@@ -1,0 +1,120 @@
+# Dialog script for build_simple_bgeo_clip automatically generated
+
+{
+    name	build_simple_bgeo_clip
+    script	build_simple_bgeo_clip
+    label	"Build Simple bgeo Clip"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+    outputlabel	1	"Clip Stage"
+    outputlabel	2	Template
+
+    parm {
+        name    "filepath"
+        label   "File"
+        type    geometry
+        default { "" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "filechooser_pattern" "*.usd*, *.mtlx, *.abc, *.bgeo*, *.gltf, *.glb, *.fbx, *.sbsar" }
+    }
+    parm {
+        name    "reload"
+        label   "Reload Files"
+        type    button
+        default { "0" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "template_frame"
+        label   "Template Frame"
+        type    integer
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "clip"
+        label   "Clip"
+        type    string
+        default { "default" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "frame_range"
+        label   "Files Frame Start/End"
+        type    integer
+        size    2
+        default { "1" "24" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "scene_range"
+        label   "Scene Frame Start/End"
+        type    integer
+        size    2
+        default { "1" "24" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "loop"
+        label   "Loop"
+        type    toggle
+        default { "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm2"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "primpath"
+        label   "Pimitive"
+        type    string
+        default { "/Geometry" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "sepparm3"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "lopoutput"
+        label   "Output File"
+        type    file
+        default { "" }
+        menureplace {
+            [ "opmenu -l -a usd_rop1 lopoutput" ]
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "filechooser_mode" "write" }
+    }
+    parm {
+        name    "execute"
+        label   "Save to Disk"
+        type    button
+        default { "0" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "takecontrol" "always" }
+    }
+}
