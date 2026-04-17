@@ -1,0 +1,15 @@
+Operator:     build_simple_bgeo_clip
+Label:        Build Simple bgeo Clip
+Path:         oplib:/Lop/build_simple_bgeo_clip?Lop/build_simple_bgeo_clip
+Icon:         opdef:/Lop/build_simple_bgeo_clip?IconSVG
+Table:        Lop
+License:      
+Extra:        visibleoutputs=0 
+User:         
+Inputs:       0 to 0
+Outputs:      0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Dec  1 16:31:00 2025
+
