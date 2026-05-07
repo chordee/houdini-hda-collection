@@ -1,0 +1,23 @@
+
+#context: lop
+#icon: Lop/create_class_from_primtive
+
+
+"""Create class tree from selected primitive path"""
+
+== Overview ==
+創建 class primtive 並把指定的 primitive 以下的結構放進 class primitive 底下
+
+@parameter
+::Primtive:
+    #id: primitive
+    要放進去 class 的 primitive，以下的結構會全部自動產生
+    
+::Class:
+    #id: class
+    創建的 class primitive 使用的 primtive 名稱，primitive specifier 會是 Class
+    
+::New Name:
+    #id: new_name
+    在 class 中產生 primitive 結構時順便將其最上層改名
+    

@@ -1,0 +1,358 @@
+# Dialog script for line_cracker::1.0 automatically generated
+
+{
+    name	line_cracker::1.0
+    script	line_cracker::1.0
+    label	"Line Cracker"
+
+    help {
+	""
+    }
+
+    inputlabel	1	Ground
+    inputlabel	2	"Single Primitive Poly Line"
+    parmtag { inputisref2 1 }
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "iterations"
+        label   "Iterations"
+        type    integer
+        default { "1" }
+        range   { 1 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "iteration_threshold"
+        label   "Iterartion Threshold"
+        type    float
+        default { "0.01" }
+        range   { 0 1 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "clean_zero_plane"
+        label   "Clean Zero Plane"
+        type    toggle
+        default { "0" }
+        range   { 0! 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "clean_threshold"
+        label   "Clean Threshold"
+        type    float
+        default { "0.001" }
+        range   { 0 1 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    groupsimple {
+        name    "folder_pieces"
+        label   "Pieces"
+
+        parm {
+            name    "createinteriorsurfaces"
+            label   "Create Interior Surfaces"
+            type    toggle
+            default { "off" }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+        parm {
+            name    "namemethod"
+            label   "Name Attribute"
+            type    ordinal
+            default { "overwrite" }
+            menu {
+                "overwrite" "Overwrite"
+                "append"    "Append"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "sepparm"
+            label   "Separator"
+            type    separator
+            default { "" }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+        parm {
+            name    "nameprefix"
+            label   "Name Prefix"
+            type    string
+            default { "piece" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "computeinteriornormals"
+            label   "Compute Interior Normals"
+            type    toggle
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "interiorcuspangle"
+            label   "Interior Cusp Angle"
+            type    float
+            default { "15" }
+            disablewhen "{ computeinteriornormals == 0 }"
+            hidewhen "{ computeinteriornormals == 0 }"
+            range   { 0! 180! }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+        parm {
+            name    "computeexteriornormals"
+            label   "Exterior Normals"
+            type    ordinal
+            default { "preserve" }
+            menu {
+                "preserve"  "Preserve Existing Normals"
+                "recompute" "Recompute Normals"
+                "none"      "Do Not Compute Normals"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "exteriorcuspangle"
+            label   "Exterior Cusp Angle"
+            type    float
+            default { "60" }
+            disablewhen "{ computeexteriornormals == none }"
+            hidewhen "{ computeexteriornormals == none }"
+            range   { 0! 180! }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+    }
+
+    groupsimple {
+        name    "folder_attribs"
+        label   "Output Attributes"
+
+        parm {
+            name    "attribnameprefix"
+            label   "Attribute Name Prefix"
+            type    string
+            default { "" }
+            disablewhen "{ outputpieceattrib == 0 outputcellptattrib == 0 outputclippieceattrib == 0 outputinteriorgroup == 0 outputexteriorgroup == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "outputpieceattrib"
+            label   "Output Primitive Piece"
+            type    toggle
+            nolabel
+            joinnext
+            default { "off" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "pieceattrib"
+            label   "Primitive Piece"
+            type    string
+            default { "piece" }
+            disablewhen "{ outputpieceattrib == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "outputcellptattrib"
+            label   "Output Primitive Cell Point"
+            type    toggle
+            nolabel
+            joinnext
+            default { "off" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cellptattrib"
+            label   "Primitive Cell Point"
+            type    string
+            default { "cellpt" }
+            disablewhen "{ outputcellptattrib == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "outputclippieceattrib"
+            label   "Output Primitive Clip Piece"
+            type    toggle
+            nolabel
+            joinnext
+            default { "off" }
+            disablewhen "{ createinteriorsurfaces == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "clippieceattrib"
+            label   "Primitive Clip Piece"
+            type    string
+            default { "clippiece" }
+            disablewhen "{ outputclippieceattrib == 0 } { createinteriorsurfaces == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "sepparm2"
+            label   "Separator"
+            type    separator
+            default { "" }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+        parm {
+            name    "outputinteriorgroup"
+            label   "Output Interior Group"
+            type    toggle
+            nolabel
+            joinnext
+            default { "on" }
+            disablewhen "{ createinteriorsurfaces == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "interiorgroup"
+            label   "Interior Group"
+            type    string
+            default { "inside" }
+            disablewhen "{ outputinteriorgroup == 0 } { createinteriorsurfaces == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "outputexteriorgroup"
+            label   "Output Exterior Group"
+            type    toggle
+            nolabel
+            joinnext
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "exteriorgroup"
+            label   "Exterior Group"
+            type    string
+            default { "outside" }
+            disablewhen "{ outputexteriorgroup == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "mergegroups"
+            label   "Merge with Existing Groups"
+            type    toggle
+            default { "on" }
+            disablewhen "{ outputinteriorgroup == 0 outputexteriorgroup == 0 }"
+            hidewhen "{ outputinteriorgroup == 0 outputexteriorgroup == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "sepparm3"
+            label   "Separator"
+            type    separator
+            default { "" }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+        parm {
+            name    "copycellattribs"
+            label   "Copy Cell Point Attributes"
+            type    toggle
+            default { "off" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "ptattributes"
+            label   "To Piece Points"
+            type    string
+            default { "" }
+            disablewhen "{ copycellattribs == 0 }"
+            hidewhen "{ copycellattribs == 0 }"
+            menutoggle {
+                [ "opmenu -l -a voronoifracture4 ptattributes" ]
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "primattributes"
+            label   "To Piece Primitives"
+            type    string
+            default { "" }
+            disablewhen "{ copycellattribs == 0 }"
+            hidewhen "{ copycellattribs == 0 }"
+            menutoggle {
+                [ "opmenu -l -a voronoifracture4 primattributes" ]
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "constraintptattributes"
+            label   "To Constraint Points"
+            type    string
+            default { "" }
+            disablewhen "{ copycellattribs == 0 }"
+            hidewhen "{ copycellattribs == 0 }"
+            menutoggle {
+                [ "opmenu -l -a voronoifracture4 constraintptattributes" ]
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupsimple {
+        name    "folder_cut"
+        label   "Cut"
+
+        parm {
+            name    "triangulation"
+            label   "Triangulation"
+            type    ordinal
+            default { "autodetect" }
+            menu {
+                "autodetect"    "Auto Detect"
+                "2d"            "2D"
+                "3d"            "3D"
+                "useexisting"   "Use Existing"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "connectivitypartition"
+            label   "Connectivity Partition"
+            type    ordinal
+            default { "overwrite" }
+            menu {
+                "none"      "None"
+                "overwrite" "Overwrite Piece Numbering"
+                "maintain"  "Maintain Piece Numbering"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cutplaneoffset"
+            label   "Cut Plane Offset"
+            type    float
+            default { "0" }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+        }
+    }
+
+}

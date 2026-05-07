@@ -1,0 +1,46 @@
+# Dialog script for collect_stage_textures automatically generated
+
+{
+    name	collect_stage_textures
+    script	collect_stage_textures
+    label	"Collect Stage Textures ()"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input 1"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "lop_node"
+        label   "Stage LOP Node"
+        type    oppath
+        default { "" }
+        parmtag { "oprelative" "." }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "texture_root_path"
+        label   "Texture Root Path"
+        type    directory
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "copy_to"
+        label   "Copy To"
+        type    directory
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "labelparm"
+        label   "Message"
+        type    label
+        default { "Actually, copy the texture files from source path to a new path which applied with the replaced string." }
+        parmtag { "sidefx::look" "block" }
+    }
+}

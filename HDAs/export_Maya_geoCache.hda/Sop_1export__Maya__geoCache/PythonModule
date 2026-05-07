@@ -1,0 +1,50 @@
+# This code is called when instances of this SOP cook.
+
+
+# Add code to modify the contents of geo.
+
+import numpy as np
+import sys, threading
+
+
+import imp
+import hou
+    
+
+def cache():
+    node = hou.pwd()
+    nc = imp.load_source('', node.parm('module_path').eval())
+    alt_node = hou.pwd().path() + '/WRITE_OUT'
+    geo = hou.node(alt_node).geometry()
+    fps = hou.fps()
+    timePerFrame = 6000/fps
+    start_frame = node.parm('start_frame').eval()
+    end_frame = node.parm('end_frame').eval()
+    channels = [x.name() for x in geo.pointGroups()]
+    total_p_amount = len(geo.points())
+    xml = node.parm('xml').eval()
+    xmlfile = nc.NCacheXML(xml, fps = fps, startFrame = start_frame, endFrame = end_frame, channels = channels)
+    xmlfile.write()
+    ths = []
+    with hou.InterruptableOperation("Cache","Caching",open_interrupt_dialog=True) as operation:
+        for frame in range(start_frame, end_frame+1):
+            hou.setFrame(frame)
+            pointArray = []
+            for group in channels:
+                temp_array = []
+                for point in geo.findPointGroup(group).points():
+                    temp_array.append(list(point.position()))
+                pointArray.append(np.array(temp_array, dtype = np.float32))  
+            mcc = nc.NCacheMC(xml, frame = frame, channels = channels, pointsArray = pointArray)
+            th = threading.Thread(target = mcc.write)
+            th.start()
+            ths.append(th)
+            operation.updateLongProgress(float(frame-start_frame)/(end_frame - start_frame),"Exporting Frame %d from %d to %d" % (frame, start_frame, end_frame))
+        for th in ths:
+            th.join()
+            
+        
+        
+    
+    
+    

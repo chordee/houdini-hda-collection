@@ -1,0 +1,67 @@
+# Dialog script for PointsVAT_exporter automatically generated
+
+{
+    name	PointsVAT_exporter
+    script	PointsVAT_exporter
+    label	"PointsVAT Exporter"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "export_path"
+        label   "Export Path"
+        type    directory
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "asset_name"
+        label   "Asset Name"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "start_frame"
+        label   "Start Frame"
+        type    integer
+        joinnext
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "end_frame"
+        label   "End Frame"
+        type    integer
+        default { "240" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "rest_frame"
+        label   "Rest Frame"
+        type    float
+        default { "1" }
+        help    "The frame output pivotpainter 2.0"
+        range   { 0 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "export"
+        label   "Export"
+        type    button
+        default { "0" }
+        help    "selectionIndex, hierachy, N, up, scale, pscale, Alpha...required!!"
+        parmtag { "script_callback" "hou.pwd().hdaModule().doIt()" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

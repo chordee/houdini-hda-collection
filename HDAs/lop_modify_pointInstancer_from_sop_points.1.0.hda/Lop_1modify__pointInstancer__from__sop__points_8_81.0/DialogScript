@@ -1,0 +1,78 @@
+# Dialog script for modify_pointInstancer_from_sop_points::1.0 automatically generated
+
+{
+    name	modify_pointInstancer_from_sop_points::1.0
+    script	modify_pointInstancer_from_sop_points::1.0
+    label	"Modify PointInstancer from SOP Points"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+    outputlabel	1	"Output Stage"
+
+    parm {
+        name    "pointinstancer_primpath"
+        label   "PointInstancer Primtive"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "sop_path"
+        label   "SOP"
+        type    oppath
+        default { "" }
+        parmtag { "oprelative" "." }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "positions"
+        label   "Positions"
+        type    toggle
+        joinnext
+        default { "0" }
+        help    "point attribute: P"
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "orientations"
+        label   "Oritations"
+        type    toggle
+        joinnext
+        default { "0" }
+        help    "point attribute: orient"
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "scales"
+        label   "Scales"
+        type    toggle
+        joinnext
+        default { "0" }
+        help    "point attribute: scale"
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "protoindices"
+        label   "ProtoIndices"
+        type    toggle
+        joinnext
+        default { "0" }
+        help    "point attribute: index"
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "invisibleIds"
+        label   "InvisibleIds"
+        type    toggle
+        default { "0" }
+        help    "point attribute: invisible"
+        parmtag { "script_callback_language" "python" }
+    }
+}

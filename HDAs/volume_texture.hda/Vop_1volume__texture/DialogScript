@@ -1,0 +1,57 @@
+# Dialog script for volume_texture automatically generated
+
+{
+    name	volume_texture
+    script	volume_texture
+    label	"Volume Texture"
+
+    input	string	volume_texture	"Volume Texture"
+    input	vector	BB	BB_pos
+    input	int	U_Tile	""
+    input	int	V_Tile	""
+    output	vector	outClr	outClr
+    inputflags	volume_texture	0
+    inputflags	BB	0
+    inputflags	U_Tile	0
+    inputflags	V_Tile	0
+    signature	"Default Inputs"	default	{ string vector int int vector }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "volume_texture"
+        label   "Volume Texture"
+        type    file
+        default { "" }
+    }
+    parm {
+        name    "BB"
+        label   "BB_pos"
+        type    float
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "U_Tile"
+        label   "U_Tile"
+        type    integer
+        default { "8" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "V_Tile"
+        label   "V_Tile"
+        type    integer
+        default { "8" }
+        range   { 0 10 }
+    }
+}

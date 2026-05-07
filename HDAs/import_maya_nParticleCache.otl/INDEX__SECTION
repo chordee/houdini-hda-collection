@@ -1,0 +1,14 @@
+Operator:     import_Maya_nParticleCache
+Label:        Import Maya nParticle Cache
+Path:         oplib:/Sop/import_Maya_nParticleCache?Sop/import_Maya_nParticleCache
+Icon:         MISC_python
+Table:        Sop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 0
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Thu May  7 15:50:00 2026
+

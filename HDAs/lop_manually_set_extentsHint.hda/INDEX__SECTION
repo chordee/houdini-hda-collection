@@ -1,0 +1,14 @@
+Operator:     chordee::manually_set_extentsHint::1.0
+Label:        Manually set ExtentsHint
+Path:         oplib:/chordee::Lop/manually_set_extentsHint::1.0?chordee::Lop/manually_set_extentsHint::1.0
+Icon:         opdef:/chordee::Lop/manually_set_extentsHint::1.0?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:45:34 2026
+

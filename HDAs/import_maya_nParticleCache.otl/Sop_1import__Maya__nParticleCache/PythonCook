@@ -1,0 +1,38 @@
+# This code is called when instances of this SOP cook.
+node = hou.pwd()
+geo = node.geometry()
+
+# Add code to modify the contents of geo.
+import sys, threading
+
+path = 'Q:/Resource/python_modules'
+
+if path not in sys.path:
+    sys.path.append(path)
+    
+import numpy as np
+from mayaGeoCache import nCache as nc
+reload(nc)
+
+xml = node.evalParm('filename')
+
+print xml
+mc = nc.NPCacheMC(xml)
+mc.setFrame(hou.frame())
+if mc.read():
+    pos_array = mc.getAttrValues('position')
+    geo.createPoints(pos_array.tolist())
+    id_array = mc.getAttrValues('id')
+    geo.addAttrib(hou.attribType.Point, 'id', default_value = 0)
+    geo.setPointIntAttribValuesFromString('id',id_array.astype(np.int32).tostring())
+    count = mc.getAttrValues('count')[0]
+    for attr in mc.getAttrs():
+        if attr != 'id' and attr != 'position':
+            values = mc.getAttrValues(attr)
+            if len(values) == count and values[0].size == 1:
+                geo.addAttrib(hou.attribType.Point, attr, default_value = 0.0)
+                geo.setPointFloatAttribValuesFromString(attr, values.astype(np.float32).tostring())
+            elif len(values) == count and values[0].size == 3:
+                geo.addAttrib(hou.attribType.Point, attr, default_value = (0.0, 0.0, 0.0))
+                geo.setPointFloatAttribValuesFromString(attr, values.tostring())
+        

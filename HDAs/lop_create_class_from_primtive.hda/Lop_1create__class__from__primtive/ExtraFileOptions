@@ -1,0 +1,22 @@
+{
+	"database-ui-web-5-svgrepo-com.svg/Cursor":{
+		"type":"intarray",
+		"value":[1,1]
+	},
+	"database-ui-web-5-svgrepo-com.svg/IsExpr":{
+		"type":"bool",
+		"value":false
+	},
+	"database-ui-web-5-svgrepo-com.svg/IsPython":{
+		"type":"bool",
+		"value":false
+	},
+	"database-ui-web-5-svgrepo-com.svg/IsScript":{
+		"type":"bool",
+		"value":false
+	},
+	"database-ui-web-5-svgrepo-com.svg/Source":{
+		"type":"string",
+		"value":"F:/database-ui-web-5-svgrepo-com.svg"
+	}
+}

@@ -1,0 +1,14 @@
+Operator:     vector_intersect::1.0
+Label:        Vector Intersect
+Path:         oplib:/Sop/vector_intersect::1.0?Sop/vector_intersect::1.0
+Icon:         SOP_subnet
+Table:        Sop
+License:      
+Extra:        inputcolors='2 "RGB 0.700195 0.700195 0.700195" "RGB 0.700195 0.700195 0.700195" ' outputcolors='1 "RGB 0.700195 0.700195 0.700195" ' 
+User:         
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:51:09 2026
+

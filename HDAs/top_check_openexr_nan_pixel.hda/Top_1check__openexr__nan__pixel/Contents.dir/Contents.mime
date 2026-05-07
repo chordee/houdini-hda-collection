@@ -1,0 +1,731 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPfallbacks"
+Content-Type: application/external-reference
+
+.OPfallbacks
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPdummydefs"
+Content-Type: application/external-reference
+
+.OPdummydefs
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Top
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = check_openexr_nan_pixel
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -9.87454 -1.43927
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+1
+0 1.1175870860691273e-08 7.3941999999999997 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filepattern1.init"
+Content-Type: text/plain
+
+type = filepattern
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filepattern1.def"
+Content-Type: text/plain
+
+comment ""
+position 0 6.3272
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	(0) "" 1 "input1"
+}
+inputs
+{
+0 	(0) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filepattern1.chn"
+Content-Type: text/plain
+
+{
+    channel pattern {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"K:/202309_BlackTdieIsland/Avalon/Shots/e04/e04_sh0860/compositing/work/render/writeComp/v022/*.exr\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../pattern\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filepattern1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	1	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+filetypes	[ 0	locks=0 ]	(	1	)
+pattern	[ 0	locks=0 ]	(	[ pattern	$HIP/* ] 	)
+recursive	[ 0	locks=0 ]	(	"off"	)
+followlinks	[ 0	locks=0 ]	(	"off"	)
+sepparm	[ 0	locks=0 ]	(	)
+nomatchbehavior	[ 0	locks=0 ]	(	"ignore"	)
+nomatchattr	[ 0	locks=0 ]	(	exists	)
+folder1	[ 0	locks=0 ]	(	1	)
+split	[ 0	locks=0 ]	(	"on"	)
+includeextensions	[ 0	locks=0 ]	(	"on"	)
+inheritupstreamindex	[ 0	locks=0 ]	(	"off"	)
+sepparm2	[ 0	locks=0 ]	(	)
+fileattrib	[ 0	locks=0 ]	(	filename	)
+directoryattrib	[ 0	locks=0 ]	(	directory	)
+extensionattrib	[ 0	locks=0 ]	(	extension	)
+usesizeattrib	[ 0	locks=0 ]	(	"off"	)
+sizeattrib	[ 0	locks=0 ]	(	filesize	)
+usemtimeattrib	[ 0	locks=0 ]	(	"off"	)
+mtimeattrib	[ 0	locks=0 ]	(	filemtime	)
+errornomatch	[ 0	locks=0 ]	(	"off"	)
+splitnomatchbehavior	[ 0	locks=0 ]	(	"ignore"	)
+folder2	[ 0	locks=0 ]	(	1	)
+useoutputattrib	[ 0	locks=0 ]	(	"off"	)
+outputattrib	[ 0	locks=0 ]	(	files	)
+overrideresultdatatag	[ 0	locks=0 ]	(	"off"	)
+resultdatatag	[ 0	locks=0 ]	(	file	)
+copyfiles	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filepattern1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.def"
+Content-Type: text/plain
+
+comment ""
+position 2.08167e-17 3.66871
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	attributecreate1 1 1 "input1"
+}
+inputs
+{
+0 	attributecreate1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	0	0	)
+inprocess	[ 0	locks=0 ]	(	"on"	)
+pdgservicename	[ 0	locks=0 ]	(	pythonscript	)
+sepparm2	[ 0	locks=0 ]	(	)
+evaluation	[ 0	locks=0 ]	(	1	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+pdg_cooktype	[ 0	locks=0 ]	(	"0"	)
+pdg_useserviceblock	[ 0	locks=0 ]	(	"1"	)
+pdg_servicename	[ 0	locks=0 ]	(	pythonscript	)
+manageservices	[ 0	locks=0 ]	(	0	)
+pdg_servicereset	[ 0	locks=0 ]	(	"0"	)
+pdg_serviceresetwhen	[ 0	locks=0 ]	(	"1"	)
+exectuable	[ 0	locks=0 ]	(	0	)
+pythonbin	[ 0	locks=0 ]	(	"0"	)
+python	[ 0	locks=0 ]	(	__PDG_PYTHON__	)
+pythonvenv	[ 0	locks=0 ]	(	`@venvroot`	)
+resetpython	[ 0	locks=0 ]	(	"off"	)
+nativeworkitem	[ 0	locks=0 ]	(	"off"	)
+sepparm3	[ 0	locks=0 ]	(	)
+pythonargs	[ 0	locks=0 ]	(	-u	)
+extraargs	[ 0	locks=0 ]	(	""	)
+batching	[ 0	locks=0 ]	(	0	)
+batchtype	[ 0	locks=0 ]	(	"0"	)
+scripttype	[ 0	locks=0 ]	(	"0"	)
+batchsize	[ 0	locks=0 ]	(	1	)
+prescript	[ 0	locks=0 ]	(	"# Script code that runs once before a batch begins.
+#
+# The following variables are available:
+# work_item    - the work item currently running 
+# graph        - the graph attributes for the current work item
+#
+# In addition to the above, in-process scripts can also access:
+# self         - the current PDG node
+# parent_item  - the parent work item, if it exists
+"	)
+expansion	[ 0	locks=0 ]	(	0	)
+expandscript	[ 0	locks=0 ]	(	"off"	)
+expandstrings	[ 0	locks=0 ]	(	"off"	)
+script	[ 0	locks=0 ]	(	"# Script code that runs for each task in the node.
+#
+# The following variables are available:
+# work_item    - the work item currently running 
+# graph        - the graph attributes for the current work item
+#
+# In addition to the above, in-process scripts can also access:
+# self         - the current PDG node
+# parent_item  - the parent work item, if it exists
+
+import OpenImageIO as oiio
+import numpy as np
+import hou
+
+def image_proc(file):
+    res = None
+    try:
+        inp = oiio.ImageInput.open(file)
+        data = inp.read_image()
+        max_val = np.max(data)
+        if np.isnan(max_val):
+            print(file)
+            res = file
+            work_item.setIntAttrib('err', 1)
+        inp.close()
+        return res
+    except Exception as e:
+        print(e)
+        inp.close()
+        return res
+
+files = work_item.inputFiles
+filepath = files[0].path
+
+log_path = hou.pwd().node('..').parm('log_file').eval()
+
+result = image_proc(filepath)
+
+if result != None:
+    with open(log_path, 'a') as f:
+        f.writelines([result,'\\n'])
+
+"	)
+pdg_cachemode	[ 0	locks=0 ]	(	"0"	)
+copyoutputs	[ 0	locks=0 ]	(	"2"	)
+sepparm5	[ 0	locks=0 ]	(	)
+expectedoutputsfrom	[ 0	locks=0 ]	(	"0"	)
+expectedoutputattr	[ 0	locks=0 ]	(	""	)
+useexpectedoutputtag	[ 0	locks=0 ]	(	"off"	)
+expectedoutputtag	[ 0	locks=0 ]	(	file	)
+expectedoutputfiles	[ 0	locks=0 ]	(	0	)
+topscheduler	[ 0	locks=0 ]	(	""	)
+addjobparms	[ 0	locks=0 ]	(	0	)
+pdg_useschedulewhen	[ 0	locks=0 ]	(	"off"	)
+pdg_schedulewhen	[ 0	locks=0 ]	(	1	)
+sepparm4	[ 0	locks=0 ]	(	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
+pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	},
+	"___toolcount___":{
+		"type":"string",
+		"value":"1"
+	},
+	"___toolid___":{
+		"type":"string",
+		"value":"object_cop2plane"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position 0 -0.143491
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	pythonscript2 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript2 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/waitforall1.init"
+Content-Type: text/plain
+
+type = waitforall
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/waitforall1.def"
+Content-Type: text/plain
+
+comment ""
+position 0 2.09731
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	pythonscript1 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/waitforall1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+attributes	[ 0	locks=0 ]	(	0	0	)
+pdg_partitionmerge	[ 0	locks=0 ]	(	"off"	)
+pdg_partitionmergeoutputs	[ 0	locks=0 ]	(	"4"	)
+pdg_partitionmergeattributes	[ 0	locks=0 ]	(	1	)
+pdg_partitionwhen	[ 0	locks=0 ]	(	"0"	)
+pdg_partitiontargettype	[ 0	locks=0 ]	(	"0"	)
+pdg_partitiontarget	[ 0	locks=0 ]	(	""	)
+pdg_partitionignorefailures	[ 0	locks=0 ]	(	"off"	)
+sepparm2	[ 0	locks=0 ]	(	)
+pdg_partitionsplit	[ 0	locks=0 ]	(	"off"	)
+pdg_partitionsplitattrib	[ 0	locks=0 ]	(	""	)
+pdg_partitionsplitmissing	[ 0	locks=0 ]	(	"0"	)
+pdg_partitionsplitdefault	[ 0	locks=0 ]	(	""	)
+pdg_partitionsplitpartial	[ 0	locks=0 ]	(	"off"	)
+sepparm	[ 0	locks=0 ]	(	)
+pdg_partitionframe	[ 0	locks=0 ]	(	"1"	)
+pdg_partitionsort	[ 0	locks=0 ]	(	"1"	)
+pdg_partitionsortdirection	[ 0	locks=0 ]	(	"0"	)
+pdg_partitionsortattrib	[ 0	locks=0 ]	(	""	)
+pdg_partitionstoreids	[ 0	locks=0 ]	(	"off"	)
+pdg_partitionidattrib	[ 0	locks=0 ]	(	partitionitems	)
+pdg_partitionmergeoperation1	[ 0	locks=0 ]	(	"7"	)
+pdg_partitionmergepattern1	[ 0	locks=0 ]	(	err	)
+pdg_partitionmergepreserve1	[ 0	locks=0 ]	(	"off"	)
+sepparm3_1	[ 0	locks=0 ]	(	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/waitforall1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0.976909
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	waitforall1 1 1 "input1"
+}
+inputs
+{
+0 	waitforall1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	0	0	)
+inprocess	[ 0	locks=0 ]	(	"on"	)
+pdgservicename	[ 0	locks=0 ]	(	pythonscript	)
+sepparm2	[ 0	locks=0 ]	(	)
+evaluation	[ 0	locks=0 ]	(	1	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+pdg_cooktype	[ 0	locks=0 ]	(	"0"	)
+pdg_useserviceblock	[ 0	locks=0 ]	(	"1"	)
+pdg_servicename	[ 0	locks=0 ]	(	pythonscript	)
+manageservices	[ 0	locks=0 ]	(	0	)
+pdg_servicereset	[ 0	locks=0 ]	(	"0"	)
+pdg_serviceresetwhen	[ 0	locks=0 ]	(	"1"	)
+exectuable	[ 0	locks=0 ]	(	0	)
+pythonbin	[ 0	locks=0 ]	(	"0"	)
+python	[ 0	locks=0 ]	(	__PDG_PYTHON__	)
+pythonvenv	[ 0	locks=0 ]	(	`@venvroot`	)
+resetpython	[ 0	locks=0 ]	(	"off"	)
+nativeworkitem	[ 0	locks=0 ]	(	"off"	)
+sepparm3	[ 0	locks=0 ]	(	)
+pythonargs	[ 0	locks=0 ]	(	-u	)
+extraargs	[ 0	locks=0 ]	(	""	)
+batching	[ 0	locks=0 ]	(	0	)
+batchtype	[ 0	locks=0 ]	(	"0"	)
+scripttype	[ 0	locks=0 ]	(	"0"	)
+batchsize	[ 0	locks=0 ]	(	1	)
+prescript	[ 0	locks=0 ]	(	"# Script code that runs once before a batch begins.
+#
+# The following variables are available:
+# work_item    - the work item currently running 
+# graph        - the graph attributes for the current work item
+#
+# In addition to the above, in-process scripts can also access:
+# self         - the current PDG node
+# parent_item  - the parent work item, if it exists
+"	)
+expansion	[ 0	locks=0 ]	(	0	)
+expandscript	[ 0	locks=0 ]	(	"off"	)
+expandstrings	[ 0	locks=0 ]	(	"off"	)
+script	[ 0	locks=0 ]	(	"# Script code that runs for each task in the node.
+#
+# The following variables are available:
+# work_item    - the work item currently running 
+# graph        - the graph attributes for the current work item
+#
+# In addition to the above, in-process scripts can also access:
+# self         - the current PDG node
+# parent_item  - the parent work item, if it exists
+
+import hou
+
+
+err_num = work_item.attribValue('err')
+num = work_item.attribValue('partitionsize')
+
+log_path = hou.pwd().node('..').parm('log_file').eval()
+
+with open(log_path, 'a') as f:
+    f.writelines(['\\n\\t', f'...Found {err_num} Errors in {num} Files','\\n'])
+
+"	)
+pdg_cachemode	[ 0	locks=0 ]	(	"0"	)
+copyoutputs	[ 0	locks=0 ]	(	"2"	)
+sepparm5	[ 0	locks=0 ]	(	)
+expectedoutputsfrom	[ 0	locks=0 ]	(	"0"	)
+expectedoutputattr	[ 0	locks=0 ]	(	""	)
+useexpectedoutputtag	[ 0	locks=0 ]	(	"off"	)
+expectedoutputtag	[ 0	locks=0 ]	(	file	)
+expectedoutputfiles	[ 0	locks=0 ]	(	0	)
+topscheduler	[ 0	locks=0 ]	(	""	)
+addjobparms	[ 0	locks=0 ]	(	0	)
+pdg_useschedulewhen	[ 0	locks=0 ]	(	"off"	)
+pdg_schedulewhen	[ 0	locks=0 ]	(	1	)
+sepparm4	[ 0	locks=0 ]	(	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
+pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	},
+	"___toolcount___":{
+		"type":"string",
+		"value":"1"
+	},
+	"___toolid___":{
+		"type":"string",
+		"value":"object_cop2plane"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attributecreate1.init"
+Content-Type: text/plain
+
+type = attributecreate
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attributecreate1.def"
+Content-Type: text/plain
+
+comment ""
+position -4.51028e-17 4.77141
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	filepattern1 0 1 "input1"
+}
+inputs
+{
+0 	filepattern1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attributecreate1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+usecondition	[ 0	locks=0 ]	(	"off"	)
+condition	[ 0	locks=0 ]	(	0	)
+folder2	[ 0	locks=0 ]	(	0	)
+copyoutputs	[ 0	locks=0 ]	(	"2"	)
+pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
+pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+useindex	[ 0	locks=0 ]	(	"off"	)
+indexvalue	[ 0	locks=0 ]	(	0	)
+useframe	[ 0	locks=0 ]	(	"off"	)
+framevalue	[ 0	locks=0 ]	(	0	)
+usepriority	[ 0	locks=0 ]	(	"off"	)
+priorityvalue	[ 0	locks=0 ]	(	0	)
+folder1	[ 0	locks=0 ]	(	0	)
+stringattribs	[ 0	locks=0 ]	(	0	)
+intattribs	[ 0	locks=0 ]	(	1	)
+floatattribs	[ 0	locks=0 ]	(	0	)
+dictattribs	[ 0	locks=0 ]	(	0	)
+pyobjectattribs	[ 0	locks=0 ]	(	0	)
+resultdata	[ 0	locks=0 ]	(	0	)
+intenable1	[ 0	locks=0 ]	(	"on"	)
+intname1	[ 0	locks=0 ]	(	err	)
+intconflict1	[ 0	locks=0 ]	(	"0"	)
+intscope1	[ 0	locks=0 ]	(	"0"	)
+intsize1	[ 0	locks=0 ]	(	0	)
+intvalue1	[ 0	locks=0 ]	(	0	0	0	0	)
+sepparm1_4	[ 0	locks=0 ]	(	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attributecreate1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+6
+filepattern1
+pythonscript1
+output0
+waitforall1
+pythonscript2
+attributecreate1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

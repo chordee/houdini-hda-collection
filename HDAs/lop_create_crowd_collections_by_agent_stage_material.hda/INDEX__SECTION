@@ -1,0 +1,14 @@
+Operator:     chordee.lin::create_crowd_collections_by_agent_stage_material
+Label:        Create Crowd Collections By Agent Stage Material
+Path:         oplib:/chordee.lin::Lop/create_crowd_collections_by_agent_stage_material?chordee.lin::Lop/create_crowd_collections_by_agent_stage_material
+Icon:         LOP_subnet
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:46:24 2026
+

@@ -1,0 +1,62 @@
+# Dialog script for create_class_from_primtive automatically generated
+
+{
+    name	create_class_from_primtive
+    script	create_class_from_primtive
+    label	"Create Class From Primtive"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "primitive"
+        label   "Primitive"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "class_name"
+        label   "Class"
+        type    string
+        default { "__CLASS__" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "enable_new_name"
+        label   "New Name"
+        type    toggle
+        joinnext
+        default { "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "new_name"
+        label   "new_name"
+        type    string
+        nolabel
+        default { "" }
+        disablewhen "{ enable_new_name == 0 }"
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "inherit"
+        label   "Inherit"
+        type    toggle
+        default { "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

@@ -1,0 +1,74 @@
+# Dialog script for export_Maya_nParticles_cache automatically generated
+
+{
+    name	export_Maya_nParticles_cache
+    script	export_Maya_nParticles_cache
+    label	"Export Maya nParticles cache"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "start_frame"
+        label   "Start Frame"
+        type    integer
+        joinnext
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "end_frame"
+        label   "End Frame"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "eval_rate"
+        label   "Evaluation Rate"
+        type    float
+        default { "1" }
+        range   { 0! 1! }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "xml"
+        label   "XML"
+        type    file
+        default { "" }
+    }
+    parm {
+        name    "particle_name"
+        label   "Particle Name"
+        type    string
+        default { "" }
+    }
+    parm {
+        name    "cache"
+        label   "Cache"
+        type    button
+        default { "0" }
+        parmtag { "script_callback" "hou.pwd().hdaModule().cache()" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "module_path"
+        label   "Python Module Path"
+        type    file
+        default { "Q:/Resource/python_modules/mayaGeoCache/nCache.py" }
+        help    "https://github.com/chordee/mayaGeoCache"
+        parmtag { "script_callback_language" "python" }
+    }
+}

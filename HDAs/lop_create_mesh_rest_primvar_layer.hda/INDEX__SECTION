@@ -1,0 +1,14 @@
+Operator:     create_mesh_rest_primvar_layer
+Label:        Create Mesh Rest Primvar Layer
+Path:         oplib:/Lop/create_mesh_rest_primvar_layer?Lop/create_mesh_rest_primvar_layer
+Icon:         opdef:/Lop/create_mesh_rest_primvar_layer?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:45:52 2026
+

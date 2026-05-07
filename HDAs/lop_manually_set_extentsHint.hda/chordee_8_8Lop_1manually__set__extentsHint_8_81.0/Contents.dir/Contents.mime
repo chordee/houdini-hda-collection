@@ -1,0 +1,297 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Lop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = chordee::manually_set_extentsHint::1.0
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -1.58483 0.274144
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+1
+0 0 6 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.def"
+Content-Type: text/plain
+
+comment ""
+position -1.11759e-08 4.17243
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	(0) "" 1 "input1"
+}
+inputs
+{
+0 	(0) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"# Use the drop down menu to select example code snippets.
+node = hou.pwd()
+
+# Add code to fetch node parameters and evaluate primitive patterns.
+# This should be done before calling editableStage or editableLayer.
+# paths = hou.LopSelectionRule(\"/*\").expandedPaths(node.input(0))
+
+# Add code to modify the stage.
+stage = node.editableStage()
+
+from pxr import UsdGeom
+
+
+
+parent = node.node('..')
+prim_path = parent.parm('prim_path').eval()
+time_depend = parent.parm('time_dependent').eval()
+start_frame = parent.parm('frange1').eval()
+end_frame = parent.parm('frange2').eval()
+minvec = parent.parm('minvecx').tuple().eval()
+maxvec = parent.parm('maxvecx').tuple().eval()
+
+prim = stage.GetPrimAtPath(prim_path)
+api = UsdGeom.ModelAPI(prim)
+
+setting = parent.parm('folders1').eval()
+
+if setting == 0:
+    if time_depend:
+        for f in range(start_frame, end_frame+1):
+            api.SetExtentsHint((minvec, maxvec), time=f)
+    else:
+        api.SetExtentsHint((minvec, maxvec))
+        
+elif setting == 1:
+    sop_path = parent.parm('sop_path').eval()
+    geo = hou.node(sop_path).geometry()
+    sop_type = parent.parm('sop_type').eval()
+    sop_group = parent.parm('sop_group').eval()
+    if sop_type == 0:
+        bbox = geo.pointBoundingBox(sop_group)
+    else:
+        bbox = geo.primBoundingBox(sop_group)
+    minvec = tuple(bbox.minvec())
+    maxvec = tuple(bbox.maxvec())
+    if time_depend:
+        api.SetExtentsHint((minvec, maxvec), time=hou.frame())
+    else:
+        api.SetExtentsHint((minvec, maxvec))
+        
+elif setting == 2:
+    file_type = parent.parm('file_type').eval()
+    file_group = parent.parm('file_group').eval()
+    geo = hou.Geometry()
+    if time_depend:
+        for f in range(start_frame, end_frame+1):
+            file_path = parent.parm('files').evalAsStringAtFrame(f)
+            geo.loadFromFile(file_path)
+            if file_type == 0:
+                bbox = geo.pointBoundingBox(file_group)
+            else:
+                bbox = geo.primBoundingBox(file_group)
+            minvec = tuple(bbox.minvec())
+            maxvec = tuple(bbox.maxvec())
+            api.SetExtentsHint((minvec, maxvec), time=f)
+        
+    else:
+        file_path = parent.parm('files').evalAsString()
+        geo.loadFromFile(file_path)
+        if file_type == 0:
+            bbox = geo.pointBoundingBox(file_group)
+        else:
+            bbox = geo.primBoundingBox(file_group)
+        minvec = tuple(bbox.minvec())
+        maxvec = tuple(bbox.maxvec())
+        api.SetExtentsHint((minvec, maxvec))
+        
+elif setting == 3:
+    geo = hou.Geometry()
+    if time_depend:
+        for f in range(start_frame, end_frame+1):
+            file_path = parent.parm('vdb_files').evalAsStringAtFrame(f)
+            geo.loadFromFile(file_path)
+            bbox = geo.boundingBox()
+            minvec = tuple(bbox.minvec())
+            maxvec = tuple(bbox.maxvec())
+            api.SetExtentsHint((minvec, maxvec), time=f)
+    else:
+        file_path = parent.parm('vdb_files').evalAsString()
+        geo.loadFromFile(file_path)
+        bbox = geo.boundingBox()
+        minvec = tuple(bbox.minvec())
+        maxvec = tuple(bbox.maxvec())
+        api.SetExtentsHint((minvec, maxvec))
+        
+        
+
+        
+    
+
+"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position -1.11759e-08 2.53647
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	pythonscript2 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript2 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+modifiedprims	[ 0	locks=0 ]	(	"`lopinputprims(\".\", 0)`"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+2
+pythonscript2
+output0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

@@ -1,0 +1,14 @@
+Operator:     kill_camera_motion_blur
+Label:        Kill Camera Motion Blur
+Path:         oplib:/Lop/kill_camera_motion_blur?Lop/kill_camera_motion_blur
+Icon:         opdef:/Lop/kill_camera_motion_blur?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:45:01 2026
+

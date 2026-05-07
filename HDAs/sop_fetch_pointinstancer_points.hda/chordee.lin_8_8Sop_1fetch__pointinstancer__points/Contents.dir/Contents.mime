@@ -1,0 +1,286 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Sop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = chordee.lin::fetch_pointinstancer_points
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+sopflags sopflags = 
+comment ""
+position -1.91109 -0.182626
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/python1.init"
+Content-Type: text/plain
+
+type = python
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/python1.def"
+Content-Type: text/plain
+
+sopflags sopflags = 
+comment ""
+position -1.11759e-08 5.48827
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/python1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"from pxr import UsdGeom, Usd, Gf
+import numpy as np
+import hou
+
+
+# Fetch parameters and stage
+parent = hou.pwd().parent()
+lop_path = parent.parm('lop_path').eval()
+prim_rule = parent.parm('primitives').eval()
+lop = hou.node(lop_path)
+stage = lop.stage(0)
+geo = hou.pwd().geometry()
+
+# Get current frame
+frame = Usd.TimeCode(hou.timeToFrame(hou.time()))
+
+# Prepare geometry attributes
+geo.addAttrib(hou.attribType.Point, 'orient', (0.0, 0.0, 0.0, 1.0))
+geo.addAttrib(hou.attribType.Point, 'index', 0)
+geo.addAttrib(hou.attribType.Point, 'scale', (1.0, 1.0, 1.0))
+geo.addAttrib(hou.attribType.Point, 'invisible', 0)
+geo.addAttrib(hou.attribType.Global, 'prototype', (''))
+geo.addAttrib(hou.attribType.Global, 'usd_global_xform', hou.Matrix4().asTuple())
+
+
+# Initialize numpy arrays for accumulation
+from typing import List
+positions_list: List[np.ndarray] = []
+scales_list: List[np.ndarray] = []
+orients_list: List[np.ndarray] = []
+indices_list: List[np.ndarray] = []
+
+# Select USD prims based on rule
+selection = hou.LopSelectionRule(prim_rule)
+paths = selection.expandedPaths(stage=stage)
+
+for path in paths:
+    prim = stage.GetPrimAtPath(path)
+    instancer = UsdGeom.PointInstancer(prim)
+    instancer_global_xform = UsdGeom.Xformable(prim).ComputeLocalToWorldTransform(hou.frame())
+    geo.setGlobalAttribValue('usd_global_xform', tuple(x for row in instancer_global_xform for x in row))
+    pos_val = instancer.GetPositionsAttr().Get(frame)
+    invisibleIds = instancer.GetInvisibleIdsAttr().Get()
+    prototype_paths = instancer.GetPrototypesRel().GetTargets()
+    if pos_val is not None:
+        pos_val = np.array(pos_val, dtype=np.float32)
+    else:
+        continue  # Skip if no positions
+
+    scale_val = instancer.GetScalesAttr().Get(frame)
+    if scale_val is None:
+        scale_val = np.ones((pos_val.shape[0], 3), dtype=np.float32)
+    else:
+        scale_val = np.array(scale_val, dtype=np.float32)
+
+    orient_attr = instancer.GetOrientationsAttr().Get(frame)
+    if orient_attr is not None:
+        orient_val = np.array([list(x.GetImaginary()) + [x.GetReal()] for x in orient_attr], dtype=np.float32)
+    else:
+        orient_val = np.tile(np.array([0.0, 0.0, 0.0, 1.0], dtype=np.float32), (pos_val.shape[0], 1))
+
+    index_val = instancer.GetProtoIndicesAttr().Get(frame)
+    if index_val is None:
+        index_val = np.zeros(pos_val.shape[0], dtype=np.int32)
+    else:
+        index_val = np.array(index_val, dtype=np.int32)
+
+    positions_list.append(pos_val)
+    scales_list.append(scale_val)
+    orients_list.append(orient_val)
+    indices_list.append(index_val)
+
+# Concatenate all data if available
+if positions_list:
+    positions = np.concatenate(positions_list, axis=0)
+    scales = np.concatenate(scales_list, axis=0)
+    orients = np.concatenate(orients_list, axis=0)
+    indices = np.concatenate(indices_list, axis=0)
+    invisible = np.zeros(np.shape(positions_list)[1], dtype=int)
+    invisible[invisibleIds] = 1
+
+    # Create points and assign attributes
+    if positions is not None and len(positions) > 0:
+        geo.createPoints(positions.tolist())
+        if scales is not None and len(scales) > 0:
+            geo.setPointFloatAttribValuesFromString('scale', scales.tobytes())
+        if orients is not None and len(orients) > 0:
+            geo.setPointFloatAttribValuesFromString('orient', orients.tobytes())
+        if indices is not None and len(indices) > 0:
+            geo.setPointIntAttribValuesFromString('index', indices.tobytes())
+        geo.setPointIntAttribValuesFromString('invisible', invisible.tobytes())            
+    geo.setGlobalAttribValue('prototype', [x.pathString for x in prototype_paths])
+    
+else:
+    # No valid points found
+    pass
+"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/python1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+sopflags sopflags = 
+comment ""
+position 0 3.53525
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	python1 0 1 "input1"
+}
+inputs
+{
+0 	python1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+2
+python1
+output0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

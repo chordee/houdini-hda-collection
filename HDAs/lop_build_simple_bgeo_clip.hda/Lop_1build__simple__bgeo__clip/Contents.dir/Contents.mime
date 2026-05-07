@@ -1,0 +1,1308 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Lop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = build_simple_bgeo_clip
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -2.51468 -0.247879
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sublayer1.init"
+Content-Type: text/plain
+
+type = sublayer
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sublayer1.def"
+Content-Type: text/plain
+
+comment ""
+position 0 6.47642
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	"" "" 1 "input1"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sublayer1.chn"
+Content-Type: text/plain
+
+{
+    channel filepath1 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"D:/hip_test/bgeo_seq/geo/config/v1/config_v1.0001.bgeo.sc\"
+      flags = 0
+      segment { length = 0 expr = "node = hou.pwd()
+frame = node.node('..').parm('template_frame').eval()
+filepath = node.node('..').parm('filepath').evalAsStringAtFrame(frame)
+return filepath" language = python }
+    }
+    channel reload {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../reload\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sublayer1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+parentlayer_group	[ 0	locks=0 ]	(	0	)
+loadpayloads	[ 0	locks=0 ]	(	"on"	)
+setstagemetadata	[ 0	locks=0 ]	(	auto	)
+editrootlayer	[ 0	locks=0 ]	(	"on"	)
+ineditblocklabel	[ 0	locks=0 ]	(	"First input is in an Edit Layer Block.  Can only Sublayer into first input's Active Layer."	)
+findsublayers	[ 0	locks=0 ]	(	""	)
+removefoundsublayers	[ 0	locks=0 ]	(	"on"	)
+composition_group	[ 0	locks=0 ]	(	0	)
+sublayertype	[ 0	locks=0 ]	(	filesandinputs	)
+handlemissingfiles	[ 0	locks=0 ]	(	error	)
+positiontype	[ 0	locks=0 ]	(	strongest	)
+positionindex	[ 0	locks=0 ]	(	0	)
+files_separator	[ 0	locks=0 ]	(	)
+num_files	[ 0	locks=0 ]	(	1	)
+reload	[ 0	locks=0 ]	(	[ reload	0 ] 	)
+inputs_separator	[ 0	locks=0 ]	(	)
+enable	[ 0	locks=0 ]	(	"on"	)
+sublayerfile_group1	[ 0	locks=0 ]	(	1	)
+enable1	[ 0	locks=0 ]	(	"on"	)
+filepath1	[ 0	locks=0 ]	(	[ filepath1	"" ] 	)
+mute1	[ 0	locks=0 ]	(	"off"	)
+timeoffset1	[ 0	locks=0 ]	(	0	)
+timescale1	[ 0	locks=0 ]	(	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sublayer1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/STAGE.init"
+Content-Type: text/plain
+
+type = null
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/STAGE.def"
+Content-Type: text/plain
+
+comment ""
+position 0.00125003 5.37062
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	sublayer1 1 1 "input1"
+}
+inputs
+{
+0 	sublayer1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.6 0.7 0.77 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/STAGE.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/STAGE.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.def"
+Content-Type: text/plain
+
+comment ""
+position 0.00125 1.06547
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	pythonscript3 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript3 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"# Use the drop down menu to select example code snippets.
+node = hou.pwd()
+
+# Add code to fetch node parameters and evaluate primitive patterns.
+# This should be done before calling editableStage or editableLayer.
+# paths = hou.LopSelectionRule(\"/*\").expandedPaths(node.input(0))
+
+# Add code to modify the stage.
+stage = node.editableStage()
+
+from pxr import UsdGeom, Usd, Sdf
+
+primpath = node.node('..').parm('primpath').eval()
+frame_range1 = node.node('..').parm('frame_range1').eval()
+frame_range2 = node.node('..').parm('frame_range2').eval()
+scene_range1 = node.node('..').parm('scene_range1').eval()
+scene_range2 = node.node('..').parm('scene_range2').eval()
+loop = node.node('..').parm('loop').eval()
+prim = stage.GetPrimAtPath(primpath)
+
+file_frame_list = list(range(frame_range1, frame_range2+1))
+orig_file_frame_list = file_frame_list
+scene_frame_list = list(range(scene_range1, scene_range2+1))
+
+if loop and len(file_frame_list) < len(scene_frame_list):
+    mul = len(scene_frame_list) / len(file_frame_list)
+    mul = int(mul)+1
+    tmp_list = []
+    for i in range(mul):
+        tmp_list += file_frame_list
+    file_frame_list = tmp_list
+
+
+clip_api = Usd.ClipsAPI(prim)
+clip_set = node.node('..').parm('clip').eval()
+
+filepaths = []
+for i in range(frame_range1, frame_range2+1):
+    filepaths.append(node.node('..').parm('filepath').evalAsStringAtFrame(i))
+
+clip_api.SetClipAssetPaths([Sdf.AssetPath(x) for x in filepaths], clip_set)
+
+clip_api.SetClipPrimPath(primpath, clip_set)
+
+times = []
+clip_api.SetClipTimes(list(zip(scene_frame_list, file_frame_list)), clip_set)
+
+active = []
+#active = [(x, orig_file_frame_list.index(y)) for x,y in list(zip(scene_frame_list, file_frame_list))]
+clip_api.SetClipActive(active, clip_set)"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript2.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position -3.13014 2.06547
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	STAGE 1 1 "input1"
+}
+inputs
+{
+0 	STAGE 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+modifiedprims	[ 0	locks=0 ]	(	"`lopinputprims(\".\", 0)`"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript3.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript3.def"
+Content-Type: text/plain
+
+comment ""
+position 0.00125 2.06547
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	configurelayer1 1 1 "input1"
+}
+inputs
+{
+0 	configurelayer1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript3.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"# Use the drop down menu to select example code snippets.
+node = hou.pwd()
+
+# Add code to fetch node parameters and evaluate primitive patterns.
+# This should be done before calling editableStage or editableLayer.
+# paths = hou.LopSelectionRule(\"/*\").expandedPaths(node.input(0))
+
+# Add code to modify the stage.
+stage = node.editableStage()
+
+primpath = node.node('..').parm('primpath').eval()
+rule = hou.LopSelectionRule(primpath + '/**')
+paths = rule.expandedPaths(stage = stage)
+
+for path in paths:
+    prim = stage.GetPrimAtPath(path)
+    for attr in prim.GetAttributes():
+        attr.Clear()"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript3.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/configurelayer1.init"
+Content-Type: text/plain
+
+type = configurelayer
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/configurelayer1.def"
+Content-Type: text/plain
+
+comment ""
+position 0.00125003 4.38645
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	STAGE 1 1 "input1"
+}
+inputs
+{
+0 	STAGE 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/configurelayer1.chn"
+Content-Type: text/plain
+
+{
+    channel starttime {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 15.666666666666666
+      segment { length = 0 value = 1 1 expr = ch(\"../scene_range1\") }
+    }
+    channel endtime {
+      lefttype = extend
+      righttype = extend
+      default = 240
+      flags = 0
+      start = 15.666666666666666
+      segment { length = 0 value = 240 240 expr = ch(\"../scene_range2\") }
+    }
+    channel timepersecond {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      start = 15.666666666666666
+      segment { length = 0 value = 24 24 expr = $FPS }
+    }
+    channel framespersecond {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      start = 15.666666666666666
+      segment { length = 0 value = 24 24 expr = $FPS }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/configurelayer1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+setsavepath	[ 0	locks=0 ]	(	"off"	)
+savepath	[ 0	locks=0 ]	(	""	)
+setdefaultprim	[ 0	locks=0 ]	(	"off"	)
+defaultprim	[ 0	locks=0 ]	(	""	)
+setcomment	[ 0	locks=0 ]	(	"off"	)
+comment	[ 0	locks=0 ]	(	""	)
+setstarttime	[ 0	locks=0 ]	(	"on"	)
+starttime	[ 0	locks=0 ]	(	[ starttime	1 ] 	)
+setendtime	[ 0	locks=0 ]	(	"on"	)
+endtime	[ 8	locks=0 ]	(	[ endtime	240 ] 	)
+settimepersecond	[ 0	locks=0 ]	(	"on"	)
+timepersecond	[ 0	locks=0 ]	(	[ timepersecond	24 ] 	)
+setframespersecond	[ 0	locks=0 ]	(	"on"	)
+framespersecond	[ 0	locks=0 ]	(	[ framespersecond	24 ] 	)
+separator_metrics	[ 0	locks=0 ]	(	)
+setupaxis	[ 0	locks=0 ]	(	"off"	)
+upaxis	[ 0	locks=0 ]	(	z	)
+setmetersperunit	[ 0	locks=0 ]	(	"off"	)
+metersperunit	[ 0	locks=0 ]	(	0.01	)
+separator_colorconfig	[ 0	locks=0 ]	(	)
+setcolorconfig	[ 0	locks=0 ]	(	"off"	)
+colorconfig	[ 0	locks=0 ]	(	""	)
+setcolormanagementsystem	[ 0	locks=0 ]	(	"off"	)
+colormanagementsystem	[ 0	locks=0 ]	(	OpenColorIO	)
+separator_rendersettings	[ 0	locks=0 ]	(	)
+setrendersettings	[ 0	locks=0 ]	(	"off"	)
+rendersettings	[ 0	locks=0 ]	(	""	)
+separator_customdata	[ 0	locks=0 ]	(	)
+customdatacount	[ 0	locks=0 ]	(	0	)
+separator_stagevariables	[ 0	locks=0 ]	(	)
+stagevariablescount	[ 0	locks=0 ]	(	0	)
+separator_newlayer	[ 0	locks=0 ]	(	)
+setstagemetadata	[ 0	locks=0 ]	(	"on"	)
+flattenop	[ 0	locks=0 ]	(	stage	)
+startnewlayer	[ 0	locks=0 ]	(	"off"	)
+setinputlayerexplicit	[ 0	locks=0 ]	(	"on"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/configurelayer1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.init"
+Content-Type: text/plain
+
+type = usd_rop
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.def"
+Content-Type: text/plain
+
+comment ""
+position 0.00125 0.06547
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	pythonscript2 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript2 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.65 0.4 0.5 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+        name    "clip"
+        label   "Clip"
+        type    string
+        default { "default" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "frame_range"
+        label   "Files Frame Start/End"
+        type    integer
+        size    2
+        default { "1" "24" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "scene_range"
+        label   "Scene Frame Start/End"
+        type    integer
+        size    2
+        default { "1" "24" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "loop"
+        label   "Loop"
+        type    toggle
+        default { "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm2"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "primpath"
+        label   "Pimitive"
+        type    string
+        default { "/Geometry" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "sepparm3"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "execute"
+        baseparm
+        label   "Save to Disk"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "executebackground"
+        baseparm
+        label   "Save to Disk in Background"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "renderdialog"
+        baseparm
+        label   "Controls..."
+        nolabel
+        export  none
+    }
+    parm {
+        name    "trange"
+        baseparm
+        label   "Valid Frame Range"
+        export  none
+    }
+    parm {
+        name    "f"
+        baseparm
+        label   "Start/End/Inc"
+        export  none
+    }
+    parm {
+        name    "foffset"
+        baseparm
+        label   "Preroll/Postroll/Inc"
+        export  none
+    }
+    parm {
+        name    "take"
+        baseparm
+        label   "Render with Take"
+        export  none
+    }
+    parm {
+        name    "loppath"
+        baseparm
+        label   "LOP Path"
+        export  none
+    }
+    parm {
+        name    "lopoutput"
+        baseparm
+        label   "Output File"
+        export  none
+    }
+    parm {
+        name    "savestyle"
+        baseparm
+        label   "Save Style"
+        export  none
+    }
+    parm {
+        name    "striplayerbreaks"
+        baseparm
+        label   "Strip Layers Above Layer Breaks"
+        export  none
+    }
+    parm {
+        name    "strippostlayers"
+        baseparm
+        label   "Strip Post-Layers"
+        export  none
+    }
+    parm {
+        name    "fileperframe"
+        baseparm
+        label   "Flush Data After Each Frame"
+        export  none
+    }
+    parm {
+        name    "trackprimexistence"
+        baseparm
+        label   "Track Primitive Existence to Set Visibility"
+        export  none
+    }
+    parm {
+        name    "usenetworksafesave"
+        baseparm
+        label   "Use Network Drive Safe Save (Windows Only)"
+        export  none
+    }
+    parm {
+        name    "filtertimesamples"
+        baseparm
+        label   "Filter Time Samples"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "filtertimesamplespadding"
+        baseparm
+        label   "Extra Frames"
+        export  none
+    }
+    groupcollapsible {
+        name    "extrafiles_group2"
+        label   "Extra Files"
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "savepattern"
+            baseparm
+            label   "Files to Save"
+            export  none
+        }
+        parm {
+            name    "errorsavingimplicitpaths"
+            baseparm
+            label   "Error Saving Layers with Implicit Paths"
+            export  none
+        }
+        parm {
+            name    "savefilesfromdisk"
+            baseparm
+            label   "Save Updates to Modified Files From Disk"
+            export  none
+        }
+        parm {
+            name    "flattenfilelayers"
+            baseparm
+            label   "Flatten File Layers"
+            export  none
+        }
+        parm {
+            name    "flattensoplayers"
+            baseparm
+            label   "Flatten SOP Layers"
+            export  none
+        }
+    }
+
+    groupcollapsible {
+        name    "outputprocessor_group2"
+        label   "Output Processing"
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "outputprocessors"
+            baseparm
+            label   "Output Processors"
+            export  none
+        }
+        groupsimple {
+            name    "simplerelativepaths_group"
+            label   "Use Relative Paths"
+
+            parm {
+                name    "enableoutputprocessor_simplerelativepaths"
+                label   "Enable"
+                type    toggle
+                joinnext
+                default { "1" }
+            }
+            parm {
+                name    "simplerelativepaths_spacer"
+                label   "Spacer"
+                type    label
+                nolabel
+                joinnext
+                default { "" }
+            }
+            parm {
+                name    "simplerelativepaths_moveup"
+                label   "Move Up"
+                type    button
+                nolabel
+                joinnext
+                default { "0" }
+                parmtag { "button_icon" "BUTTONS_up" }
+                parmtag { "script_callback" "import loputils\nloputils.handleOutputProcessorMoveUp(kwargs)" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "simplerelativepaths_remove"
+                label   "Remove"
+                type    button
+                nolabel
+                default { "0" }
+                parmtag { "button_icon" "BUTTONS_delete" }
+                parmtag { "script_callback" "import loputils\nloputils.handleOutputProcessorRemove(kwargs)" }
+                parmtag { "script_callback_language" "python" }
+            }
+        }
+
+    }
+
+    groupcollapsible {
+        name    "layermetadata_group2"
+        label   "Layer Metadata"
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "defaultprim"
+            baseparm
+            label   "Default Primitive"
+            export  none
+        }
+        parm {
+            name    "requiredefaultprim"
+            baseparm
+            label   "Error Saving Layer with No Default Primitive"
+            export  none
+        }
+        parm {
+            name    "savetimeinfo"
+            baseparm
+            label   "Save ROP's Time Information to Output"
+            export  none
+        }
+        parm {
+            name    "clearhoudinicustomdata"
+            baseparm
+            label   "Clear Houdini-Specific Custom Data"
+            export  none
+        }
+        parm {
+            name    "ensuremetricsset"
+            baseparm
+            label   "Ensure Basic Metrics Are Set on All Layers"
+            export  none
+        }
+    }
+
+    groupcollapsible {
+        name    "contextoptions_group2"
+        label   "Context Options"
+        grouptag { "group_type" "collapsible" }
+
+        parm {
+            name    "setropcook"
+            baseparm
+            label   "Set ROP Cook Context Option"
+            export  none
+        }
+        multiparm {
+            name    "optioncount"
+            label    "Number of Options"
+            baseparm
+            default 1
+
+            groupsimple {
+                name    "optiongroup#"
+                label   ""
+                baseparm
+
+                parm {
+                    name    "optionenable#"
+                    baseparm
+                    label   "Enable"
+                    export  none
+                }
+                parm {
+                    name    "optionname#"
+                    baseparm
+                    label   "Option Name"
+                    joinnext
+                    export  none
+                }
+                parm {
+                    name    "optiontype#"
+                    baseparm
+                    label   "Option Type"
+                    export  none
+                }
+                parm {
+                    name    "optionstrvalue#"
+                    baseparm
+                    label   "Option Value"
+                    export  none
+                }
+                parm {
+                    name    "optionfloatvalue#"
+                    baseparm
+                    label   "Option Value"
+                    export  none
+                }
+            }
+
+        }
+
+    }
+
+    parm {
+        name    "separator_scripts"
+        baseparm
+        label   "separator_scripts"
+        export  none
+    }
+    parm {
+        name    "tprerender"
+        baseparm
+        label   "Pre-Render Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "prerender"
+        baseparm
+        label   "Pre-Render Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "lprerender"
+        baseparm
+        label   "Pre-Render Script Language"
+        nolabel
+        export  none
+    }
+    parm {
+        name    "tpreframe"
+        baseparm
+        label   "Pre-Frame Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "preframe"
+        baseparm
+        label   "Pre-Frame Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "lpreframe"
+        baseparm
+        label   "Pre-Frame Script Language"
+        nolabel
+        export  none
+    }
+    parm {
+        name    "tpostframe"
+        baseparm
+        label   "Post-Frame Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "postframe"
+        baseparm
+        label   "Post-Frame Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "lpostframe"
+        baseparm
+        label   "Post-Frame Script Language"
+        nolabel
+        export  none
+    }
+    parm {
+        name    "tpostrender"
+        baseparm
+        label   "Post-Render Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "postrender"
+        baseparm
+        label   "Post-Render Script"
+        joinnext
+        export  none
+    }
+    parm {
+        name    "lpostrender"
+        baseparm
+        label   "Post-Render Script Language"
+        nolabel
+        export  none
+    }
+    parm {
+        name    "initsim"
+        baseparm
+        label   "Initialize Simulation OPs"
+        export  none
+    }
+    parm {
+        name    "alfprogress"
+        baseparm
+        label   "Alfred Style Progress"
+        export  none
+    }
+    parm {
+        name    "reportnetwork"
+        baseparm
+        label   "Report Network Use"
+        export  none
+    }
+    parm {
+        name    "outputprocessor_removehfs"
+        baseparm
+        label   "Remove Houdini Install Directory from Asset Paths"
+        export  none
+    }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.chn"
+Content-Type: text/plain
+
+{
+    channel f1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 1 1 expr = $FSTART }
+    }
+    channel f2 {
+      lefttype = extend
+      righttype = extend
+      default = 240
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 240 240 expr = $FEND }
+    }
+    channel frame_range1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 1 1 expr = ch(\"../frame_range1\") }
+    }
+    channel frame_range2 {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 24 24 expr = ch(\"../frame_range2\") }
+    }
+    channel scene_range1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 1 1 expr = ch(\"../scene_range1\") }
+    }
+    channel scene_range2 {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 value = 24 24 expr = ch(\"../scene_range2\") }
+    }
+    channel loop {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 expr = ch(\"../loop\") }
+    }
+    channel lopoutput {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"D:/tmp/tmp.usda\"
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 expr = chs(\"../lopoutput\") }
+    }
+    channel execute {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 55.899999999999999
+      segment { length = 0 expr = ch(\"../execute\") }
+    }
+    channel enableoutputprocessor_simplerelativepaths {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../enableoutputprocessor_simplerelativepaths\") }
+    }
+    channel simplerelativepaths_spacer {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../simplerelativepaths_spacer\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	[ execute	0 ] 	)
+executebackground	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+trange	[ 0	locks=0 ]	(	"off"	)
+f	[ 0	locks=0 ]	(	[ f1	1 ] 	[ f2	240 ] 	1	)
+foffset	[ 0	locks=0 ]	(	0	0	1	)
+take	[ 0	locks=0 ]	(	_current_	)
+loppath	[ 0	locks=0 ]	(	"../`opinput(\".\", 0)`"	)
+lopoutput	[ 0	locks=0 ]	(	[ lopoutput	$HIP/geo/$HIPNAME.$OS.usd ] 	)
+savestyle	[ 0	locks=0 ]	(	flattenimplicitlayers	)
+striplayerbreaks	[ 0	locks=0 ]	(	"on"	)
+strippostlayers	[ 0	locks=0 ]	(	"off"	)
+fileperframe	[ 0	locks=0 ]	(	"off"	)
+trackprimexistence	[ 0	locks=0 ]	(	"off"	)
+usenetworksafesave	[ 0	locks=0 ]	(	"on"	)
+filtertimesamples	[ 0	locks=0 ]	(	framerange	)
+filtertimesamplespadding	[ 0	locks=0 ]	(	0	)
+extrafiles_group	[ 0	locks=0 ]	(	0	)
+savepattern	[ 0	locks=0 ]	(	""	)
+errorsavingimplicitpaths	[ 0	locks=0 ]	(	"on"	)
+savefilesfromdisk	[ 0	locks=0 ]	(	"on"	)
+flattenfilelayers	[ 0	locks=0 ]	(	"off"	)
+flattensoplayers	[ 0	locks=0 ]	(	"off"	)
+outputprocessor_group	[ 0	locks=0 ]	(	0	)
+outputprocessor_removehfs	[ 0	locks=0 ]	(	"on"	)
+outputprocessors	[ 0	locks=0 ]	(	0	)
+layermetadata_group	[ 0	locks=0 ]	(	0	)
+defaultprim	[ 0	locks=0 ]	(	""	)
+requiredefaultprim	[ 0	locks=0 ]	(	"off"	)
+savetimeinfo	[ 0	locks=0 ]	(	"on"	)
+clearhoudinicustomdata	[ 0	locks=0 ]	(	"on"	)
+ensuremetricsset	[ 0	locks=0 ]	(	"on"	)
+contextoptions_group	[ 0	locks=0 ]	(	0	)
+setropcook	[ 0	locks=0 ]	(	"on"	)
+optioncount	[ 0	locks=0 ]	(	1	)
+separator_scripts	[ 0	locks=0 ]	(	)
+tprerender	[ 0	locks=0 ]	(	"on"	)
+prerender	[ 0	locks=0 ]	(	""	)
+lprerender	[ 0	locks=0 ]	(	hscript	)
+tpreframe	[ 0	locks=0 ]	(	"on"	)
+preframe	[ 0	locks=0 ]	(	""	)
+lpreframe	[ 0	locks=0 ]	(	hscript	)
+tpostframe	[ 0	locks=0 ]	(	"on"	)
+postframe	[ 0	locks=0 ]	(	""	)
+lpostframe	[ 0	locks=0 ]	(	hscript	)
+tpostrender	[ 0	locks=0 ]	(	"on"	)
+postrender	[ 0	locks=0 ]	(	opdef:/Lop/build_simple_bgeo_clip?bgeo_clip_maker.py	)
+lpostrender	[ 0	locks=0 ]	(	python	)
+initsim	[ 0	locks=0 ]	(	"off"	)
+alfprogress	[ 0	locks=0 ]	(	"off"	)
+reportnetwork	[ 0	locks=0 ]	(	"off"	)
+optiongroup1	[ 0	locks=0 ]	(	0	)
+optionenable1	[ 0	locks=0 ]	(	"on"	)
+optionname1	[ 0	locks=0 ]	(	""	)
+optiontype1	[ 0	locks=0 ]	(	string	)
+optionstrvalue1	[ 0	locks=0 ]	(	""	)
+optionfloatvalue1	[ 0	locks=0 ]	(	0	)
+clip	[ 0	locks=0 ]	(	`chs(\"../clip\")`	)
+sepparm	[ 0	locks=0 ]	(	)
+frame_range	[ 8	locks=0 ]	(	[ frame_range1	1 ] 	[ frame_range2	24 ] 	)
+scene_range	[ 8	locks=0 ]	(	[ scene_range1	1 ] 	[ scene_range2	24 ] 	)
+loop	[ 8	locks=0 ]	(	[ loop	0 ] 	)
+sepparm2	[ 0	locks=0 ]	(	)
+primpath	[ 0	locks=0 ]	(	`chs(\"../primpath\")`	)
+sepparm3	[ 0	locks=0 ]	(	)
+extrafiles_group2	[ 0	locks=0 ]	(	0	)
+outputprocessor_group2	[ 0	locks=0 ]	(	1	)
+simplerelativepaths_group	[ 0	locks=0 ]	(	0	)
+enableoutputprocessor_simplerelativepaths	[ 0	locks=0 ]	(	[ enableoutputprocessor_simplerelativepaths	1 ] 	)
+simplerelativepaths_spacer	[ 0	locks=0 ]	(	[ simplerelativepaths_spacer	"" ] 	)
+simplerelativepaths_moveup	[ 0	locks=0 ]	(	0	)
+simplerelativepaths_remove	[ 0	locks=0 ]	(	0	)
+layermetadata_group2	[ 0	locks=0 ]	(	0	)
+contextoptions_group2	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/usd_rop1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+7
+sublayer1
+STAGE
+pythonscript2
+output0
+pythonscript3
+configurelayer1
+usd_rop1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

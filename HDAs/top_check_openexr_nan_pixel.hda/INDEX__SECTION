@@ -1,0 +1,14 @@
+Operator:     check_openexr_nan_pixel
+Label:        Check OpenEXR nan Pixel
+Path:         oplib:/Top/check_openexr_nan_pixel?Top/check_openexr_nan_pixel
+Icon:         TOP_subnet
+Table:        Top
+License:      
+Extra:        
+User:         
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Mar 13 13:31:12 2025
+

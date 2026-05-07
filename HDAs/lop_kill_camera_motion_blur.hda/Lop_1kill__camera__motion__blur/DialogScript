@@ -1,0 +1,17 @@
+# Dialog script for kill_camera_motion_blur automatically generated
+
+{
+    name	kill_camera_motion_blur
+    script	kill_camera_motion_blur
+    label	"Kill Camera Motion Blur"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+}

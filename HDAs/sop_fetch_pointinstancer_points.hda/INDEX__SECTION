@@ -1,0 +1,14 @@
+Operator:     chordee.lin::fetch_pointinstancer_points
+Label:        Fetch PointInstancer Points
+Path:         oplib:/chordee.lin::Sop/fetch_pointinstancer_points?chordee.lin::Sop/fetch_pointinstancer_points
+Icon:         opdef:/chordee.lin::Sop/fetch_pointinstancer_points?IconSVG
+Table:        Sop
+License:      
+Extra:        inputcolors='0 ' outputcolors='1 "RGB 0.700195 0.700195 0.700195" ' 
+User:         
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:47:55 2026
+

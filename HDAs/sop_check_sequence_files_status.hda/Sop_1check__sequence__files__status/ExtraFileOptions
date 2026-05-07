@@ -1,0 +1,22 @@
+{
+	"check_seq_files.png/Cursor":{
+		"type":"intarray",
+		"value":[0,0]
+	},
+	"check_seq_files.png/IsExpr":{
+		"type":"bool",
+		"value":false
+	},
+	"check_seq_files.png/IsPython":{
+		"type":"bool",
+		"value":false
+	},
+	"check_seq_files.png/IsScript":{
+		"type":"bool",
+		"value":false
+	},
+	"check_seq_files.png/Source":{
+		"type":"string",
+		"value":"D:/check_seq_files.png"
+	}
+}

@@ -1,0 +1,43 @@
+# Dialog script for chordee.lin::create_crowd_collections_by_agent_stage_material automatically generated
+
+{
+    name	chordee.lin::create_crowd_collections_by_agent_stage_material
+    script	chordee.lin::create_crowd_collections_by_agent_stage_material
+    label	"Create Crowd Collections By Agent Stage Material"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Agent Stage w/ Materials Binding"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "collection_path"
+        label   "Collection"
+        type    string
+        default { "/collections" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "from_path"
+        label   "From Path"
+        type    string
+        default { "/crowd/agentdefinitions/agent/layers/default" }
+        help    "Path in agentdefinitions/agent/layers"
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "replace_path"
+        label   "Replace Path"
+        type    string
+        default { "/agent" }
+        help    "Path in materials source stage"
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+}

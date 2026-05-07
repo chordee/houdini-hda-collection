@@ -1,0 +1,38 @@
+= Load Sequcense VDBs =
+#context: lop
+
+"""Load Sequence VDB file immediately"""
+
+== Overview ==
+
+Create USD layer with Volume and OpenVDB primtive.
+filePath properity of OpenVDB primitive will has animated time-sample.
+
+WARNING:
+    There in *NO* extent data in primtive (*No Bound info*)
+
+@parameters
+Parent Primitive:
+    #id: parent_primpath
+    The root path of VDB, where Volume will below.
+    
+Primitive Name:
+    #id: prim_name
+    The name of Volume primtive, OpenVDB primitive will below it.
+    
+VDB Files:
+    #id: files
+    Sequence VDB files
+    
+Start/End:
+    #id: frame_range
+    Frame range
+
+Grids:
+    #id: grids
+    The name of grid will put into OpenVDB primitive. 
+    Use space to separate multi-grids.
+    
+Grid Index:
+    #id: grid_index
+    Usually 0. Exception in there are multi grids in same name.

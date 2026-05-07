@@ -1,0 +1,14 @@
+Operator:     chordee.lin::bind_materials_by_collection_name
+Label:        Bind Materials By Collection Name
+Path:         oplib:/chordee.lin::Lop/bind_materials_by_collection_name?chordee.lin::Lop/bind_materials_by_collection_name
+Icon:         LOP_subnet
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:42:20 2026
+

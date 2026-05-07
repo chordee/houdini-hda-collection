@@ -1,0 +1,78 @@
+# Dialog script for repose_turntable_camera::1.0 automatically generated
+
+{
+    name	repose_turntable_camera::1.0
+    script	repose_turntable_camera::1.0
+    label	"Repose Turntable Camera"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "show_root"
+        label   "Show Root"
+        type    string
+        default { "/ROOT" }
+        menutoggle {
+            [ "opmenu -l -a attribwrangle5 primpattern" ]
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_action" "import loputils\nloputils.selectPrimsInParm(kwargs, True,\n    allowinstanceproxies=kwargs['node'].parm(\n    'allowinstanceproxies').eval() != 0)" }
+        parmtag { "script_action_help" "Select primitives in the Scene Viewer or Scene Graph Tree pane.\nCtrl-click to select using the primitive picker dialog.\nShift-click to select using the primitive pattern editor.\nAlt-click to toggle movement of the display flag." }
+        parmtag { "script_action_icon" "BUTTONS_reselect" }
+        parmtag { "sidefx::usdpathtype" "primlist" }
+    }
+    parm {
+        name    "xform_prim"
+        label   "Xform Primtive"
+        type    string
+        default { "/turntable" }
+        menutoggle {
+            [ "opmenu -l -a attribwrangle5 primpattern" ]
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_action" "import loputils\nloputils.selectPrimsInParm(kwargs, True,\n    allowinstanceproxies=kwargs['node'].parm(\n    'allowinstanceproxies').eval() != 0)" }
+        parmtag { "script_action_help" "Select primitives in the Scene Viewer or Scene Graph Tree pane.\nCtrl-click to select using the primitive picker dialog.\nShift-click to select using the primitive pattern editor.\nAlt-click to toggle movement of the display flag." }
+        parmtag { "script_action_icon" "BUTTONS_reselect" }
+        parmtag { "sidefx::usdpathtype" "primlist" }
+    }
+    parm {
+        name    "camera_name"
+        label   "Camera Name"
+        type    string
+        default { "camera" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "oprelative" "." }
+    }
+    parm {
+        name    "padding_scale"
+        label   "Padding Scale"
+        type    float
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "start_frame"
+        label   "Start Frame"
+        type    integer
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "duration_frames"
+        label   "Duration Frames"
+        type    integer
+        default { "24" }
+        range   { 0 60 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

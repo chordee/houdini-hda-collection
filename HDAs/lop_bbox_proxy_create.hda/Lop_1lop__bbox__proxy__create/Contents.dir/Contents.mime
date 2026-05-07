@@ -1,0 +1,385 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPfallbacks"
+Content-Type: application/external-reference
+
+.OPfallbacks
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPdummydefs"
+Content-Type: application/external-reference
+
+.OPdummydefs
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Lop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = lop_bbox_proxy_create
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -2.20473 0.7146
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+1
+0 0 6 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.init"
+Content-Type: text/plain
+
+type = attribwrangle
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.def"
+Content-Type: text/plain
+
+comment ""
+position -0.00300001 4.72348
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	(0) "" 1 "input1"
+}
+inputs
+{
+0 	(0) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.spareparmdef"
+Content-Type: text/plain
+
+    parm {
+        name    "primpattern"
+        baseparm
+        label   "Primitives"
+        export  none
+    }
+    parm {
+        name    "runonarrays"
+        baseparm
+        label   "Run on Elements of Array Attributes"
+        export  none
+    }
+    parm {
+        name    "lengthhint"
+        baseparm
+        label   "Array Length"
+        export  none
+    }
+    parm {
+        name    "lengthattrib"
+        baseparm
+        label   "Attribute Name"
+        export  none
+    }
+    group {
+        name    "folder1"
+        label   "Code"
+
+        parm {
+            name    "snippet"
+            baseparm
+            label   "VEXpression"
+            export  none
+        }
+        parm {
+            name    "exportlist"
+            baseparm
+            label   "Attributes to Create"
+            export  none
+        }
+        parm {
+            name    "strict"
+            baseparm
+            label   "Enforce Prototypes"
+            export  none
+        }
+    }
+
+    group {
+        name    "folder1_1"
+        label   "Bindings"
+
+        parm {
+            name    "autobind"
+            baseparm
+            label   "Autobind by Name"
+            export  none
+        }
+        multiparm {
+            name    "bindings"
+            label    "Number of Bindings"
+            baseparm
+            default 0
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "multistartoffset" "1" }
+
+            parm {
+                name    "bindattrib#"
+                baseparm
+                label   "Attribute Name"
+                joinnext
+                export  none
+            }
+            parm {
+                name    "bindattribtype#"
+                baseparm
+                label   "Attribute Type"
+                nolabel
+                export  none
+            }
+            parm {
+                name    "bindparm#"
+                baseparm
+                label   "VEX Parameter"
+                export  none
+            }
+        }
+
+        parm {
+            name    "vex_cwdpath"
+            baseparm
+            label   "Evaluation Node Path"
+            export  none
+        }
+        parm {
+            name    "vex_outputmask"
+            baseparm
+            label   "Export Parameters"
+            export  none
+        }
+    }
+
+    parm {
+        name    "original_purpose"
+        label   "Original Purpose"
+        type    ordinal
+        default { "0" }
+        menu {
+            "default"   "Default"
+            "render"    "Render"
+            "proxy"     "Proxy"
+        }
+    }
+    parm {
+        name    "sample_behavior"
+        baseparm
+        label   "Sampling Behavior"
+        export  none
+    }
+    parm {
+        name    "sample_f"
+        baseparm
+        label   "Start/End/Inc"
+        export  none
+    }
+    parm {
+        name    "sample_subframeenable"
+        baseparm
+        label   "Subframe Sampling"
+        export  none
+    }
+    parm {
+        name    "sample_shuttermode"
+        baseparm
+        label   "Shutter"
+        export  none
+    }
+    parm {
+        name    "sample_shutterrange"
+        baseparm
+        label   "Shutter Open/Close"
+        export  none
+    }
+    parm {
+        name    "sample_cameraprim"
+        baseparm
+        label   "Camera Prim"
+        export  none
+    }
+    parm {
+        name    "sample_count"
+        baseparm
+        label   "Samples"
+        export  none
+    }
+    parm {
+        name    "sample_includeframe"
+        baseparm
+        label   "Always Include Frame Sample"
+        export  none
+    }
+    parm {
+        name    "allowinstanceproxies"
+        baseparm
+        label   "Allow Instance Proxy Primitives"
+        export  none
+    }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.chn"
+Content-Type: text/plain
+
+{
+    channel sample_f1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = @fstart }
+    }
+    channel sample_f2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = @fend }
+    }
+    channel sample_f3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = @finc }
+    }
+    channel primpattern {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"**/modelDefault\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../primpattern\") }
+    }
+    channel original_purpose {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../original_purpose\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+sample_group	[ 0	locks=0 ]	(	0	)
+sample_behavior	[ 0	locks=0 ]	(	single	)
+sample_f	[ 0	locks=0 ]	(	[ sample_f1	0 ] 	[ sample_f2	0 ] 	[ sample_f3	0 ] 	)
+sample_subframeenable	[ 0	locks=0 ]	(	"off"	)
+sample_subframegroup	[ 0	locks=0 ]	(	0	)
+sample_shuttermode	[ 0	locks=0 ]	(	manual	)
+sample_shutterrange	[ 0	locks=0 ]	(	-0.25	0.25	)
+sample_cameraprim	[ 0	locks=0 ]	(	/cameras/camera1	)
+sample_count	[ 0	locks=0 ]	(	2	)
+sample_includeframe	[ 0	locks=0 ]	(	"on"	)
+primpattern	[ 0	locks=0	autoscope=0 ]	(	[ primpattern	"`lopinputprim('.', 0)`" ] 	)
+allowinstanceproxies	[ 0	locks=0 ]	(	"off"	)
+runonarrays	[ 0	locks=0	autoscope=0 ]	(	"off"	)
+lengthhint	[ 0	locks=0	autoscope=0 ]	(	"auto"	)
+lengthattrib	[ 0	locks=0	autoscope=0 ]	(	""	)
+folder0	[ 0	locks=0	autoscope=0 ]	(	0	0	)
+snippet	[ 0	locks=0	autoscope=0 ]	(	"string parent = usd_parentpath(0, s@primpath);
+string proxy_path = parent + '/proxy';
+string original_purpose = chs('original_purpose');
+usd_addprim(0, proxy_path, 'Cube');
+vector cen = usd_getbbox_center(0, s@primpath, original_purpose);
+vector size = usd_getbbox_size(0, s@primpath, original_purpose);
+matrix xform = maketransform(0, 0, cen, vector(0), size);
+usd_addtransform(0, proxy_path, '_proxy', xform);
+usd_setpurpose(0, proxy_path, 'proxy');
+usd_setpurpose(0, s@primpath, 'render');
+"	)
+exportlist	[ 0	locks=0	autoscope=0 ]	(	*	)
+strict	[ 0	locks=0	autoscope=0 ]	(	"off"	)
+autobind	[ 0	locks=0	autoscope=0 ]	(	"on"	)
+bindings	[ 0	locks=0	autoscope=0 ]	(	0	)
+vex_cwdpath	[ 0	locks=0	autoscope=0 ]	(	.	)
+vex_outputmask	[ 0	locks=0	autoscope=0 ]	(	*	)
+folder1	[ 0	locks=0 ]	(	0	0	)
+original_purpose	[ 0	locks=0 ]	(	[ original_purpose	0 ] 	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribwrangle2.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

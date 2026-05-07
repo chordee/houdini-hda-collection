@@ -1,0 +1,33 @@
+# Dialog script for kill_time_sample automatically generated
+
+{
+    name	kill_time_sample
+    script	kill_time_sample
+    label	"Kill Time Sample"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "primitives"
+        label   "Primitives"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "primlist" }
+    }
+    parm {
+        name    "frame"
+        label   "Frame"
+        type    integer
+        default { "$F" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+}

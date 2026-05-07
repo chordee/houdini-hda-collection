@@ -1,0 +1,281 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Lop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = custom_houdini_procedural
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -1.99266 0.0457586
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+1
+0 1.1175870846813485e-08 7.3941999999999997 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.def"
+Content-Type: text/plain
+
+comment ""
+position 0 6.1118
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	(0) "" 1 "input1"
+}
+inputs
+{
+0 	(0) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"# Use the drop down menu to select example code snippets.
+node = hou.pwd()
+
+# Add code to fetch node parameters and evaluate primitive patterns.
+# This should be done before calling editableStage or editableLayer.
+# paths = hou.LopSelectionRule(\"/*\").expandedPaths(node.input(0))
+
+# Add code to modify the stage.
+stage = node.editableStage()
+
+from husd import UsdHoudini
+from pxr import Sdf, UsdGeom
+
+path = node.node('..').parm('proc_prim').eval()
+prim = stage.GetPrimAtPath(path)
+proc_name = node.node('..').parm('proc_name').eval()
+
+graph_file = node.node('..').parm('graph_file').eval()
+
+args = { 'graph': graph_file,'inputs': [], 'overrides': {} }
+
+##### INPUT #####
+
+inputs_list = []
+inputs = node.node('..').parm('inputs').eval()
+if inputs > 0:
+    for i in range(1, inputs + 1):
+        inputs_list.append(node.node('..').parm('input_primitive{0}'.format(i)).eval())
+    input_paths = [Sdf.Path(path) for path in inputs_list]
+
+input_parms = ['inputprims']
+
+for i, ipath in enumerate(input_paths):
+     rel_name = 'inputparms:input_{}'.format(i)
+     rel = prim.CreateRelationship(rel_name)
+     rel.AddTarget(ipath)
+     args['inputs'].append(rel_name) 
+     
+
+##### OVERRIDE #####
+     
+parm_list = []
+property_list = []
+type_list = []
+value_list = []
+anima_list = []
+type_dict = {'int': Sdf.ValueTypeNames.Int, 'float': Sdf.ValueTypeNames.Float, 
+             'string': Sdf.ValueTypeNames.String, 'vector': Sdf.ValueTypeNames.Vector3f, 'assetPath': Sdf.ValueTypeNames.Asset}
+             
+overrides = node.node('..').parm('overrides').eval()
+if overrides > 0:
+    for i in range(1, node.node('..').parm('overrides').eval() + 1):
+        parm_list.append(node.node('..').parm(f'parm_name{i}').eval())
+        anima_list.append(node.node('..').parm(f'animated{i}').eval())
+        property_list.append(node.node('..').parm(f'property_name{i}').eval())
+        type_name = node.node('..').parm(f'parm_type{i}').rawValue()
+        if type_name != 'string' and type_name != 'assetPath':
+            if type_name == 'float':
+                value_list.append(node.node('..').parm(f'value{i}1').eval())
+            elif type_name == 'int':
+                value_list.append(int(node.node('..').parm(f'value{i}1').eval()))
+            elif type_name == 'vector':
+                value_list.append(tuple([node.node('..').parm(f'value{i}{x}').eval() for x in range(1,4)]))
+        elif type_name == 'string':
+            value_list.append(node.node('..').parm(f'string{i}').eval())
+        elif type_name == 'assetPath':
+            value_list.append(node.node('..').parm(f'string{i}').eval())
+        type_list.append(type_name)
+
+    
+    primvar_api = UsdGeom.PrimvarsAPI(prim)
+    
+    for parm, property, parm_type, value, anima in zip(parm_list, property_list, type_list, value_list, anima_list):
+        args['overrides'][parm] = f'{proc_name}:{property}'
+        primvar_name = f\"{proc_name}:{property}\"
+        primvar = primvar_api.CreatePrimvar(primvar_name, type_dict[parm_type])
+        if anima:
+            primvar.Set(value, hou.frame())
+        else:
+            primvar.Set(value)
+
+hp_api = UsdHoudini.HoudiniProceduralAPI.Apply(prim, f\"{proc_name}\")
+hp_api.GetHoudiniProceduralPathAttr().Set('invokegraph.py')
+hp_api.GetHoudiniProceduralArgsAttr().Set(str(args))
+hp_api.GetHoudiniAnimatedAttr().Set(1)"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position -2.42861e-17 4.06791
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	pythonscript1 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+modifiedprims	[ 0	locks=0 ]	(	"`lopinputprims(\".\", 0)`"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+2
+pythonscript1
+output0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

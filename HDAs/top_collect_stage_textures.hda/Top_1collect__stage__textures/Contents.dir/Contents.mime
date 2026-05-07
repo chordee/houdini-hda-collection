@@ -1,0 +1,409 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPfallbacks"
+Content-Type: application/external-reference
+
+.OPfallbacks
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPdummydefs"
+Content-Type: application/external-reference
+
+.OPdummydefs
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Top
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = collect_stage_textures
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -0.23021 2.67962
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+1
+0 -2.6107463750821518 7.8941999999999988 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonprocessor1.init"
+Content-Type: text/plain
+
+type = pythonprocessor
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonprocessor1.def"
+Content-Type: text/plain
+
+comment ""
+position 1.4327 6.94468
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonprocessor1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+savenodescript	[ 0	locks=0 ]	(	0	)
+savenodehda	[ 0	locks=0 ]	(	0	)
+sepparm2	[ 0	locks=0 ]	(	)
+processor	[ 0	locks=0 ]	(	0	0	0	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+pdg_command	[ 0	locks=0 ]	(	""	)
+sepparm	[ 0	locks=0 ]	(	)
+callbacks	[ 0	locks=0 ]	(	0	0	0	0	0	)
+generate	[ 0	locks=0 ]	(	"# Called when this node should generate new work items from upstream items.
+#
+# self             -   A reference to the current pdg.Node instance
+# item_holder      -   A pdg.WorkItemHolder for constructing and adding work items
+# upstream_items   -   The list of work items in the node above, or empty list if there are no inputs
+# generation_type  -   The type of generation, e.g. pdg.generationType.Static, Dynamic, or Regenerate
+
+import hou
+
+parent_node = hou.pwd().node('..')
+stage_lop = hou.node(parent_node.parm('lop_node').eval())
+stage = stage_lop.stage()
+
+from pxr import Usd, UsdShade, Sdf
+import os, glob, shutil
+from pathlib import Path
+
+
+
+
+rule = hou.LopSelectionRule('%type:Shader')
+paths = rule.expandedPaths(stage = stage)
+prims = [stage.GetPrimAtPath(path) for path in paths]
+texture_root_path = parent_node.parm('texture_root_path').eval()
+destinate_root_path = parent_node.parm('copy_to').eval()
+
+source_list = []
+destinate_list = []
+
+for prim in prims:
+    prim_stack = prim.GetPrimStack()
+    shader = UsdShade.Shader(prim)
+    inputs = shader.GetInputs()
+    attrs = [shader_input.GetAttr() for shader_input in inputs]
+    for attr in attrs:
+        val = attr.Get()
+        if type(val) is Sdf.AssetPath:
+            texture_path = val.path
+            texture_path_pattern = texture_path.replace('<UDIM>', '*')
+            texture_col = glob.glob(texture_path_pattern)
+            for source_path in texture_col:
+                destinate_path = source_path.replace(texture_root_path, destinate_root_path)
+                source_list.append(Path(source_path))
+                destinate_list.append(Path(destinate_path))
+                
+
+
+
+
+for idx, (src, dst) in enumerate(zip(source_list, destinate_list)):
+    new_item = item_holder.addWorkItem()
+    new_item.addOutputFile(str(src))
+    new_item.setStringAttrib('src_path', str(src))
+    new_item.setStringAttrib('dst_path', str(dst))
+"	)
+useregeneratestatic	[ 0	locks=0 ]	(	"off"	)
+regeneratestatic	[ 0	locks=0 ]	(	"# Called when this node may need to regenerate existing work items
+#
+# self           -   A reference to the current pdg.Node instance
+# item_holder    -   A pdg.WorkItemHolder for constructing and adding new work items
+# existing_items -   The existing work items in the node
+# upstream_items -   The list of work items in the node above, or empty list
+# generation_type -   The type of generation, e.g. pdg.generationType.Static, Dynamic, or Regenerate"	)
+addinternaldependencies	[ 0	locks=0 ]	(	"# Called when the node has generated work items so that dependencies can
+# be added between work items in this node.
+#
+# self              -   A reference to the current pdg.Node instance
+# dependency_holder -   A pdg.WorkItemHolder for adding pairs of items that should have a dependency
+# internal_items    -   The list of items, either all static items or a group of dynamic items
+# is_static         -   Boolean indicating if the items list contains static items
+"	)
+cooktask	[ 0	locks=0 ]	(	"# Called when an in process work item needs to cook. In process work items
+# are created by passing the `inProcess=True` flag when constructing the item in
+# the `Generate` callback
+#
+# self              -   A reference to the current pdg.Node instance
+# work_item         -   The work item being cooked by this callback"	)
+servicename	[ 0	locks=0 ]	(	""	)
+sepparm3	[ 0	locks=0 ]	(	)
+alwaysregenerate	[ 0	locks=0 ]	(	"off"	)
+dirtyonregenerate	[ 0	locks=0 ]	(	"off"	)
+dirtyonincomplete	[ 0	locks=0 ]	(	"off"	)
+sepparm4	[ 0	locks=0 ]	(	)
+requiresgeneratedinputs	[ 0	locks=0 ]	(	"off"	)
+requirescookedinputs	[ 0	locks=0 ]	(	"off"	)
+requiresscenefile	[ 0	locks=0 ]	(	"off"	)
+requiresinputdata	[ 0	locks=0 ]	(	"off"	)
+sepparm6	[ 0	locks=0 ]	(	)
+usesdynamicbatching	[ 0	locks=0 ]	(	"off"	)
+sepparm7	[ 0	locks=0 ]	(	)
+usestatefilter	[ 0	locks=0 ]	(	"off"	)
+statefilter	[ 0	locks=0 ]	(	"0"	)
+clearfailures	[ 0	locks=0 ]	(	"off"	)
+pdgnodedeps	[ 0	locks=0 ]	(	1	)
+topscheduler	[ 0	locks=0 ]	(	""	)
+addjobparms	[ 0	locks=0 ]	(	0	)
+pdg_useschedulewhen	[ 0	locks=0 ]	(	"off"	)
+pdg_schedulewhen	[ 0	locks=0 ]	(	1	)
+sepparm5	[ 0	locks=0 ]	(	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
+pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+pdgnodedep1	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonprocessor1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	},
+	"___toolcount___":{
+		"type":"string",
+		"value":"1"
+	},
+	"___toolid___":{
+		"type":"string",
+		"value":"object_cop2plane"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position 1.4327 1.99406
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	filecopy1 1 1 "input1"
+}
+inputs
+{
+0 	filecopy1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filecopy1.init"
+Content-Type: text/plain
+
+type = filecopy
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filecopy1.def"
+Content-Type: text/plain
+
+comment ""
+position 1.4327 4.64246
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	pythonprocessor1 0 1 "input1"
+}
+inputs
+{
+0 	pythonprocessor1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filecopy1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	0	)
+pdg_workitemgeneration	[ 0	locks=0 ]	(	"2"	)
+pdg_cachemode	[ 0	locks=0 ]	(	"0"	)
+pdg_cooktype	[ 0	locks=0 ]	(	"1"	)
+copyduring	[ 0	locks=0 ]	(	"1"	)
+sepparm	[ 0	locks=0 ]	(	)
+sourcefolder	[ 0	locks=0 ]	(	0	)
+filesource	[ 0	locks=0 ]	(	"0"	)
+filetag	[ 0	locks=0 ]	(	file/image	)
+filepath	[ 0	locks=0 ]	(	""	)
+outputfolder	[ 0	locks=0 ]	(	0	)
+copyto	[ 0	locks=0 ]	(	"1"	)
+destfolder	[ 0	locks=0 ]	(	""	)
+destfile	[ 0	locks=0 ]	(	`@dst_path`	)
+resultdatatag	[ 0	locks=0 ]	(	file/image	)
+topscheduler	[ 0	locks=0 ]	(	""	)
+addjobparms	[ 0	locks=0 ]	(	0	)
+pdg_useschedulewhen	[ 0	locks=0 ]	(	"off"	)
+pdg_schedulewhen	[ 0	locks=0 ]	(	1	)
+sepparm4	[ 0	locks=0 ]	(	)
+pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
+pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
+pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
+pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/filecopy1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+3
+pythonprocessor1
+output0
+filecopy1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--
