@@ -56,58 +56,6 @@ Fractures based on polyline projection (X/Z plane).
 * Iterations: Increase to better match the input line. (May not be a perfect match.)
 * Iteration Threshold: Avoids extremely small pieces.
 
-### export_Maya_nParticles_cache (SOP: Export Maya nParticle cache)
-
-*Export Maya nParticle cache directly from Houdini.*
-
-REQUIREMENT:
-
-1. Unique id attribute.
-2. [Source code: nCache.py](https://github.com/chordee/mayaGeoCache)
-
-Attribute Mapping:
-
-```
-v@v -> velocity
-f@age -> age
-f@life -> lifespanPP
-f@pscale -> radiusPP
-v@Cd -> rgbPP
-f@Alpha -> opacityPP
-v@rotation -> rotationPP
-```
-
-![export Maya nParticle cache node](imgs/export_maya_nparicle_cache_node.png)
-
-* Start Frame
-* End Frame
-* Evaluation Rate
-* XML: xml file path to be written.
-* Particle Name: Name of the particle shape in Maya.
-* Python Module Path: File path to [nCache.py](https://github.com/chordee/mayaGeoCache/blob/master/nCache.py).
-
-### export_Maya_geoCache (SOP: Export Maya geoCache)
-
-*Export Maya geometry point cache directly from Houdini. (Multiple objects are supported.)*
-
-REQUIREMENT:
-
-1. Primitive attribute: path
-2. [Source code: nCache.py](https://github.com/chordee/mayaGeoCache)
-
-> The path attribute defines the target in Maya. The recommended workflow is to use an Alembic file exported from Maya, preserving the path attribute for exporting back.
-
-![export Maya Geo cache node](imgs/export_maya_geo_cache_node.png)
-
-* XML: Path to the XML file to be written.
-* Start Frame
-* End Frame
-* Python Module Path: File path to [nCache.py](https://github.com/chordee/mayaGeoCache/blob/master/nCache.py).
-
-### import_maya_nParticleCache (SOP: Import Maya nParticle Cache)
-
-Import Maya nParticle cache files into Houdini.
-
 ### matrix_deformer (SOP: Matrix Deformer)
 
 Deforms geometry using a matrix derived from reference geometry.
@@ -115,18 +63,6 @@ Deforms geometry using a matrix derived from reference geometry.
 > Input 1: Geometry to deform  
 > Input 2: Rest geometry  
 > Input 3: Deformer geometry
-
-### PointsVAT_exporter (SOP: PointsVAT Exporter)
-
-Exports Vertex Animation Texture (VAT) for use with Pivot Painter 2.0 in Unreal Engine.
-
-Requires the following point attributes: `selectionIndex`, `hierachy`, `N`, `up`, `scale`, `pscale`, `Alpha`.
-
-* Export Path: Output directory.
-* Asset Name: Base name for exported texture files.
-* Start Frame / End Frame
-* Rest Frame: The frame output from Pivot Painter 2.0.
-* Export: Execute export.
 
 ### sop_check_sequence_files_status (SOP: Check Sequence Files Status)
 
@@ -168,18 +104,6 @@ Procedurally generates lightning bolt geometry from a polyline.
 * Tail Attrib: Output a tail point attribute.
 * Main tab: Noise Type, Frequency, Offset, Fractal Type, Roughness, Bias Angle, Exponent, Bias Along Curve ramp.
 * Branch tab: Branch probability, Max Branch count, Seed, Angle settings, Branch Step settings, Noise settings.
-
-### tree_builder (SOP: Tree Builder)
-
-Procedurally generates tree geometry from a single input primitive.
-
-> Input 1: Single main primitive (trunk base)
-
-* Segments: Total number of segments.
-* Growthing: Growth amount (0–1).
-* Tail Attrib: Output a tail point attribute.
-* Main tab: Noise Type, Bias Angle, Roughness, Frequency, Offset, Exponent, Forward Direction ramp.
-* Branch tab: Per-branch-level settings including Bi Branch, Start At, Branch probability, Seed, Root Angle (vertical/horizontal), Step range, Noise.
 
 ### vector_intersect (SOP: Vector Intersect)
 
@@ -303,17 +227,6 @@ Updates PointInstancer data using point attributes from a SOP node.
 * ProtoIndices: Sync from `index` attribute.
 * InvisibleIds: Sync from `invisible` attribute.
 
-### lop_repose_turntable_camera (LOP: Repose Turntable Camera)
-
-Repositions a turntable camera to fit the bounding box of a specified primitive.
-
-* Show Root: The primitive to fit the camera to.
-* Xform Primitive: The turntable xform primitive path (default: `/turntable`).
-* Camera Name: Camera prim name.
-* Padding Scale: Scale factor for camera distance.
-* Start Frame
-* Duration Frames: Length of the turntable rotation.
-
 ---
 
 ## VOP Nodes
@@ -354,13 +267,6 @@ Reuse the volume texture exported from **Labs Volume Texture Export** in Houdini
 ---
 
 ## TOP Nodes
-
-### top_check_openexr_nan_pixel (TOP: Check OpenEXR NaN Pixel)
-
-Scans an OpenEXR image sequence and detects frames containing NaN pixel values.
-
-* Pattern: File pattern for the EXR sequence.
-* Log File: Path to write a log of detected frames.
 
 ### top_collect_stage_textures (TOP: Collect Stage Textures)
 
