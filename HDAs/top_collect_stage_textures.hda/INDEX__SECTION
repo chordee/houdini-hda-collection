@@ -1,0 +1,14 @@
+Operator:     collect_stage_textures
+Label:        Collect Stage Textures
+Path:         oplib:/Top/collect_stage_textures?Top/collect_stage_textures
+Icon:         TOP_subnet
+Table:        Top
+License:      
+Extra:        
+User:         
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Mar 13 14:18:18 2025
+

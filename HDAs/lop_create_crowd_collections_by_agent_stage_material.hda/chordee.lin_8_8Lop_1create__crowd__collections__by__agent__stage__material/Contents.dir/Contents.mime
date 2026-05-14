@@ -1,0 +1,298 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Lop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = chordee.lin::create_crowd_collections_by_agent_stage_material
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position -1.86215 0.388336
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.inp"
+Content-Type: text/plain
+
+2
+0 1.1175870819057909e-08 8.1373036242991503 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+1 2.8927392152362277 8.1373036242991503 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.def"
+Content-Type: text/plain
+
+comment ""
+position -1.17961e-16 5.85552
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	(0) "" 1 "input1"
+}
+inputs
+{
+0 	(0) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"node = hou.pwd()
+stage = node.editableStage()
+col_path = hou.parm('../collection_path').eval()
+
+source_node = hou.node('../AGENT_SOURCE')
+source_stage = source_node.stage()
+
+from_path = hou.parm('../from_path').eval()
+replace_path = hou.parm('../replace_path').eval()
+
+
+from pxr import Usd, Sdf, UsdShade
+# Add code to modify the stage.
+# Use drop down menu to select examples.
+
+col = stage.DefinePrim(col_path, '')
+
+proxies = Usd.PrimRange.Stage(stage, Usd.TraverseInstanceProxies())
+for proxy in list(proxies):
+    if proxy.HasAuthoredReferences():
+        if proxy.GetTypeName() == 'Mesh':
+            query = Usd.PrimCompositionQuery.GetDirectReferences(proxy)
+
+            arcs = query.GetCompositionArcs()
+            
+            arc = arcs[0]
+            arc_target_node = arc.GetTargetNode()
+            target_path = str(arc_target_node.GetIntroPath())
+            target_prim = stage.GetPrimAtPath(target_path)
+            if from_path in target_path:
+                source_prim_path = target_path.replace(from_path, replace_path)
+                source_prim = source_stage.GetPrimAtPath(source_prim_path)
+                if source_prim.IsValid():
+                    bind_api = UsdShade.MaterialBindingAPI(source_prim)
+                    mat = bind_api.ComputeBoundMaterial()[0]
+                    mat_name = mat.GetPrim().GetName()
+                    col_api = Usd.CollectionAPI.Apply(col, mat_name)
+                    col_api.CreateExpansionRuleAttr(Usd.Tokens.explicitOnly)
+                    col_api.IncludePath(proxy.GetPath())
+
+                
+
+"	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pythonscript1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.init"
+Content-Type: text/plain
+
+type = output
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.def"
+Content-Type: text/plain
+
+comment ""
+position -5.55112e-17 3.31923
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	pythonscript1 1 1 "input1"
+}
+inputs
+{
+0 	pythonscript1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+outputidx	[ 0	locks=0 ]	(	0	)
+modifiedprims	[ 0	locks=0 ]	(	"`lopinputprims(\".\", 0)`"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output0.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/AGENT_SOURCE.init"
+Content-Type: text/plain
+
+type = null
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/AGENT_SOURCE.def"
+Content-Type: text/plain
+
+comment ""
+position 2.89274 5.85052
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	(1) "" 1 "input1"
+}
+inputs
+{
+0 	(1) 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee.lin@MoonShineFx06.moonshine.ad
+  access 0777
+}
+color UT_Color RGB 0.6 0.7 0.77 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/AGENT_SOURCE.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/AGENT_SOURCE.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+3
+pythonscript1
+output0
+AGENT_SOURCE
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

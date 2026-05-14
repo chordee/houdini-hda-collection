@@ -1,0 +1,14 @@
+# Automatically generated script
+\set noalias = 1
+#
+#  Creation script for chordee.lin::create_crowd_collections_by_agent_stage_material operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (chordee.lin::Lop/create_crowd_collections_by_agent_stage_material)
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

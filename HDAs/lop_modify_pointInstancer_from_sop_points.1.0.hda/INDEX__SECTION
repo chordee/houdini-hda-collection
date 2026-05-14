@@ -1,0 +1,14 @@
+Operator:     modify_pointInstancer_from_sop_points::1.0
+Label:        Modify PointInstancer from SOP Points
+Path:         oplib:/Lop/modify_pointInstancer_from_sop_points::1.0?Lop/modify_pointInstancer_from_sop_points::1.0
+Icon:         opdef:/Lop/modify_pointInstancer_from_sop_points::1.0?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:46:08 2026
+

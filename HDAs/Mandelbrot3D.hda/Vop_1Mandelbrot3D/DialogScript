@@ -1,0 +1,58 @@
+# Dialog script for Mandelbrot3D automatically generated
+
+{
+    name	Mandelbrot3D
+    script	Mandelbrot3D
+    label	Mandelbrot3D
+
+    input	vector	P	P
+    input	float	phase	phase
+    input	float	N	N
+    input	int	maxIter	maxIter
+    output	float	outvalue	value
+    inputflags	P	0
+    inputflags	phase	0
+    inputflags	N	0
+    inputflags	maxIter	0
+    signature	"Default Inputs"	default	{ vector float float int float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "P"
+        label   "P"
+        type    float
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "phase"
+        label   "phase"
+        type    float
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "N"
+        label   "N"
+        type    float
+        default { "8" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "maxIter"
+        label   "maxIter"
+        type    integer
+        default { "8" }
+        range   { 0 10 }
+    }
+}

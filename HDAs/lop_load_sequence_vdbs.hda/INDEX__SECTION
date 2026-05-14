@@ -1,0 +1,14 @@
+Operator:     chordee::load_sequence_vdbs::1.0
+Label:        Load Sequence VDBs
+Path:         oplib:/chordee::Lop/load_sequence_vdbs::1.0?chordee::Lop/load_sequence_vdbs::1.0
+Icon:         opdef:/chordee::Lop/load_sequence_vdbs::1.0?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:44:29 2026
+

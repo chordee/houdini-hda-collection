@@ -1,0 +1,14 @@
+Operator:     custom_houdini_procedural
+Label:        Custom Houdini Procedural
+Path:         oplib:/Lop/custom_houdini_procedural?Lop/custom_houdini_procedural
+Icon:         opdef:/Lop/custom_houdini_procedural?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:44:46 2026
+

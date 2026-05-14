@@ -1,0 +1,40 @@
+# Dialog script for chordee.lin::fetch_pointinstancer_points automatically generated
+
+{
+    name	chordee.lin::fetch_pointinstancer_points
+    script	chordee.lin::fetch_pointinstancer_points
+    label	"Fetch PointInstancer Points"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "lop_path"
+        label   "LOP Path"
+        type    oppath
+        default { "" }
+        parmtag { "oprelative" "." }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "primitives"
+        label   "Primitives"
+        type    string
+        default { "" }
+        menutoggle {
+            [ "import loputils" ]
+            [ "node = hou.node(kwargs['node'].parm('lop_path').eval())" ]
+            [ "return loputils.createPrimPatternMenu(node, input_idx=None, expressions=('Sop/lopimport','Lop/selectionrule'))" ]
+            language python
+        }
+        parmtag { "script_action" "import hou\nfrom husdui.dialogs import primpicker\nfrom pxr import Usd\n\nnode = kwargs['node']\nlop_path = node.parm('lop_path').eval()\nlop_node = hou.node(lop_path)\n\ndef set_prim(prims):\n    node.parm('primitives').set(prims[0])\n\nif lop_node:\n    stage = lop_node.stage()\n    dialog = primpicker.SelectPrimDialog(stage, False, Usd.PrimIsDefined)\n    dialog.setAcceptCallback(lambda sel: set_prim(sel))\n    dialog.show()" }
+        parmtag { "script_action_icon" "hicon:/SVGIcons.index?BUTTONS_curve_mode_select.svg" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

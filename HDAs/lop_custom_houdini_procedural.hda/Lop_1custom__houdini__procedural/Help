@@ -1,0 +1,32 @@
+= Custom Houdini Procedural = 
+#context: lop
+#icon: opdef:.?gear-svgrepo-com.svg
+
+"""Customize Houdini Procedural Primitve"""
+
+== Overview ==
+Make specified primitive to present Houdini procedural
+
+WARNING:
+     Render command must has argument *--allowed-procedurals all* if not only curves and points
+
+@parameters
+Graph File:
+    #id: graph_file
+    Graph file provided from sop level
+    
+Procedural Name:
+    #id: proc_name
+    The name of Houdini Procedural
+    
+Procedural Primtive:
+    #id: proc_prim
+    The primitive will be Houdini procedural
+    
+Inputs:
+    #id: inputs
+    Specify primitive to be input of graph
+    
+Overrides:
+    #id: overrides
+    Specify parm of graph and properity of USD primitive

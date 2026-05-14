@@ -1,0 +1,29 @@
+{
+	"values":["21.0.559"
+	],
+	"indexes":{
+		"hdaroot/merge4.userdata":0,
+		"hdaroot/merge2.userdata":0,
+		"hdaroot/output0.userdata":0,
+		"hdaroot/sort1.userdata":0,
+		"hdaroot/transform1.userdata":0,
+		"hdaroot/foreach_begin1.userdata":0,
+		"hdaroot/null1.userdata":0,
+		"hdaroot/python2.userdata":0,
+		"hdaroot/font2.userdata":0,
+		"hdaroot/attribpromote4.userdata":0,
+		"hdaroot/group2.userdata":0,
+		"hdaroot/attribpromote2.userdata":0,
+		"hdaroot/GUIDE.userdata":0,
+		"hdaroot/foreach_end1.userdata":0,
+		"hdaroot/merge3.userdata":0,
+		"hdaroot/merge1.userdata":0,
+		"hdaroot/transform2.userdata":0,
+		"hdaroot/merge5.userdata":0,
+		"hdaroot/python1.userdata":0,
+		"hdaroot/font1.userdata":0,
+		"hdaroot/attribpromote3.userdata":0,
+		"hdaroot/group1.userdata":0,
+		"hdaroot/attribpromote1.userdata":0
+	}
+}

@@ -1,0 +1,17 @@
+# Dialog script for matrix_deformer automatically generated
+
+{
+    name	matrix_deformer
+    script	matrix_deformer
+    label	"Matrix Deformer"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry to Deformed"
+    inputlabel	2	Rest
+    inputlabel	3	Deformer
+    inputlabel	4	"Sub-Network Input #4"
+
+}

@@ -1,0 +1,34 @@
+= Check Sequence Files Status =
+#context: sop
+
+"""Visualize Sequence Files Status"""
+
+== Overview ==
+Use Houdini Point data to visualize sequence file size (range from min to max), and the modified time (from now).
+[Image:opdef:.?check_seq_files.png]
+
+TIP:
+    There are some point attributes to show the file status, ex: *size*, *mod_time*, *frame*, *file_path*, *exists*
+    non-exists file will show in red color and in *non_exist* point group
+    Also, there are point groups: *size* and *time*.
+
+@parameters
+Files:
+    #id: files
+    Sequence files to visualize
+    
+Start/End:
+    #id: frame_range
+    Frame range
+    
+Preview Length:
+    #id: preview_length
+    Generated points range in X-axis
+    
+Preview Height:
+    #id: preview_height
+    Generated points range in Y-axis
+    
+Font Size:
+    #id: font_size
+    Size of guide font

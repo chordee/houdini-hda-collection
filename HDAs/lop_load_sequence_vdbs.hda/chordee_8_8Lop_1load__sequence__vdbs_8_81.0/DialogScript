@@ -1,0 +1,83 @@
+# Dialog script for chordee::load_sequence_vdbs::1.0 automatically generated
+
+{
+    name	chordee::load_sequence_vdbs::1.0
+    script	chordee::load_sequence_vdbs::1.0
+    label	"Load Sequence VDBs"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "parent_primpath"
+        label   "Parent Primitive"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "prim_name"
+        label   "Primitive Name"
+        type    string
+        default { "volume" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "files"
+        label   "VDB Files"
+        type    geometry
+        default { "" }
+        parmtag { "filechooser_pattern" "*.vdb" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "frame_rage"
+        label   "Star/End"
+        type    integer
+        size    2
+        default { "0" "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx:usdpathtype" "primtive" }
+    }
+    parm {
+        name    "grids"
+        label   "Grids"
+        type    string
+        default { "density" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "grid_index"
+        label   "Grid Index"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm2"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "extentshint_from_file"
+        label   "ExtentsHint From File (Performance Warning)"
+        type    toggle
+        default { "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

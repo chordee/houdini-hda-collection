@@ -1,0 +1,94 @@
+# Dialog script for check_sequence_files_status automatically generated
+
+{
+    name	check_sequence_files_status
+    script	check_sequence_files_status
+    label	"Check Sequence Files Status"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "files"
+        label   "Files"
+        type    file
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "frame_range"
+        label   "Start/End"
+        type    integer
+        size    2
+        default { "1" "240" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "preview_length"
+        label   "Preview Length"
+        type    float
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "preview_height"
+        label   "Preview Height"
+        type    float
+        default { "1" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "fontsize"
+        label   "Font Size"
+        type    float
+        default { "0.5" }
+        range   { 0! 100 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "targettopnetwork"
+        label   "Top Network"
+        type    oppath
+        invisible
+        default { "topgeometry1" }
+        help    "None"
+        parmtag { "opfilter" "!!TOP!!" }
+        parmtag { "oprelative" "." }
+        parmtag { "script_callback" "" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "spare_category" "TOPCookControls" }
+    }
+    parm {
+        name    "_cook_controls_generatestaticworkitems"
+        label   "Generate Static Work Items"
+        type    button
+        invisible
+        joinnext
+        default { "0" }
+        help    "None"
+        parmtag { "script_callback" "import nodegraphtopui; nodegraphtopui.generateStatic(kwargs['node'].parm('targettopnetwork').evalAsNode())" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "spare_category" "TOPCookControls" }
+    }
+    parm {
+        name    "_cook_controls_deleteresults"
+        label   "Delete All File Outputs From Disk"
+        type    button
+        invisible
+        default { "0" }
+        help    "None"
+        parmtag { "script_callback" "import nodegraphtopui; nodegraphtopui.dirtyAll(kwargs['node'].parm('targettopnetwork').evalAsNode(), True)" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "spare_category" "TOPCookControls" }
+    }
+}

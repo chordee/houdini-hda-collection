@@ -1,0 +1,44 @@
+# Dialog script for lop_bbox_proxy_create automatically generated
+
+{
+    name	lop_bbox_proxy_create
+    script	lop_bbox_proxy_create
+    label	"BBox Proxy Create"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "primpattern"
+        label   "Primitives"
+        type    string
+        default { "" }
+        menutoggle {
+            [ "opmenu -l -a attribwrangle2 primpattern" ]
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_action" "import loputils\nloputils.selectPrimsInParm(kwargs, True)" }
+        parmtag { "script_action_help" "Select primitives in the Scene Viewer or Scene Graph Tree pane. Ctrl-click to select using the primitive picker dialog." }
+        parmtag { "script_action_icon" "BUTTONS_reselect" }
+        parmtag { "sidefx::usdpathtype" "primlist" }
+    }
+    parm {
+        name    "original_purpose"
+        label   "Original Purpose"
+        type    ordinal
+        default { "default" }
+        menu {
+            "default"   "Default"
+            "render"    "Render"
+            "proxy"     "Proxy"
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

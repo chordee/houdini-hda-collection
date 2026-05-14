@@ -1,0 +1,61 @@
+= Manually set ExtentsHint =
+#context: lop
+
+"""Manually set extentsHint, can be bound info from sop node, from files."""
+
+== Overview ==
+Manually set extentsHint, from SOP node or file.
+When enable Time Dependent, this node will fetch data each frame and time sample the property immediately.
+
+@parameters
+::prim_path:
+    #id: prim_path
+    Which primitive to set extentsHint
+    
+::Time Dependent:
+    #id: time_dependent
+    Switch to timesample the bound info.
+    
+::Start/End:
+    #id: frame_range
+    Frame Range (when Time Dependent enabled)
+    
+:box: Manually
+    ::Min:
+        #id: min
+        Min bound value
+        
+    ::Max:
+        #id: max
+        Max bound value
+
+:box: From SOP
+    ::Sop Path:
+        #id: sop_path
+        Path of SOP node
+        
+    ::Type:
+        #id: sop_type
+        Group type
+        
+    ::Group:
+        #id: sop_group
+        The name fo group. Blank for all
+        
+:box: From Files
+    ::Files:
+        #id: files
+        The path of file, when Time Dependent enabled, this will evaluate each frame.
+        
+    ::Type:
+        #id: file_type
+        Group type
+        
+    ::Group:
+        #id: file_group
+        The name fo group. Blank for all
+        
+:box: From VDB Files
+    ::VDB Files:
+        #id: vdb_files
+        The path of file, when Time Dependent enabled, this will evaluate each frame.

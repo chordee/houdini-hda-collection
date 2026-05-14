@@ -1,0 +1,35 @@
+# Dialog script for chordee.lin::smooth_polyline automatically generated
+
+{
+    name	chordee.lin::smooth_polyline
+    script	chordee.lin::smooth_polyline
+    label	"Smooth Polyline"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "bias"
+        label   "Bias"
+        type    float
+        default { "0.3" }
+        range   { 0 1 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "step"
+        label   "Step"
+        type    integer
+        default { "10" }
+        range   { 1 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

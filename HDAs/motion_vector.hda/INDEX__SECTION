@@ -1,0 +1,15 @@
+Operator:     motion_vector
+Label:        Motion Vector
+Path:         oplib:/Vop/motion_vector?Vop/motion_vector
+Icon:         VOP_motion_vector
+Table:        Vop
+License:      
+Extra:        displace fog light photon shadow surface
+User:         
+Inputs:       0 to 0
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed May 12 18:40:58 2021
+

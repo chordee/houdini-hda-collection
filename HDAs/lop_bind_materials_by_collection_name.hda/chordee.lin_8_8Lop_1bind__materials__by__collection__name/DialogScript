@@ -1,0 +1,41 @@
+# Dialog script for chordee.lin::bind_materials_by_collection_name automatically generated
+
+{
+    name	chordee.lin::bind_materials_by_collection_name
+    script	chordee.lin::bind_materials_by_collection_name
+    label	"Bind Materials By Collection Name"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "collections"
+        label   "Collections"
+        type    string
+        default { "/collections" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "materials"
+        label   "Materials"
+        type    string
+        default { "/materials" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+    parm {
+        name    "prim"
+        label   "Primitive"
+        type    string
+        default { "/crowd" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
+    }
+}

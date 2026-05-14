@@ -1,0 +1,22 @@
+{
+	"gear-svgrepo-com.svg/Cursor":{
+		"type":"intarray",
+		"value":[1,1]
+	},
+	"gear-svgrepo-com.svg/IsExpr":{
+		"type":"bool",
+		"value":false
+	},
+	"gear-svgrepo-com.svg/IsPython":{
+		"type":"bool",
+		"value":false
+	},
+	"gear-svgrepo-com.svg/IsScript":{
+		"type":"bool",
+		"value":false
+	},
+	"gear-svgrepo-com.svg/Source":{
+		"type":"string",
+		"value":"/home/chordee/tmp/gear-svgrepo-com.svg"
+	}
+}

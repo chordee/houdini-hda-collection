@@ -1,0 +1,36 @@
+#line 1 "fisheye_vex.vfl"
+_Pragma("opname          fisheye_lens_vex");
+_Pragma("oplabel         \"Fisheye Lens VEX\"");
+
+_Pragma("hint    x       hidden");
+_Pragma("hint    y       hidden");
+_Pragma("hint    P       hidden");
+_Pragma("hint    I       hidden");
+_Pragma("hint    valid   hidden");
+_Pragma("hint    aspect  hidden");
+_Pragma("hint    mask    toggle");
+
+cvex fisheye_vcc (
+
+    float x = 0;
+    float y = 0;
+    float aspect = 1;
+    int mask = 0;
+
+
+    export vector P = 0;
+    export vector I = 0;
+    export int valid = 1;
+
+
+    float fov = 180;
+) {
+    float r = sqrt(x*x + y*y);
+    float phi = atan2(y, x);
+    float rfov = radians(fov);
+    float theta = r * (rfov / 2.0);
+    P = {0,0,0};
+    I = set( sin(theta)*cos(phi), sin(theta)*sin(phi), cos(theta) );
+    if(r > 1 && mask == 1)
+        valid = 0;
+}

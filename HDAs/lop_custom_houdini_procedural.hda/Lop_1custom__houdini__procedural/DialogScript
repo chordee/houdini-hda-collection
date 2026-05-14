@@ -1,0 +1,137 @@
+# Dialog script for custom_houdini_procedural automatically generated
+
+{
+    name	custom_houdini_procedural
+    script	custom_houdini_procedural
+    label	"Custom Houdini Procedural"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+        name    "graph_file"
+        label   "Graph File"
+        type    geometry
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm3"
+        label   "Spacer"
+        type    separator
+        default { "" }
+        parmtag { "sidefx::layout_height" "small" }
+        parmtag { "sidefx::look" "blank" }
+    }
+    parm {
+        name    "proc_name"
+        label   "Procedural Name"
+        type    string
+        default { "$OS" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "proc_prim"
+        label   "Procedural Primtive"
+        type    string
+        default { "" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm2"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    multiparm {
+        name    "inputs"
+        label    "Input"
+
+        parm {
+            name    "input_primitive#"
+            label   "Input Primitive"
+            type    string
+            default { "" }
+            parmtag { "script_callback_language" "python" }
+            parmtag { "sidefx:usdpathtype" "primlist" }
+        }
+    }
+
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    multiparm {
+        name    "overrides"
+        label    "Overrides"
+
+        parm {
+            name    "parm_type#"
+            label   "Type"
+            type    ordinal
+            joinnext
+            default { "0" }
+            menu {
+                "float"     "Float"
+                "vector"    "Vector"
+                "int"       "Int"
+                "string"    "String"
+                "assetPath" "AssetPath"
+            }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "parm_name#"
+            label   "Parm / Property"
+            type    string
+            joinnext
+            default { "" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "property_name#"
+            label   "Property Name"
+            type    string
+            nolabel
+            joinnext
+            default { "" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "animated#"
+            label   "Animated"
+            type    toggle
+            default { "0" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "value#"
+            label   "Value"
+            type    float
+            size    3
+            default { "0" "0" "0" }
+            disablewhen "{ parm_type# == string } { parm_type# == assetPath }"
+            hidewhen "{ parm_type# == string } { parm_type# == assetPath }"
+            range   { 0 10 }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "string#"
+            label   "String"
+            type    string
+            default { "" }
+            disablewhen "{ parm_type# != string parm_type# != assetPath }"
+            hidewhen "{ parm_type# != string parm_type# != assetPath }"
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+}

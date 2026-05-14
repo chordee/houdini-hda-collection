@@ -1,0 +1,61 @@
+# Dialog script for fisheye_lens_vex automatically generated
+
+{
+    name	fisheye_lens_vex
+    script	fisheye_vcc
+    label	"Fisheye Lens VEX"
+
+    rendermask	VMantra
+    shadertype	vopmaterial
+    input	float	x	x
+    input	float	y	y
+    input	float	aspect	aspect
+    input	int	mask	mask
+    input	vector	P	P
+    input	vector	I	I
+    input	int	valid	valid
+    input	float	fov	fov
+    output	cvex	cvex	cvex
+    output	vector	P	P
+    output	vector	I	I
+    output	int	valid	valid
+    inputflags	x	0
+    inputflags	y	0
+    inputflags	aspect	0
+    inputflags	mask	0
+    inputflags	P	0
+    inputflags	I	0
+    inputflags	valid	0
+    inputflags	fov	0
+    signature	"Default Inputs"	default	{ float float float int vector vector int float cvex vector vector int }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0,0,0)
+	___begin	auto
+			(0,0,0)
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "mask"
+        label   "mask"
+        type    toggle
+        default { "0" }
+    }
+    parm {
+        name    "fov"
+        label   "fov"
+        type    float
+        default { "180" }
+        range   { 0 10 }
+    }
+}

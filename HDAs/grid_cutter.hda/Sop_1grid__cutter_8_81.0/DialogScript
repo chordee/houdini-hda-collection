@@ -1,0 +1,93 @@
+# Dialog script for grid_cutter::1.0 automatically generated
+
+{
+    name	grid_cutter::1.0
+    script	grid_cutter::1.0
+    label	"Grid Cutter"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "iterations"
+        label   "Iterations"
+        type    integer
+        default { "5" }
+        range   { 0 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "auto_align"
+        label   "Auto Align (or Cut X/Z Only)"
+        type    toggle
+        default { "1" }
+        range   { 0! 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "force_cut_long_side"
+        label   "Force Cut Long Side"
+        type    toggle
+        default { "0" }
+        range   { 0! 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "sepparm2"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "helf_ratio"
+        label   "Half Ratio"
+        type    float
+        default { "0" }
+        range   { 0 1 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "parmvop" "1" }
+        parmtag { "shaderparmcontexts" "cvex" }
+    }
+    parm {
+        name    "global_seed"
+        label   "Global Seed"
+        type    float
+        default { "0" }
+        range   { 0 100 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "parmvop" "1" }
+        parmtag { "shaderparmcontexts" "cvex" }
+    }
+    parm {
+        name    "sepparm"
+        label   "Separator"
+        type    separator
+        default { "" }
+    }
+    parm {
+        name    "min_area_limited"
+        label   "Min Area Limited"
+        type    toggle
+        default { "1" }
+        range   { 0! 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "min_size"
+        label   "Min Size"
+        type    float
+        default { "0" }
+        range   { 0 10 }
+        parmtag { "script_callback_language" "python" }
+    }
+}

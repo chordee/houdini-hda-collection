@@ -1,0 +1,15 @@
+Operator:     Mandelbrot3D
+Label:        Mandelbrot3D
+Path:         oplib:/Vop/Mandelbrot3D?Vop/Mandelbrot3D
+Icon:         VOP_Mandelbrot3D
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May  7 15:58:48 2026
+
