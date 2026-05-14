@@ -23,8 +23,8 @@
         parmtag { "script_callback_language" "python" }
     }
     parm {
-        name    "primitives"
-        label   "Primitives"
+        name    "primitive"
+        label   "Primitive"
         type    string
         default { "" }
         menutoggle {
@@ -33,8 +33,6 @@
             [ "return loputils.createPrimPatternMenu(node, input_idx=None, expressions=('Sop/lopimport','Lop/selectionrule'))" ]
             language python
         }
-        parmtag { "script_action" "import hou\nfrom husdui.dialogs import primpicker\nfrom pxr import Usd\n\nnode = kwargs['node']\nlop_path = node.parm('lop_path').eval()\nlop_node = hou.node(lop_path)\n\ndef set_prim(prims):\n    node.parm('primitives').set(prims[0])\n\nif lop_node:\n    stage = lop_node.stage()\n    dialog = primpicker.SelectPrimDialog(stage, False, Usd.PrimIsDefined)\n    dialog.setAcceptCallback(lambda sel: set_prim(sel))\n    dialog.show()" }
-        parmtag { "script_action_icon" "hicon:/SVGIcons.index?BUTTONS_curve_mode_select.svg" }
-        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx::usdpathtype" "prim" }
     }
 }

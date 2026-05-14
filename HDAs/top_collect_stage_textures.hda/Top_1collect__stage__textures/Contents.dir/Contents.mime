@@ -31,7 +31,7 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position -0.23021 2.67962
+position -2.54581 1.11021
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -47,7 +47,7 @@ stat
 {
   create -1
   modify -1
-  author chordee.lin@MoonShineFx06.moonshine.ad
+  author chordee@LAPTOP-ULJICLO8
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -378,6 +378,8 @@ pdg_workitemlabel	[ 0	locks=0 ]	(	"0"	)
 pdg_workitemlabelexpr	[ 0	locks=0 ]	(	""	)
 pdg_workitempriority	[ 0	locks=0 ]	(	"0"	)
 pdg_workitempriorityexpr	[ 0	locks=0 ]	(	0	)
+pdg_commandtype	[ 0	locks=0 ]	(	"0"	)
+pdg_command	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY

@@ -3,7 +3,7 @@
 {
     name	collect_stage_textures
     script	collect_stage_textures
-    label	"Collect Stage Textures ()"
+    label	"Collect Stage Textures"
 
     help {
 	""
