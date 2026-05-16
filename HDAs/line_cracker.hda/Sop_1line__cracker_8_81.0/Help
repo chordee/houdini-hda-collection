@@ -1,0 +1,81 @@
+= Line Cracker =
+#context: sop
+#type: node
+
+"""Fractures ground geometry along a projected polyline path."""
+
+== Overview ==
+
+Line Cracker projects a polyline onto the X/Z plane and uses it as a fracture boundary for the input ground geometry. Both open and closed polylines are supported.
+
+The fracture iteratively refines the cut to better match the input line shape.
+
+@inputs
+
+Ground:
+    The geometry to fracture. Does not need to be flat.
+
+Single Primitive Poly Line:
+    The polyline used as the fracture boundary. Must be a single primitive.
+
+@parameters
+
+Iterations:
+    #id: iterations
+    Number of refinement iterations. Higher values produce a closer match to the input polyline.
+
+Iteration Threshold:
+    #id: iteration_threshold
+    Minimum segment length. Segments shorter than this are skipped to avoid extremely small pieces.
+
+Clean Zero Plane:
+    #id: clean_zero_plane
+    Removes degenerate faces on the zero plane after fracturing.
+
+Clean Threshold:
+    #id: clean_threshold
+    Distance threshold for zero-plane face removal.
+
+== Pieces ==
+
+Create Interior Surfaces:
+    #id: createinteriorsurfaces
+    Generates capping surfaces along the fracture cuts.
+
+Name Attribute:
+    #id: namemethod
+    Whether to overwrite or append to the existing `name` primitive attribute.
+
+Name Prefix:
+    #id: nameprefix
+    Prefix for generated piece names. Default: `piece`.
+
+Compute Interior Normals:
+    #id: computeinteriornormals
+    Recomputes normals on interior (cut) surfaces.
+
+Interior Cusp Angle:
+    #id: interiorcuspangle
+    Cusp angle threshold for interior normal computation.
+
+Exterior Normals:
+    #id: computeexteriornormals
+    Normal handling for exterior surfaces: preserve existing, recompute, or skip.
+
+== Output Attributes ==
+
+Output Primitive Piece:
+    #id: outputpieceattrib
+    Writes a primitive attribute identifying which piece each polygon belongs to.
+
+Output Interior Group:
+    #id: outputinteriorgroup
+    Creates a primitive group containing interior (cut) faces.
+
+Output Exterior Group:
+    #id: outputexteriorgroup
+    Creates a primitive group containing exterior faces.
+
+Copy Cell Point Attributes:
+    #id: copycellattribs
+    Copies attributes from the fracture cell points to piece points and primitives.

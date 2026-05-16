@@ -1,0 +1,33 @@
+= Create Crowd Collections By Agent Stage Material =
+#context: lop
+#type: node
+
+"""Creates USD collections based on material binding names from an agent stage."""
+
+== Overview ==
+
+Create Crowd Collections By Agent Stage Material inspects the material bindings on the source agent stage (Input 2) and creates a corresponding USD collection for each unique material binding name. Collections are written to the target stage (Input 1).
+
+This is designed for Houdini crowd workflows where each agent layer has material bindings that need to be exposed as USD collections for downstream look-dev or rendering.
+
+@inputs
+
+Input Stage:
+    The destination USD stage where collections will be written.
+
+Agent Stage w/ Materials Binding:
+    The source agent stage containing material bindings to inspect.
+
+@parameters
+
+Collection:
+    #id: collection_path
+    Root prim path where collections will be created. Default: `/collections`.
+
+From Path:
+    #id: from_path
+    Path within `agentdefinitions/agent/layers` to read material bindings from.
+
+Replace Path:
+    #id: replace_path
+    Corresponding path in the materials source stage used to resolve binding names.

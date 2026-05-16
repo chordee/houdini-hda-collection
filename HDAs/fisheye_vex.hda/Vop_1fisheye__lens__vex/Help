@@ -1,0 +1,21 @@
+= Fisheye Lens VEX =
+#context: vop
+#type: node
+
+"""A CVEX lens shader that applies fisheye distortion for Mantra rendering."""
+
+== Overview ==
+
+Fisheye Lens VEX is a CVEX lens shader that remaps rays from a standard perspective camera into a fisheye projection. Assign it to a Mantra camera's lens shader parameter.
+
+The shader supports full 180° fisheye by default, with an optional circular mask to crop the image to the fisheye disc.
+
+@parameters
+
+fov:
+    #id: fov
+    Field of view in degrees. Default is `180`.
+
+mask:
+    #id: mask
+    When enabled, pixels outside the circular fisheye boundary are masked out (made invalid).

@@ -1,0 +1,58 @@
+= Build Simple bgeo Clip =
+#context: lop
+#type: node
+
+"""Builds a USD value clip set from a bgeo sequence file."""
+
+== Overview ==
+
+Build Simple bgeo Clip creates a USD stage that references a bgeo geometry sequence as a USD value clip. This allows Houdini geometry caches to be consumed natively in a USD pipeline without full conversion.
+
+The bgeo files must have a sample frame detail attribute set by a `usdconfigure` SOP.
+
+Output 1 is the clip stage. Output 2 is a template stage.
+
+TIP:
+    Use __Use Relative Paths__ when the output USD file and bgeo sequence share a common root directory to keep the setup portable.
+
+@parameters
+
+File:
+    #id: filepath
+    Path to the bgeo sequence. Supports `$F` frame substitution.
+
+Reload Files:
+    #id: reload
+    Forces a reload of the bgeo sequence from disk.
+
+Template Frame:
+    #id: template_frame
+    Frame number used as the clip template (topology reference). Default: `1`.
+
+Clip:
+    #id: clip
+    Name of the USD clip set. Default: `default`.
+
+Files Frame Start/End:
+    #id: frame_range
+    Frame range of the source bgeo sequence on disk.
+
+Scene Frame Start/End:
+    #id: scene_range
+    Frame range the clip maps to in the USD scene.
+
+Loop:
+    #id: loop
+    When enabled, the clip loops back to the start after the last frame.
+
+Primitive:
+    #id: primpath
+    Target USD primitive path that will reference the clip. Default: `/Geometry`.
+
+Output File:
+    #id: lopoutput
+    File path to write the output USD clip file.
+
+Use Relative Paths:
+    #id: enableoutputprocessor_simplerelativepaths
+    Writes relative asset paths in the output USD file.

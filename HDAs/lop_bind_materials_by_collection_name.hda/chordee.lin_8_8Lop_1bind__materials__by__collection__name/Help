@@ -1,0 +1,25 @@
+= Bind Materials By Collection Name =
+#context: lop
+#type: node
+
+"""Automatically binds materials to primitives by matching collection names to material names."""
+
+== Overview ==
+
+Bind Materials By Collection Name iterates over all collections under the specified __Collections__ path and looks for a material under __Materials__ with the same name. When a match is found, a material binding is applied to the target __Primitive__.
+
+This is particularly useful for crowd workflows where collection names correspond directly to material names.
+
+@parameters
+
+Collections:
+    #id: collections
+    Root prim path containing the USD collections. Default: `/collections`.
+
+Materials:
+    #id: materials
+    Root prim path containing the USD materials. Default: `/materials`.
+
+Primitive:
+    #id: prim
+    Target primitive to receive the material bindings. Default: `/crowd`.

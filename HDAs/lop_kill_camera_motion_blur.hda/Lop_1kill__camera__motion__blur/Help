@@ -1,0 +1,11 @@
+= Kill Camera Motion Blur =
+#context: lop
+#type: node
+
+"""Removes time samples from camera primitives to disable camera motion blur."""
+
+== Overview ==
+
+Kill Camera Motion Blur strips all time samples from camera transform and property attributes, collapsing them to a single static value at the current frame. This effectively disables camera motion blur for the affected cameras while leaving object motion blur on other primitives untouched.
+
+This node has no parameters. Connect it after the camera in the LOP network.

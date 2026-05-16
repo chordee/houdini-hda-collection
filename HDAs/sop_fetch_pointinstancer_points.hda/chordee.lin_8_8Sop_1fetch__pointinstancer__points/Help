@@ -1,0 +1,19 @@
+= Fetch PointInstancer Points =
+#context: sop
+#type: node
+
+"""Fetches point data from a USD PointInstancer primitive into SOP geometry."""
+
+== Overview ==
+
+Fetch PointInstancer Points reads the instance positions, orientations, scales, and prototype indices from a USD PointInstancer primitive and outputs them as SOP point geometry. This allows PointInstancer data to be processed or visualized at the SOP level.
+
+@parameters
+
+LOP Path:
+    #id: lop_path
+    Path to the LOP node whose stage contains the PointInstancer primitive.
+
+Primitive:
+    #id: primitive
+    USD path to the PointInstancer primitive to fetch.

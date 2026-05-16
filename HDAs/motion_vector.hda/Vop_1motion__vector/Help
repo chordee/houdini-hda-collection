@@ -1,0 +1,24 @@
+= Motion Vector =
+#context: vop
+#type: node
+
+"""Outputs a screen-space motion vector scaled to pixel dimensions."""
+
+== Overview ==
+
+Motion Vector converts the standard camera-space velocity vector into a screen-space motion vector scaled to pixel units. Use the output as a motion vector AOV for compositing motion blur or optical flow effects.
+
+@parameters
+
+Width Pixel (Multiply):
+    #id: width_pixel
+    Horizontal resolution used to scale the X component of the motion vector. Default is `1920`.
+
+Height Pixel (Multiply):
+    #id: height_pixel
+    Vertical resolution used to scale the Y component of the motion vector. Default is `1080`.
+
+@outputs
+
+Motion Vector:
+    Screen-space motion vector in pixel units.

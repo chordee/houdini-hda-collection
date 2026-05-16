@@ -1,0 +1,15 @@
+= Vector Intersect =
+#context: sop
+#type: node
+
+"""Finds intersection points between line vectors in the input geometry."""
+
+== Overview ==
+
+Vector Intersect computes the intersection (or closest point) between pairs of line vectors defined in the input geometry and outputs the resulting intersection points.
+
+@parameters
+
+Tolerance:
+    #id: tolerance
+    Maximum distance between two lines to be considered intersecting. Pairs farther apart than this threshold are ignored.

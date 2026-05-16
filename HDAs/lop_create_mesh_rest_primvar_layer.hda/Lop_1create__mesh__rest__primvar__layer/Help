@@ -1,0 +1,21 @@
+= Create Mesh Rest Primvar Layer =
+#context: lop
+#type: node
+
+"""Creates a USD layer that adds a rest position primvar to mesh primitives."""
+
+== Overview ==
+
+Create Mesh Rest Primvar Layer traverses all mesh primitives under the specified root and writes a rest-position primvar using the current point positions. The output is a separate USD layer that can be composited over the animation layers.
+
+This is commonly used to provide a stable reference pose for shaders that require a rest position (e.g. for noise anchoring or displacement baking).
+
+@parameters
+
+Root Primitive:
+    #id: root_prim
+    Root of the USD hierarchy to process. All mesh descendants will receive the rest primvar.
+
+Primvar Name:
+    #id: primvar_name
+    Name of the primvar to write. Default: `rest`.

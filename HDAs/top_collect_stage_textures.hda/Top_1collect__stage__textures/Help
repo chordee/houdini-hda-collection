@@ -1,0 +1,25 @@
+= Collect Stage Textures =
+#context: top
+#type: node
+
+"""Collects all textures referenced in a USD stage and copies them to a new location."""
+
+== Overview ==
+
+Collect Stage Textures scans all material and shader primitives in the specified USD stage for texture file paths, then copies each texture from the source location to a destination directory. Path prefixes are replaced according to the __Texture Root Path__ and __Copy To__ settings.
+
+This is useful for packaging a USD scene's texture dependencies for delivery or archival.
+
+@parameters
+
+Stage LOP Node:
+    #id: lop_node
+    Path to the LOP node providing the USD stage to scan.
+
+Texture Root Path:
+    #id: texture_root_path
+    The root directory prefix to match against texture paths found in the stage.
+
+Copy To:
+    #id: copy_to
+    Destination directory. Textures are copied here with the __Texture Root Path__ prefix replaced by this path.

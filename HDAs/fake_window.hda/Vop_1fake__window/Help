@@ -1,0 +1,58 @@
+= Fake Window =
+#context: vop
+#type: node
+
+"""Simulates a window light source using a perspective camera-based UV projection."""
+
+== Overview ==
+
+Fake Window samples directional texture maps based on the camera view direction, producing the illusion of a window at render time without actual geometry. Inspired by Unity's Fake Window shader.
+
+The node projects five directional maps (opposite, left, right, top, bottom) and selects the appropriate one based on the incident ray direction.
+
+@parameters
+
+Opposite Map 0:
+    #id: opposite_map
+    File path for the straight-on (opposite-facing) texture.
+
+Left Side Map 1:
+    #id: left_side_map
+    File path for the left-facing texture.
+
+Right Side Map 2:
+    #id: right_side_map
+    File path for the right-facing texture.
+
+Top Map 3:
+    #id: top_map
+    File path for the top-facing texture.
+
+Bottom Map 4:
+    #id: bottom_map
+    File path for the bottom-facing texture.
+
+Source Color Space:
+    #id: srccolorspace
+    Color space of the input textures. `Automatic` detects from file metadata; `Linear` forces linear interpretation.
+
+Depth:
+    #id: depth
+    Maximum depth value for the `inDepth` output.
+
+@outputs
+
+Texture Map Color (`clr`):
+    RGB color sampled from the selected directional map.
+
+Output 2 (`outUV`):
+    Projected UV coordinates.
+
+Output 1 (`id`):
+    Integer ID of the selected face direction.
+
+Transformed 3D Entity (`outNor`):
+    Transformed normal vector.
+
+Output 4 (`inDepth`):
+    Depth value scaled by the Depth parameter.

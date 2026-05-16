@@ -1,0 +1,19 @@
+= Kill Time Sample =
+#context: lop
+#type: node
+
+"""Removes all time samples from specified primitives, collapsing them to a single static value."""
+
+== Overview ==
+
+Kill Time Sample strips all time-sampled values from the selected primitives and replaces them with a single static value sampled at the specified frame. Use this to freeze animated primitives or to remove unwanted motion blur from specific objects.
+
+@parameters
+
+Primitives:
+    #id: primitives
+    USD primitives to remove time samples from.
+
+Frame:
+    #id: frame
+    The frame at which to sample the current values before removing all other time samples. Defaults to `$F`.

@@ -1,61 +1,68 @@
-= Manually set ExtentsHint =
+= Manually Set ExtentsHint =
 #context: lop
 
-"""Manually set extentsHint, can be bound info from sop node, from files."""
+"""Manually sets the extentsHint on a USD primitive from a variety of sources."""
 
 == Overview ==
-Manually set extentsHint, from SOP node or file.
-When enable Time Dependent, this node will fetch data each frame and time sample the property immediately.
+
+Manually Set ExtentsHint writes `extentsHint` metadata to a USD primitive from one of four sources: a manual min/max value, a SOP node, a geometry file, or a VDB file.
+
+When __Time Dependent__ is enabled, the node evaluates the source each frame and writes time-sampled `extentsHint` values across the specified frame range.
 
 @parameters
-::prim_path:
-    #id: prim_path
-    Which primitive to set extentsHint
-    
-::Time Dependent:
-    #id: time_dependent
-    Switch to timesample the bound info.
-    
-::Start/End:
-    #id: frame_range
-    Frame Range (when Time Dependent enabled)
-    
-:box: Manually
-    ::Min:
-        #id: min
-        Min bound value
-        
-    ::Max:
-        #id: max
-        Max bound value
 
-:box: From SOP
-    ::Sop Path:
-        #id: sop_path
-        Path of SOP node
-        
-    ::Type:
-        #id: sop_type
-        Group type
-        
-    ::Group:
-        #id: sop_group
-        The name fo group. Blank for all
-        
-:box: From Files
-    ::Files:
-        #id: files
-        The path of file, when Time Dependent enabled, this will evaluate each frame.
-        
-    ::Type:
-        #id: file_type
-        Group type
-        
-    ::Group:
-        #id: file_group
-        The name fo group. Blank for all
-        
-:box: From VDB Files
-    ::VDB Files:
-        #id: vdb_files
-        The path of file, when Time Dependent enabled, this will evaluate each frame.
+Prim Path:
+    #id: prim_path
+    The USD primitive to set `extentsHint` on.
+
+Time Dependent:
+    #id: time_dependent
+    When enabled, fetches bounds data per-frame and writes time samples.
+
+Start/End:
+    #id: frame_range
+    Frame range for time-dependent evaluation.
+
+== Manually ==
+
+Min:
+    #id: min
+    Minimum bound value (XYZ).
+
+Max:
+    #id: max
+    Maximum bound value (XYZ).
+
+== From SOP ==
+
+Sop Path:
+    #id: sop_path
+    Path to a SOP node. Bounds are computed from the SOP geometry.
+
+Type:
+    #id: sop_type
+    Group type to use when computing bounds.
+
+Group:
+    #id: sop_group
+    Group name to restrict bounds computation. Leave blank for all geometry.
+
+== From Files ==
+
+Files:
+    #id: files
+    Geometry file path. When __Time Dependent__ is enabled, evaluated per frame.
+
+Type:
+    #id: file_type
+    Group type for bounds computation.
+
+Group:
+    #id: file_group
+    Group name. Leave blank for all.
+
+== From VDB Files ==
+
+VDB Files:
+    #id: vdb_files
+    VDB file path. When __Time Dependent__ is enabled, evaluated per frame.

@@ -1,0 +1,20 @@
+= Matrix Deformer =
+#context: sop
+#type: node
+
+"""Deforms geometry by applying a transformation matrix derived from reference geometry."""
+
+== Overview ==
+
+Matrix Deformer computes the transformation matrix between a rest pose and a deformed pose, then applies that matrix to the input geometry. This allows geometry to follow the same deformation as a reference object without requiring a direct skin or blend shape relationship.
+
+@inputs
+
+Geometry to Deform:
+    The geometry that will be deformed.
+
+Rest:
+    Rest-pose reference geometry.
+
+Deformer:
+    Deformed-pose reference geometry. The transform from Rest to Deformer is applied to the input.

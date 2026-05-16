@@ -1,0 +1,111 @@
+= Thunder Builder =
+#context: sop
+#type: node
+
+"""Procedurally generates lightning bolt geometry from a polyline."""
+
+== Overview ==
+
+Thunder Builder takes a rest polyline (Input 1) and optionally an animated target line (Input 2), then generates a fractal lightning bolt along the path. Branching, noise, and growth are all fully controllable.
+
+@inputs
+
+Rest Line:
+    The base polyline defining the lightning path.
+
+Animated Line To Match:
+    An optional animated polyline. When __Match Animated__ is enabled, the bolt follows this line each frame.
+
+@parameters
+
+Match Tip:
+    #id: input
+    Snaps the tip of the generated bolt to the endpoint of the input line.
+
+Match Animated:
+    #id: input2
+    Causes the bolt to follow the animated input line (Input 2) each frame. Requires __Match Tip__ to be enabled.
+
+Segments:
+    #id: segs
+    Total number of segments in the generated bolt.
+
+Growthing:
+    #id: growthing
+    Growth amount from `0` (no bolt) to `1` (full bolt).
+
+Tail Attrib:
+    #id: tail_attr
+    Outputs a `tail` point attribute marking the end of each bolt segment.
+
+== Main ==
+
+Noise Type:
+    #id: basis
+    Noise function used for bolt displacement. Options include Simplex, Perlin, Worley, and others.
+
+Frequency:
+    #id: freq
+    Noise frequency (XYZ + time).
+
+Offset:
+    #id: offset
+    Noise offset (XYZ + time).
+
+Fractal Type:
+    #id: fractal
+    Fractal layering method: None, fBm, Terrain, or Hybrid Terrain.
+
+Roughness:
+    #id: rough
+    Fractal roughness. Higher values produce more jagged bolts.
+
+Bias Angle:
+    #id: val
+    Angle bias controlling how much the bolt deviates from the straight path.
+
+Exponent:
+    #id: exp
+    Sharpens or softens the noise envelope.
+
+Bias Along Curve:
+    #id: ramp
+    Ramp controlling how much displacement is applied along the length of the bolt.
+
+Angle Sum:
+    #id: angle_sum
+    When enabled, accumulates displacement angles along the bolt rather than applying them independently.
+
+== Branch ==
+
+Branch:
+    #id: branch
+    Probability of a branch occurring at each segment.
+
+Max Branch Limited:
+    #id: branch_limited
+    Maximum number of branches allowed per bolt.
+
+Seed:
+    #id: seed
+    Random seed for branch placement.
+
+Push Away:
+    #id: push_away
+    When enabled, branches are pushed away from the main bolt direction instead of using the bias angle.
+
+Branch Root Bias Angle:
+    #id: branch_root_bias_angle
+    Angle at which branches diverge from the main bolt at their root.
+
+Angle Decrease By Branch Step:
+    #id: angle_decrease_by_branch_step
+    Reduces the branch angle with each successive branch level.
+
+Bias Angle (Branch):
+    #id: bias
+    Noise-driven angle bias for branches.
+
+Min/Max Branch Step:
+    #id: min_branch_step / max_branch_step
+    Range of segment counts between branch points.

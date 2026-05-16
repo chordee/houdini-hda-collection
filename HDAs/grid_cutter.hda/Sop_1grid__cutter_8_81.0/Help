@@ -1,0 +1,44 @@
+= Grid Cutter =
+#context: sop
+#type: node
+
+"""Recursively cuts polygons into smaller pieces using axis-aligned cuts."""
+
+== Overview ==
+
+Grid Cutter repeatedly bisects input polygons using axis-aligned cuts. Each iteration selects a cut axis (X or Z) and position based on the Half Ratio parameter.
+
+Works well inside a For-Each Primitive loop to independently cut each piece.
+
+TIP:
+    Enable __Auto Align__ when running inside a For-Each Primitive loop so each piece is aligned to the X/Z plane before cutting.
+
+@parameters
+
+Iterations:
+    #id: iterations
+    Number of cut iterations to perform.
+
+Auto Align (or Cut X/Z Only):
+    #id: auto_align
+    Aligns each piece to the X/Z plane before cutting. When disabled, all cuts are made in world-space X and Z.
+
+Force Cut Long Side:
+    #id: force_cut_long_side
+    Always cuts along the longer axis of the bounding box at each iteration.
+
+Half Ratio:
+    #id: helf_ratio
+    Controls how close each cut is to the midpoint. `0` cuts at the center. `1` allows cuts anywhere along the length.
+
+Global Seed:
+    #id: global_seed
+    Random seed for cut position variation.
+
+Min Area Limited:
+    #id: min_area_limited
+    Prevents pieces smaller than __Min Size__ from being cut further.
+
+Min Size:
+    #id: min_size
+    Minimum piece size. Pieces smaller than this value are not cut.

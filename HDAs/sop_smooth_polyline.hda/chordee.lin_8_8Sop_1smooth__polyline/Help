@@ -1,0 +1,19 @@
+= Smooth Polyline =
+#context: sop
+#type: node
+
+"""Smooths polyline curves by iterative averaging."""
+
+== Overview ==
+
+Smooth Polyline applies iterative point averaging to polyline curves, producing smoother paths. The __Bias__ parameter controls how strongly each point is pulled toward the average of its neighbors, and __Step__ controls how many times the operation is applied.
+
+@parameters
+
+Bias:
+    #id: bias
+    Smoothing strength per iteration, from `0` (no smoothing) to `1` (full averaging toward neighbors).
+
+Step:
+    #id: step
+    Number of smoothing iterations. Higher values produce smoother results.

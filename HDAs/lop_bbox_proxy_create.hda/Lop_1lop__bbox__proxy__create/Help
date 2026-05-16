@@ -1,0 +1,19 @@
+= BBox Proxy Create =
+#context: lop
+#type: node
+
+"""Replaces specified primitives with bounding box proxy geometry for a given USD purpose."""
+
+== Overview ==
+
+BBox Proxy Create generates a bounding box proxy representation for the selected primitives and assigns it to a specified USD purpose (Default, Render, or Proxy). This is useful for providing lightweight stand-ins during layout or look-dev without modifying the render geometry.
+
+@parameters
+
+Primitives:
+    #id: primpattern
+    USD primitives to create a bounding box proxy for.
+
+Original Purpose:
+    #id: original_purpose
+    The USD purpose to replace with the bounding box proxy. Options: `Default`, `Render`, `Proxy`.

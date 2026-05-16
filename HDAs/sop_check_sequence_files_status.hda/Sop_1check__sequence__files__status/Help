@@ -1,34 +1,38 @@
 = Check Sequence Files Status =
 #context: sop
+#type: node
 
-"""Visualize Sequence Files Status"""
+"""Visualizes sequence file status as point geometry showing size and modification time."""
 
 == Overview ==
-Use Houdini Point data to visualize sequence file size (range from min to max), and the modified time (from now).
-[Image:opdef:.?check_seq_files.png]
+
+Check Sequence Files Status generates a point cloud where each point represents one frame of a file sequence. Points are colored and positioned to visualize file size (relative to the min/max across all frames) and modification time (relative to now).
+
+Non-existent files are colored red and added to the `non_exist` point group.
+
+[Image:opdef:.?check__seq__files.png]
 
 TIP:
-    There are some point attributes to show the file status, ex: *size*, *mod_time*, *frame*, *file_path*, *exists*
-    non-exists file will show in red color and in *non_exist* point group
-    Also, there are point groups: *size* and *time*.
+    Useful point attributes include: `size`, `mod_time`, `frame`, `file_path`, `exists`. Point groups: `size`, `time`, `non_exist`.
 
 @parameters
+
 Files:
     #id: files
-    Sequence files to visualize
-    
+    File path pattern for the sequence. Supports `$F` frame substitution.
+
 Start/End:
     #id: frame_range
-    Frame range
-    
+    Frame range to check.
+
 Preview Length:
     #id: preview_length
-    Generated points range in X-axis
-    
+    Spread of generated points along the X axis.
+
 Preview Height:
     #id: preview_height
-    Generated points range in Y-axis
-    
+    Spread of generated points along the Y axis.
+
 Font Size:
     #id: font_size
-    Size of guide font
+    Size of the guide text displayed in the viewport.
