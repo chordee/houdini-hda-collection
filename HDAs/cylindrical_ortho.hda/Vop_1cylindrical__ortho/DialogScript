@@ -1,0 +1,105 @@
+# Dialog script for cylindrical_ortho automatically generated
+
+{
+    name	cylindrical_ortho
+    script	cylindrical_ortho
+    label	"Cylindrical Ortho"
+
+    rendermask	VMantra
+    shadertype	vopmaterial
+    input	float	x	x
+    input	float	y	y
+    input	float	Time	Time
+    input	int	SID	SID
+    input	float	fov_h	fov_h
+    input	float	height	height
+    input	vector	P	P
+    input	vector	I	I
+    output	cvex	cvex	cvex
+    output	vector	P	P
+    output	vector	I	I
+    inputflags	x	0
+    inputflags	y	0
+    inputflags	Time	0
+    inputflags	SID	0
+    inputflags	fov_h	0
+    inputflags	height	0
+    inputflags	P	0
+    inputflags	I	0
+    signature	"Default Inputs"	default	{ float float float int float float vector vector cvex vector vector }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0,0,0)
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "x"
+        label   "x"
+        type    float
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "y"
+        label   "y"
+        type    float
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "Time"
+        label   "Time"
+        type    float
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "SID"
+        label   "SID"
+        type    integer
+        default { "0" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "fov_h"
+        label   "fov_h"
+        type    float
+        default { "360" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "height"
+        label   "height"
+        type    float
+        default { "2" }
+        range   { 0 10 }
+    }
+    parm {
+        name    "P"
+        label   "P"
+        type    float
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+        export  all
+    }
+    parm {
+        name    "I"
+        label   "I"
+        type    float
+        size    3
+        default { "0" "0" "0" }
+        range   { 0 10 }
+        export  all
+    }
+}

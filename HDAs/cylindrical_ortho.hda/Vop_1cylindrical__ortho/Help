@@ -1,0 +1,52 @@
+= Cylindrical Ortho =
+#context: vop
+#type: node
+
+"""CVEX lens shader that produces a cylindrical orthographic projection for Mantra."""
+
+== Overview ==
+
+Cylindrical Ortho is a CVEX lens shader for Mantra that remaps camera rays into a cylindrical orthographic projection. The horizontal axis wraps around the full specified field of view, while the vertical axis spans a fixed world-space height rather than a perspective angle. This makes it suitable for rendering panoramic projections where the vertical parallax must remain constant.
+
+Attach this node to the __Lens Shader__ parameter of a Mantra ROP or camera object.
+
+@parameters
+
+fov_h:
+    #id: fov_h
+    Horizontal field of view in degrees. A value of `360` produces a full cylindrical wrap-around.
+
+height:
+    #id: height
+    Vertical extent of the projection in world-space units. Controls how tall the cylindrical image plane is.
+
+@inputs
+
+x:
+    Normalized horizontal pixel coordinate from the camera.
+
+y:
+    Normalized vertical pixel coordinate from the camera.
+
+Time:
+    Current shutter time.
+
+SID:
+    Sample identifier.
+
+P:
+    Ray origin override.
+
+I:
+    Ray direction override.
+
+@outputs
+
+cvex:
+    CVEX evaluation result passed back to Mantra.
+
+P:
+    Computed ray origin for the cylindrical projection.
+
+I:
+    Computed ray direction for the cylindrical projection.
