@@ -1,32 +1,34 @@
-= Custom Houdini Procedural = 
+= Custom Houdini Procedural =
 #context: lop
-#icon: opdef:.?gear-svgrepo-com.svg
+#type: node
 
-"""Customize Houdini Procedural Primitve"""
+"""Assigns a Houdini Procedural to a specified USD primitive for rendering."""
 
 == Overview ==
-Make specified primitive to present Houdini procedural
+
+Custom Houdini Procedural configures a USD primitive to be rendered using a Houdini Procedural. A Houdini Procedural is a plugin that generates geometry at render time from a SOP graph.
 
 WARNING:
-     Render command must has argument *--allowed-procedurals all* if not only curves and points
+    The Karma/Mantra render command must include the argument `--allowed-procedurals all` unless the procedural outputs only curves or points.
 
 @parameters
+
 Graph File:
     #id: graph_file
-    Graph file provided from sop level
-    
+    SOP-level graph file provided as input to the procedural.
+
 Procedural Name:
     #id: proc_name
-    The name of Houdini Procedural
-    
-Procedural Primtive:
+    Name of the registered Houdini Procedural.
+
+Procedural Primitive:
     #id: proc_prim
-    The primitive will be Houdini procedural
-    
+    The USD primitive to configure as a Houdini Procedural.
+
 Inputs:
     #id: inputs
-    Specify primitive to be input of graph
-    
+    USD primitives to use as inputs to the SOP graph.
+
 Overrides:
     #id: overrides
-    Specify parm of graph and properity of USD primitive
+    Overrides for SOP graph parameters and USD primitive properties.

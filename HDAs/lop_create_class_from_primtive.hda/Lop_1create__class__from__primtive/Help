@@ -1,23 +1,23 @@
-
+= Create Class from Primitive =
 #context: lop
 #icon: Lop/create_class_from_primtive
 
-
-"""Create class tree from selected primitive path"""
+"""Creates a USD class primitive and moves the hierarchy of a specified primitive into it."""
 
 == Overview ==
-創建 class primtive 並把指定的 primitive 以下的結構放進 class primitive 底下
 
-@parameter
-::Primtive:
+Create Class from Primitive creates a new USD class prim and re-parents the hierarchy beneath the specified source primitive into it. Class prims in USD are used for inheriting opinions across many prims efficiently.
+
+@parameters
+
+Primitive:
     #id: primitive
-    要放進去 class 的 primitive，以下的結構會全部自動產生
-    
-::Class:
+    The source primitive whose hierarchy will be placed inside the new class prim.
+
+Class:
     #id: class
-    創建的 class primitive 使用的 primtive 名稱，primitive specifier 會是 Class
-    
-::New Name:
+    Name for the new class primitive. The specifier of the created prim will be `class`.
+
+New Name:
     #id: new_name
-    在 class 中產生 primitive 結構時順便將其最上層改名
-    
+    Optional new name for the top-level prim when it is moved into the class hierarchy.

@@ -1,0 +1,32 @@
+= Volume Texture =
+#context: vop
+#type: node
+
+"""Samples a volume texture baked by SideFX Labs Volume Texture Export."""
+
+== Overview ==
+
+Volume Texture reads back a volume texture baked with the SideFX Labs __Volume Texture Export__ tool. It reconstructs 3D color by sampling a tiled 2D texture atlas using the bounding box position and tile counts.
+
+@parameters
+
+Volume Texture:
+    #id: volume_texture
+    File path to the baked volume texture (`.rat`, `.exr`, etc.).
+
+BB_pos:
+    #id: BB
+    Bounding box origin of the source volume. Connect from the original geometry's bounding box.
+
+U_Tile:
+    #id: U_Tile
+    Number of horizontal tiles in the texture atlas. Must match the export setting.
+
+V_Tile:
+    #id: V_Tile
+    Number of vertical tiles in the texture atlas. Must match the export setting.
+
+@outputs
+
+outClr:
+    RGB color sampled from the volume texture at the current shading position.

@@ -1,0 +1,41 @@
+= Modify PointInstancer from SOP Points =
+#context: lop
+#type: node
+
+"""Updates a USD PointInstancer's attributes using point data from a SOP node."""
+
+== Overview ==
+
+Modify PointInstancer from SOP Points reads point attributes from a SOP geometry node and writes them into the corresponding arrays on a USD PointInstancer primitive. This allows SOP-based simulation or procedural data to drive USD instancing at the LOP level.
+
+Each attribute toggle selects which PointInstancer array to update.
+
+@parameters
+
+PointInstancer Primitive:
+    #id: pointinstancer_primpath
+    USD path to the PointInstancer primitive to modify.
+
+SOP:
+    #id: sop_path
+    Path to the SOP node providing the point data.
+
+Positions:
+    #id: positions
+    Update `positions` from the SOP `P` point attribute.
+
+Orientations:
+    #id: orientations
+    Update `orientations` from the SOP `orient` point attribute.
+
+Scales:
+    #id: scales
+    Update `scales` from the SOP `scale` point attribute.
+
+ProtoIndices:
+    #id: protoindices
+    Update `protoIndices` from the SOP `index` point attribute.
+
+InvisibleIds:
+    #id: invisibleIds
+    Update `invisibleIds` from the SOP `invisible` point attribute.

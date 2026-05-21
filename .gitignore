@@ -3,3 +3,7 @@ backup/
 .gitignore
 imgs/Thumbs.db
 **/backup/
+node_modules/
+.claude/
+package.json
+package-lock.json

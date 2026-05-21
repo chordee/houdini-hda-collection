@@ -7,14 +7,17 @@
 
   <tool name="$HDA_DEFAULT_TOOL" label="$HDA_LABEL" icon="$HDA_ICON">
     <toolMenuContext name="viewer">
-      <contextNetType>TOP</contextNetType>
+      <contextNetType>VOP</contextNetType>
     </toolMenuContext>
     <toolMenuContext name="network">
       <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
     </toolMenuContext>
     <toolSubmenu>CHD</toolSubmenu>
-    <script scriptType="python"><![CDATA[import toptoolutils
+    <script scriptType="python"><![CDATA[import voptoolutils
 
-toptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>
+voptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>
+    <keywordList>
+      <keyword>Mantra</keyword>
+    </keywordList>
   </tool>
 </shelfDocument>

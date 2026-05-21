@@ -20,7 +20,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -1.91109 -0.182626
+position -1.83392 1.07266
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -107,7 +107,7 @@ import hou
 # Fetch parameters and stage
 parent = hou.pwd().parent()
 lop_path = parent.parm('lop_path').eval()
-prim_rule = parent.parm('primitives').eval()
+prim_rule = parent.parm('primitive').eval()
 lop = hou.node(lop_path)
 stage = lop.stage(0)
 geo = hou.pwd().geometry()

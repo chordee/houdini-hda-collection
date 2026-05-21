@@ -1,0 +1,46 @@
+float normal_pdf(float u,a,n){
+    float res = 1 / (a * pow(2 * PI, .5)) * exp( - pow(n - u, 2) / (2 * pow(a, 2)));
+    return res;
+}
+
+vector bezier(vector pos1, t1, pos2, t2; float phase){
+    vector p1 = pos1, p1_ = pos1 + t1, p2 = pos2 + t2, p2_ = pos2;
+    vector k1 = lerp(p1, p1_, phase);
+    vector k2 = lerp(p2, p2_, phase);
+    vector k3 = lerp(p1_, p2, phase);
+    vector k4 = lerp(k1, k3, phase);
+    vector k5 = lerp(k3, k2, phase);
+    vector res = lerp(k4, k5, phase);
+    return res;
+}
+
+float tanh01(float arg, amount){
+    float tmp = efit(amount, 0, 1, -1, 1);
+    float result = efit(tanh(tmp * arg), tanh(-arg), tanh(arg), 0, 1);
+    return result;
+}
+
+function int[] random_order_index(float seed; int length){
+    float tmp[];
+    resize(tmp, length);
+    for(int i = 0; i < len(tmp); i++){
+        tmp[i] = rand(seed + float(i)/1000);
+    }
+    int args[] = argsort(tmp);
+    return args;
+}
+
+function float[] random_order(float seed; float numbers[]){
+    float result[] = reorder(numbers, random_order_index(seed, len(numbers)));
+    return result;
+}
+
+function int[] random_order(float seed; int numbers[]){
+    int result[] = reorder(numbers, random_order_index(seed, len(numbers)));
+    return result;
+}
+
+string random_order(float seed; string str){
+    string result = reorder(str, random_order_index(seed, len(str)));
+    return result;
+}

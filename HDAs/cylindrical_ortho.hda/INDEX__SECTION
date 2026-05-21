@@ -1,0 +1,15 @@
+Operator:     cylindrical_ortho
+Label:        Cylindrical Ortho
+Path:         oplib:/Vop/cylindrical_ortho?Vop/cylindrical_ortho
+Icon:         VOP_cylindrical_ortho
+Table:        Vop
+License:      
+Extra:        shadertype=vopmaterial subtype=material visibleoutputs=3 vopnetmask='cvex' 
+User:         
+Inputs:       0 to 8
+Outputs:      3
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Sun May 17 02:01:51 2026
+

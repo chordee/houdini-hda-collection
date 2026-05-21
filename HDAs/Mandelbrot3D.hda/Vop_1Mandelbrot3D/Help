@@ -1,0 +1,36 @@
+= Mandelbrot3D =
+#context: vop
+#type: node
+
+"""Computes a 3D Mandelbulb fractal value at a given position."""
+
+== Overview ==
+
+Mandelbrot3D evaluates the Mandelbulb fractal formula at position P and returns a normalized escape-time value. Use the output to drive density, color, or displacement in volume and surface shaders.
+
+References:
+- [Entagma - VEX in Houdini: Mandelbrot and Mandelbulb|https://vimeo.com/176911687]
+- [Zeus VFX - 3D Fractal in Houdini Tutorial|https://youtu.be/-qgtQ91oItQ]
+
+@parameters
+
+P:
+    #id: P
+    Sample position in 3D space.
+
+phase:
+    #id: phase
+    Phase offset added to the fractal iteration. Animating this value morphs the fractal shape over time.
+
+N:
+    #id: N
+    Power exponent for the Mandelbulb formula. Default is `8`. Higher values produce sharper, more detailed bulbs.
+
+maxIter:
+    #id: maxIter
+    Maximum number of iterations. Higher values increase detail at the cost of performance.
+
+@outputs
+
+value:
+    Normalized escape-time value in [0, 1]. Points inside the set return `0`.

@@ -1,38 +1,38 @@
-= Load Sequcense VDBs =
+= Load Sequence VDBs =
 #context: lop
+#type: node
 
-"""Load Sequence VDB file immediately"""
+"""Loads a VDB file sequence into a USD stage as a Volume and OpenVDB primitive."""
 
 == Overview ==
 
-Create USD layer with Volume and OpenVDB primtive.
-filePath properity of OpenVDB primitive will has animated time-sample.
+Load Sequence VDBs creates a USD layer containing a Volume primitive and a child OpenVDB primitive. The `filePath` property on the OpenVDB primitive is time-sampled to match the VDB file sequence frame range.
 
 WARNING:
-    There in *NO* extent data in primtive (*No Bound info*)
+    No extent (bounding box) data is written. Downstream consumers relying on `extentsHint` will not receive bounds information from this node. Use __Manually Set ExtentsHint__ to add it if needed.
 
 @parameters
+
 Parent Primitive:
     #id: parent_primpath
-    The root path of VDB, where Volume will below.
-    
+    Root path under which the Volume primitive will be created.
+
 Primitive Name:
     #id: prim_name
-    The name of Volume primtive, OpenVDB primitive will below it.
-    
+    Name of the Volume primitive. The OpenVDB primitive will be created as a child of this prim.
+
 VDB Files:
     #id: files
-    Sequence VDB files
-    
+    File path pattern for the VDB sequence. Supports `$F` frame substitution.
+
 Start/End:
     #id: frame_range
-    Frame range
+    Frame range of the VDB sequence.
 
 Grids:
     #id: grids
-    The name of grid will put into OpenVDB primitive. 
-    Use space to separate multi-grids.
-    
+    Space-separated list of VDB grid names to include in the OpenVDB primitive.
+
 Grid Index:
     #id: grid_index
-    Usually 0. Exception in there are multi grids in same name.
+    Index of the grid within the VDB file. Usually `0`. Increase if multiple grids share the same name.
