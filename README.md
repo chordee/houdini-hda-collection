@@ -10,29 +10,29 @@ Houdini Digital Assets Collection
 
 A shader similar to Unity's Fake Window. Outputs a simple color from the perspective camera.
 
-|![fake window node](imgs/fake_window_node.png)|![fake window example](imgs/fake_window_setting.png)|
+|![fake window node](docs/images/fake_window_node.png)|![fake window example](docs/images/fake_window_setting.png)|
 |:---:|:---:|
 |Vop in MatNetwork|Pre-set: UV and Normal|
 
 * Depth: Maximum depth value when outputting inDepth.
 * Outputs:
 
-    |![outUV](imgs/wall_outUV.png)|![id](imgs/wall_id.png)|![drawing](imgs/out_nor.png)|![inDepth](imgs/in_depth.png)|
+    |![outUV](docs/images/wall_outUV.png)|![id](docs/images/wall_id.png)|![drawing](docs/images/out_nor.png)|![inDepth](docs/images/in_depth.png)|
     |:---:|:---:|:---:|:---:|
     |outUV|id|outNor|inDepth|
 
 ### grid_cutter (SOP: Grid Cutter)
 
-|![grid cutter node](imgs/grid_cutter_node.png)|![grid cutter example](imgs/grid_cutter.png)|
+|![grid cutter node](docs/images/grid_cutter_node.png)|![grid cutter example](docs/images/grid_cutter.png)|
 |---|---|
 
 * Auto Align: Aligns the face to the X/Z plane before cutting. (Useful when using grid_cutter in a For-Each Primitive loop.)
-  ![auto align](imgs/grid_cutter_auto.png)
+  ![auto align](docs/images/grid_cutter_auto.png)
 * Force Cut Long Side: Cuts the longer side at each iteration.
-  ![force cut long side](imgs/grid_cutter_force.png)
+  ![force cut long side](docs/images/grid_cutter_force.png)
 * Half Ratio: How close each cut is to the halfway point.
 
-  | ![half ratio 05](imgs/grid_cutter_h05.png)|  ![half ratio 1](imgs/grid_cutter_h1.png) |
+  | ![half ratio 05](docs/images/grid_cutter_h05.png)|  ![half ratio 1](docs/images/grid_cutter_h1.png) |
   |:----:|:----:|
   | Half Ratio: 0.5 | Half Ratio: 1 |
 
@@ -42,14 +42,14 @@ A shader similar to Unity's Fake Window. Outputs a simple color from the perspec
 
 Fractures based on polyline projection (X/Z plane).
 
-|![line creacker node](imgs/line_cracker_node.png)|![line crack example](imgs/line_cracker_45.png)|
+|![line creacker node](docs/images/line_cracker_node.png)|![line crack example](docs/images/line_cracker_45.png)|
 |---|---|
 
 > Input 1: polyline.  
 > Input 2: Ground plane (does not need to be flat)  
 > Output: Fractured polygons with attributes.
 
-|![close line example](imgs/line_cracker_circle.png)|![open line example](imgs/line_cracker_straight.png)|
+|![close line example](docs/images/line_cracker_circle.png)|![open line example](docs/images/line_cracker_straight.png)|
 |:---:|:---:|
 |Close Line|Open Line|
 
@@ -244,7 +244,7 @@ A CVEX lens shader that applies a fisheye distortion for Mantra rendering.
 
 [Zeus VFX - 3D Fractal in Houdini Tutorial](https://youtu.be/-qgtQ91oItQ)
 
-![Mandelbrot3D](imgs/mandelbrot3d.png)
+![Mandelbrot3D](docs/images/mandelbrot3d.png)
 
 ### motion_vector (VOP: Motion Vector)
 
@@ -256,7 +256,7 @@ Outputs a screen-space motion vector, scaled to pixel dimensions for use in moti
 ### volume_texture (VOP: Volume Texture)
 
 Reuse the volume texture exported from **Labs Volume Texture Export** in Houdini.
-![Volume Texture Node](imgs/volume_texture_node.png)
+![Volume Texture Node](docs/images/volume_texture_node.png)
 
 * Volume Texture: Texture filepath.
 * BB_pos: Bounding box position.
