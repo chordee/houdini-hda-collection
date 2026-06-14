@@ -7,10 +7,13 @@ def copy_structure_no_values(src_path, dst_path, primpath=''):
     if not src_stage:
         return
 
-    dst_stage = Usd.Stage.CreateNew(dst_path)
-    if not dst_stage:
-        return
-    
+    dst_layer = Sdf.Layer.FindOrOpen(dst_path)
+    if dst_layer:
+        dst_layer.Clear()
+    else:
+        dst_layer = Sdf.Layer.CreateNew(dst_path)
+    dst_stage = Usd.Stage.Open(dst_layer)
+
     rule = hou.LopSelectionRule(primpath + '/**')
     paths = rule.expandedPaths(stage = src_stage)
 
@@ -40,9 +43,10 @@ def copy_structure_no_values(src_path, dst_path, primpath=''):
 node = hou.pwd()
 
 usd_file_path = node.parm('lopoutput').eval()
-manifest_path = '.'.join(usd_file_path.split('.')[:-1] + ['manifest'] + usd_file_path.split('.')[-1:])
 
-manifest_name = manifest_path.split('/')[-1]
+usd_path = Path(usd_file_path)
+manifest_path = usd_path.with_name(f"{usd_path.stem}.manifest{usd_path.suffix}").as_posix()
+manifest_name = Path(manifest_path).name
 
 primpath = node.parm('primpath').eval()
 clip_name = node.parm('clip').eval()
