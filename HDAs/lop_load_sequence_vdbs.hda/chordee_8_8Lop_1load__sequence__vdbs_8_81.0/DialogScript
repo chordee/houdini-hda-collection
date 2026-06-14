@@ -43,8 +43,8 @@
         parmtag { "script_callback_language" "python" }
     }
     parm {
-        name    "frame_rage"
-        label   "Star/End"
+        name    "frame_range"
+        label   "Start/End"
         type    integer
         size    2
         default { "0" "1" }

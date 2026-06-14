@@ -119,10 +119,10 @@ stage = node.editableStage()
 from pxr import Usd, UsdVol, UsdGeom
 
 name = node.node('..').parm('prim_name').eval()
-start_frame = node.node('..').parm(\"frame_rage1\").eval()
-end_frame = node.node('..').parm(\"frame_rage2\").eval()
+start_frame = node.node('..').parm(\"frame_range1\").eval()
+end_frame = node.node('..').parm(\"frame_range2\").eval()
 root_prim_path = node.node('..').parm('parent_primpath').eval()
-girds_list = node.node('..').parm('grids').eval().split(' ')
+grids_list = node.node('..').parm('grids').eval().split(' ')
 grid_index = node.node('..').parm('grid_index').eval()
 if not stage.GetPrimAtPath(root_prim_path).IsValid():
     UsdGeom.Xform.Define(stage, root_prim_path)
@@ -138,7 +138,7 @@ vol = UsdVol.Volume.Define(stage, vol_prim_path)
 api = UsdGeom.ModelAPI(stage.GetPrimAtPath(vol_prim_path))
 
 grid_paths = []
-for grid in girds_list:
+for grid in grids_list:
     grid_path = f'{vol_prim_path}/{grid}'
     grid_paths.append(grid_path)
     vdb = UsdVol.OpenVDBAsset.Define(stage, grid_path)
