@@ -132,7 +132,7 @@ Binds materials to primitives by matching collection names to material names.
 
 ### lop_build_simple_bgeo_clip (LOP: Build Simple bgeo Clip)
 
-Builds USD value clips from a bgeo sequence. Requires a `usdconfigure` SOP to set the sample frame detail attribute on the bgeo files.
+Builds USD value clips from a bgeo sequence. Requires a `usdconfigure` SOP to set the sample frame detail attribute on the bgeo files. Writing to disk also produces a `<output>.manifest.usd` sidecar next to the output, referenced by a relative path, so it must travel alongside the output file.
 
 * File: bgeo sequence path.
 * Template Frame: Frame used as the clip template.
@@ -140,8 +140,9 @@ Builds USD value clips from a bgeo sequence. Requires a `usdconfigure` SOP to se
 * Files Frame Start/End: Frame range of the source bgeo files.
 * Scene Frame Start/End: Frame range in the USD scene.
 * Loop: Enable looping.
-* Primitive: Target USD primitive path.
+* Primitive: Target USD primitive path (must match the prim path the bgeo imports to).
 * Output File: Path to write the clip USD file.
+* Save to Disk: Write the output USD file and generate the manifest sidecar.
 * Use Relative Paths: Write relative paths in the output USD.
 
 ### lop_create_class_from_primtive (LOP: Create Class from Primitive)
@@ -192,16 +193,15 @@ Removes all time samples from specified primitives, collapsing animated properti
 
 ### lop_load_sequence_vdbs (LOP: Load Sequence VDBs)
 
-Creates a USD stage with Volume and OpenVDB primitives from a VDB file sequence. The `filePath` property of the OpenVDB primitive is time-sampled.
-
-> **WARNING:** No extent data is written (no bounding box info).
+Creates a USD stage with a Volume and one OpenVDB primitive per grid from a VDB file sequence. The `filePath`, `fieldName`, and `fieldIndex` properties of each OpenVDB primitive are time-sampled.
 
 * Parent Primitive: Root path for the Volume primitive.
 * Primitive Name: Name of the Volume primitive.
 * VDB Files: Sequence file path.
 * Start/End: Frame range.
-* Grids: Grid names to include (space-separated).
+* Grids: Grid names to include (space-separated). One OpenVDB primitive is created per grid.
 * Grid Index: Grid index (usually 0).
+* ExtentsHint From File: Load each VDB per frame to compute and write a time-sampled `extentsHint` on the Volume. Accurate but slow.
 
 ### lop_manually_set_extentsHint (LOP: Manually Set ExtentsHint)
 
