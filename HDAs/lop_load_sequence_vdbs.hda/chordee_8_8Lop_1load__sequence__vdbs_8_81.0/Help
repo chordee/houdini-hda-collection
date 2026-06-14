@@ -2,14 +2,13 @@
 #context: lop
 #type: node
 
-"""Loads a VDB file sequence into a USD stage as a Volume and OpenVDB primitive."""
+"""Loads a VDB file sequence into a USD stage as a Volume with one OpenVDB primitive per grid."""
 
 == Overview ==
 
-Load Sequence VDBs creates a USD layer containing a Volume primitive and a child OpenVDB primitive. The `filePath` property on the OpenVDB primitive is time-sampled to match the VDB file sequence frame range.
+Load Sequence VDBs creates a USD layer containing a Volume primitive with one child OpenVDB primitive per grid name. Each OpenVDB primitive is connected to the Volume by a field relationship, and its `filePath`, `fieldName`, and `fieldIndex` properties are time-sampled to match the VDB file sequence frame range.
 
-WARNING:
-    No extent (bounding box) data is written. Downstream consumers relying on `extentsHint` will not receive bounds information from this node. Use __Manually Set ExtentsHint__ to add it if needed.
+By default no extent (bounding box) data is written. Enable __ExtentsHint From File__ to compute and write time-sampled `extentsHint`, or add it downstream with __Manually Set ExtentsHint__.
 
 @parameters
 
@@ -35,4 +34,8 @@ Grids:
 
 Grid Index:
     #id: grid_index
-    Index of the grid within the VDB file. Usually `0`. Increase if multiple grids share the same name.
+    Index of the grid within the VDB file. Usually `0`. Increase if multiple grids share the same name. Applied to every grid in the list.
+
+ExtentsHint From File:
+    #id: extentshint_from_file
+    When enabled, loads each VDB file per frame to compute its bounding box and writes a time-sampled `extentsHint` on the Volume. Accurate but slow, since every file in the frame range is opened.

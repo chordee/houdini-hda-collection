@@ -12,6 +12,8 @@ The bgeo files must have a sample frame detail attribute set by a `usdconfigure`
 
 Output 1 is the clip stage. Output 2 is a template stage.
 
+When writing to disk, a manifest sidecar file (`<output>.manifest.usd`) is generated next to the output USD. The output's clip metadata references it with a relative path, so the manifest must always travel alongside the output file.
+
 TIP:
     Use __Use Relative Paths__ when the output USD file and bgeo sequence share a common root directory to keep the setup portable.
 
@@ -47,11 +49,15 @@ Loop:
 
 Primitive:
     #id: primpath
-    Target USD primitive path that will reference the clip. Default: `/Geometry`.
+    Target USD primitive path that will reference the clip. Must match the prim path the bgeo imports to (determined by the `usdconfigure` SOP). Default: `/Geometry`.
 
 Output File:
     #id: lopoutput
-    File path to write the output USD clip file.
+    File path to write the output USD clip file. A `.manifest.usd` sidecar is written next to it.
+
+Save to Disk:
+    #id: execute
+    Writes the output USD clip file and generates the manifest sidecar.
 
 Use Relative Paths:
     #id: enableoutputprocessor_simplerelativepaths
