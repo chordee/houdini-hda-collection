@@ -1,0 +1,75 @@
+= Usd Stitch Export =
+#context: sop
+#type: node
+
+"""Exports SOP geometry to a per-frame USD sequence and stitches it into a USD value clip."""
+
+== Overview ==
+
+Usd Stitch Export wraps a USD ROP and a USD Stitch Clips ROP into a single SOP, running in two steps. __Save to Disk__ writes the incoming SOP geometry to one USD file per frame. __Render__ then stitches the per-frame files into a USD value clip set, so the whole sequence can be referenced as a single animated asset.
+
+@parameters
+
+Load from Disk:
+    #id: loadfromdisk
+    Reads the geometry back from the exported USD sequence (USD Sequence Path) instead of cooking the input. Errors if the sequence has not been exported yet.
+
+Import Path Prefix:
+    #id: pathprefix
+    USD scope the geometry is imported under. Default: `/Geometry`.
+
+Sample Frame:
+    #id: sampleframe
+    Frame at which the geometry is sampled. Default: `$F`.
+
+Flush Data After Each Frame:
+    #id: fileperframe
+    Flushes data to disk after every frame to limit memory use.
+
+Track Primitive Existence to Set Visibility:
+    #id: trackprimexistence
+    Toggles primitive visibility based on whether it exists on each frame.
+
+Base Name:
+    #id: basename
+    Base name of the exported USD files. Default: `$HIPNAME.$OS`.
+
+Base Folder:
+    #id: basedir
+    Output directory for the exported files. Default: `$HIP/geo`.
+
+Version:
+    #id: version
+    Version number of the exported sequence.
+
+Start/End/Inc:
+    #id: f
+    Frame range and increment to export.
+
+Save to Disk:
+    #id: execute
+    Exports the per-frame USD sequence.
+
+Sync Version:
+    #id: sync_version
+    Keeps the clip version in sync with the export Version. Disable to set the clip version independently.
+
+Clip Version:
+    #id: clip_version
+    Version of the stitched value clip, used when Sync Version is off.
+
+Time Codes per Second:
+    #id: tcps
+    Time codes per second written into the value clip. Default: `$FPS`.
+
+Render:
+    #id: execute2
+    Stitches the exported sequence into a USD value clip. Reports an error if any frame in the range is missing or cannot be opened.
+
+USD Sequence Path:
+    #id: usd_seq_path
+    Path template of the exported per-frame USD sequence (mirrors the Save to Disk output, with `$F` substituted per frame).
+
+USD Stitch Path:
+    #id: usd_stitch_path
+    Output path of the stitched value clip (mirrors the Render output template).

@@ -1,0 +1,10 @@
+{
+	"values":["21.0.700","2"
+	],
+	"indexes":{
+		"hdaroot/output0.userdata":0,
+		"hdaroot/ropnet1.userdata":0,
+		"hdaroot/switchif1.userdata":0,
+		"hdaroot/usdimport1.userdata":1
+	}
+}

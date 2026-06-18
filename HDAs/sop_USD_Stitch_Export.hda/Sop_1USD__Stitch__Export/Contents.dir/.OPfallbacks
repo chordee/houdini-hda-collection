@@ -1,0 +1,12 @@
+Lop/attribwrangle D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibLop.hda
+Lop/attribwrangle otls/OPlibLop.hda
+Sop/attribwrangle D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibSop.hda
+Sop/attribwrangle otls/OPlibSop.hda
+Sop/usdconfigure D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibSop.hda
+Sop/usdconfigure otls/OPlibSop.hda
+Sop/usdexport D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibSop.hda
+Sop/usdexport otls/OPlibSop.hda
+Sop/usdimport D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibSop.hda
+Sop/usdimport otls/OPlibSop.hda
+Driver/usdstitchclips D:/Programs/Side Effects Software/Houdini 21.0.700/houdini/otls/OPlibDriver.hda
+Driver/usdstitchclips otls/OPlibDriver.hda

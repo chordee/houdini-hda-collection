@@ -1,0 +1,12 @@
+def check_err():
+    check_node = hou.pwd().node('ropnet1').node('usdstitchclips1')
+    try:
+        check_node.render(verbose=False)
+    except hou.Error:
+        pass
+    errors = check_node.errors()
+    warnings = check_node.warnings()
+    if warnings:
+        print('\n'.join(warnings))
+    if errors:
+        raise hou.NodeError('\n'.join(errors))
