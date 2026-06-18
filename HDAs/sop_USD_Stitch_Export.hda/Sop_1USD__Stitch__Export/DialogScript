@@ -1,0 +1,186 @@
+# Dialog script for USD_Stitch_Export automatically generated
+
+{
+    name	USD_Stitch_Export
+    script	USD_Stitch_Export
+    label	"Usd Stitch Export"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+        name    "loadfromdisk"
+        label   "Load from Disk         "
+        type    toggle
+        default { "0" }
+        range   { 0 1 }
+    }
+    parm {
+        name    "labelparm4"
+        label   "Heading"
+        type    label
+        default { "Configure" }
+        parmtag { "sidefx::look" "heading" }
+    }
+    parm {
+        name    "pathprefix"
+        label   "Import Path Prefix"
+        type    string
+        default { "/Geometry" }
+        parmtag { "autoscope" "0000000000000000" }
+    }
+    parm {
+        name    "sampleframe"
+        label   "Sample Frame"
+        type    float
+        default { [ "$F" hscript-expr ] }
+        range   { 1 240 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "labelparm3"
+        label   "Heading"
+        type    label
+        default { "Export" }
+        parmtag { "sidefx::look" "heading" }
+    }
+    parm {
+        name    "fileperframe"
+        label   "Flush Data After Each Frame"
+        type    toggle
+        default { "on" }
+        parmtag { "autoscope" "0000000000000000" }
+    }
+    parm {
+        name    "trackprimexistence"
+        label   "Track Primitive Existence to Set Visibility"
+        type    toggle
+        default { "off" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "basename"
+        label   "Base Name"
+        type    string
+        default { "$HIPNAME.$OS" }
+        menureplace {
+            "$OS"                                           "Node Name"
+            "`opname(\"..\")`_$OS"                          "Parent + Node Name"
+            "$HIPNAME.$OS"                                  "Scene + Node Name"
+            "`strreplace(opfullpath(\".\"),\"/\",\"_\")`"   "Unique Node Name"
+        }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "editor" "0" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "basedir"
+        label   "Base Folder"
+        type    directory
+        default { "$HIP/geo" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "version"
+        label   "Version"
+        type    integer
+        default { "1" }
+        range   { 1! 25 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "f"
+        label   "Start/End/Inc"
+        type    float
+        size    3
+        default { "1" "240" "1" }
+        range   { 0 10 }
+        parmtag { "autoscope" "0000000000000000" }
+    }
+    parm {
+        name    "execute"
+        label   "Save to Disk"
+        type    button
+        default { "0" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "takecontrol" "always" }
+    }
+    parm {
+        name    "labelparm"
+        label   "Heading"
+        type    label
+        default { "Stitch Value Clip" }
+        parmtag { "sidefx::look" "heading" }
+    }
+    parm {
+        name    "sync_version"
+        label   "Sync Version"
+        type    toggle
+        default { "1" }
+        parmtag { "script_callback" "if kwargs['parm'].eval() == 0:     kwargs['node'].parm('clip_version').setExpression('ch(\"version\")')" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "clip_version"
+        label   "Clip Version"
+        type    integer
+        default { [ "ch('version')" hscript-expr ] }
+        disablewhen "{ sync_version == 1 }"
+        range   { 1! 25 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "tcps"
+        label   "Time Codes per Second"
+        type    float
+        default { [ "$FPS" hscript-expr ] }
+        range   { 0 10 }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "execute2"
+        label   "Render"
+        type    button
+        default { "0" }
+        parmtag { "autoscope" "0000000000000000" }
+        parmtag { "script_callback" "hou.pwd().hdaModule().check_err()" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "takecontrol" "always" }
+    }
+    parm {
+        name    "labelparm2"
+        label   "Heading"
+        type    label
+        default { "Path" }
+        parmtag { "sidefx::look" "heading" }
+    }
+    parm {
+        name    "usd_seq_path"
+        label   "USD Sequence Path"
+        type    file
+        default { [ "{\n    return chs('usdexport1/lopoutput');\n}" hscript-expr ] }
+        parmtag { "editor" "0" }
+        parmtag { "filechooser_mode" "read" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
+        name    "usd_stitch_path"
+        label   "USD Stitch Path"
+        type    file
+        default { [ "{\n    return chs('ropnet1/usdstitchclips1/outtemplatefile1');\n}" hscript-expr ] }
+        parmtag { "filechooser_mode" "read" }
+        parmtag { "script_callback_language" "python" }
+    }
+}

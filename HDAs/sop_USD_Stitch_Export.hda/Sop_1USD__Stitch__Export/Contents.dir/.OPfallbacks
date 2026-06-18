@@ -1,0 +1,12 @@
+Lop/attribwrangle W:/Resource/hfs-21.0.512/houdini/otls/OPlibLop.hda
+Lop/attribwrangle otls/OPlibLop.hda
+Sop/attribwrangle W:/Resource/hfs-21.0.512/houdini/otls/OPlibSop.hda
+Sop/attribwrangle otls/OPlibSop.hda
+Sop/usdconfigure W:/Resource/hfs-21.0.512/houdini/otls/OPlibSop.hda
+Sop/usdconfigure otls/OPlibSop.hda
+Sop/usdexport W:/Resource/hfs-21.0.512/houdini/otls/OPlibSop.hda
+Sop/usdexport otls/OPlibSop.hda
+Sop/usdimport W:/Resource/hfs-21.0.512/houdini/otls/OPlibSop.hda
+Sop/usdimport otls/OPlibSop.hda
+Driver/usdstitchclips W:/Resource/hfs-21.0.512/houdini/otls/OPlibDriver.hda
+Driver/usdstitchclips otls/OPlibDriver.hda

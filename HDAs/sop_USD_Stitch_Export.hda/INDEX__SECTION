@@ -1,0 +1,14 @@
+Operator:     USD_Stitch_Export
+Label:        Usd Stitch Export
+Path:         oplib:/Sop/USD_Stitch_Export?Sop/USD_Stitch_Export
+Icon:         opdef:/Sop/USD_Stitch_Export?IconSVG
+Table:        Sop
+License:      
+Extra:        inputcolors='1 "RGB 0.700195 0.700195 0.700195" ' outputcolors='1 "RGB 0.700195 0.700195 0.700195" ' 
+User:         
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Apr  1 16:49:42 2026
+

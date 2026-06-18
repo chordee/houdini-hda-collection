@@ -1,0 +1,104 @@
+= Houdini Ocean Procedural Configure =
+#context: lop
+#type: node
+
+"""Configures a USD primitive to render as a Houdini Ocean surface using the ocean rendering procedural."""
+
+== Overview ==
+
+Houdini Ocean Procedural Configure assigns the Houdini Ocean rendering procedural to a USD mesh primitive, so the displaced ocean surface (and optional foam and interior volume) is generated at render time from cached ocean spectrum data rather than being baked into the stage.
+
+Feed the node the ocean spectrum and mask caches written by the ocean SOP tools, point it at the surface mesh primitive on the input stage, and assign the materials used for the surface, interior and proxy.
+
+WARNING:
+    The Karma/Mantra render command must include `--allowed-procedurals all` for the ocean procedural to load.
+
+@parameters
+
+== Spectrum ==
+
+Spectrum File:
+    #id: spectrumfile
+    Ocean spectrum geometry cache used to displace and animate the surface.
+
+Mask File:
+    #id: maskfile
+    Optional mask geometry cache that limits the ocean deformation.
+
+Time:
+    #id: time
+    Time at which the ocean spectrum is evaluated. Default: `$T`.
+
+== Geometry ==
+
+Surface Mesh Primitive:
+    #id: rendergeo
+    USD primitive of the ocean surface mesh to render with the procedural.
+
+Enable Interior:
+    #id: enableinterior
+    Renders an interior (underwater) volume below the surface.
+
+Interior Mesh Primitive:
+    #id: interiorgeo
+    USD primitive used as the interior volume boundary.
+
+Viewport Quality:
+    #id: viewportquality
+    Tessellation quality of the surface preview shown in the viewport.
+
+== Dicing ==
+
+Dicing Quality:
+    #id: dicingquality
+    Render-time tessellation quality of the ocean surface.
+
+Screen Window Size:
+    #id: winsize
+    Screen-space window size used when dicing the surface.
+
+Downsample:
+    #id: downsample
+    Reduces the resolution of the evaluated spectrum to speed up dicing.
+
+Anti-Alias Blur:
+    #id: aablur
+    Amount of blur applied to reduce aliasing on the diced surface.
+
+Verbose:
+    #id: verbose
+    Prints procedural diagnostics during rendering.
+
+== Shading ==
+
+Materials Path:
+    #id: materials_path
+    Scope on the stage that holds the ocean materials. Default: `/$OS`.
+
+Surface Material:
+    #id: surfacematerial
+    Material bound to the ocean surface. The adjacent toggle enables the assignment.
+
+Interior Material:
+    #id: interiormaterial
+    Material bound to the interior volume. The adjacent toggle enables the assignment.
+
+Proxy Material:
+    #id: proxymaterial
+    Material bound to the proxy representation. The adjacent toggle enables the assignment.
+
+Point Velocity:
+    #id: pointvel
+    Outputs point velocities so the surface can be motion blurred.
+
+Cusp:
+    #id: cusp
+    Sharpens wave crests, controlled by the cusp range, gamma and intensity.
+
+Enable Foam:
+    #id: enablefoam
+    Renders foam from a foam particle cache, with Foam Pattern controls for streaks, bubbles and displacement.
+
+Foam Particles:
+    #id: foamfile
+    Foam particle geometry cache used when foam is enabled.

@@ -1,0 +1,453 @@
+# Dialog script for houdini_ocean_procedural_configure automatically generated
+
+{
+    name	houdini_ocean_procedural_configure
+    script	houdini_ocean_procedural_configure
+    label	"Houdini Ocean Procedural Configure"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Stage"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    groupsimple {
+        name    "folder2"
+        label   "Spectrum"
+
+        parm {
+            name    "spectrumfile"
+            label   "Spectrum File"
+            type    geometry
+            default { "" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "filechooser_mode" "read_and_write" }
+        }
+        parm {
+            name    "maskfile"
+            label   "Mask File"
+            type    geometry
+            default { "" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "filechooser_mode" "read_and_write" }
+        }
+        parm {
+            name    "time"
+            label   "Time"
+            type    float
+            default { "$T" }
+            range   { 0 10 }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "reload"
+            label   "Reload Geometry"
+            type    button
+            invisible
+            default { "0" }
+            parmtag { "script_callback" "geocache -n;opcook -F ." }
+            parmtag { "script_callback_language" "hscript" }
+        }
+    }
+
+    groupsimple {
+        name    "folder0"
+        label   "Geometry"
+
+        parm {
+            name    "rendergeo"
+            label   "Surface Mesh Primitive"
+            type    string
+            default { "" }
+            parmtag { "sidefx::usdpathtype" "prim" }
+        }
+        parm {
+            name    "enableinterior"
+            label   "Enable Interior"
+            type    toggle
+            default { "1" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "interiorgeo"
+            label   "Interior Mesh Primitive"
+            type    string
+            default { "" }
+            disablewhen "{ enableinterior == 0 }"
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "rendergroup"
+            label   "Group"
+            type    string
+            invisible
+            default { "" }
+            disablewhen "{ enabledicedsurface == 1 }"
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "viewportquality"
+            label   "Viewport Quality"
+            type    float
+            default { "0.1" }
+            range   { 0.001! 1 }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupsimple {
+        name    "folder4"
+        label   "Dicing"
+
+        parm {
+            name    "dicingquality"
+            label   "Dicing Quality"
+            type    float
+            default { "1" }
+            range   { 0.001! 4 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "spare_category" "Dicing" }
+            parmtag { "uiscope" "None" }
+            parmtag { "usdvaluetype" "float" }
+        }
+        parm {
+            name    "winsize"
+            label   "Screen Window Size"
+            type    vector2
+            size    2
+            default { "1.1" "1.1" }
+            disablewhen "{ enabledicedsurface == 1 enabledicedinterior == 1 enableinterior == 1 } { enabledicedsurface == 1 enableinterior == 0 }"
+            range   { -1 1 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "downsample"
+            label   "Downsample"
+            type    integer
+            default { "0" }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "aablur"
+            label   "Anti-Alias Blur"
+            type    float
+            default { "0.25" }
+            range   { 0 1 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "verbose"
+            label   "Verbose"
+            type    toggle
+            default { "0" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupsimple {
+        name    "folder1"
+        label   "Shading"
+
+        parm {
+            name    "materials_path"
+            label   "Materials Path"
+            type    string
+            default { "/$OS" }
+            parmtag { "script_callback_language" "python" }
+            parmtag { "sidefx::usdpathtype" "prim" }
+        }
+        parm {
+            name    "assignsurface"
+            label   "Assign Surface Material"
+            type    toggle
+            nolabel
+            joinnext
+            default { "1" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "surfacematerial"
+            label   "Surface Material"
+            type    oppath
+            default { "ocean_materials/mtlxoceansurface" }
+            disablewhen "{ assignsurface == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "opfilter" "!!CUSTOM/MATERIAL!!" }
+            parmtag { "oprelative" "." }
+        }
+        parm {
+            name    "assigninterior"
+            label   "Assign Interior Material"
+            type    toggle
+            nolabel
+            joinnext
+            default { "1" }
+            disablewhen "{ enableinterior == 0 }"
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "interiormaterial"
+            label   "Interior Material"
+            type    oppath
+            default { "ocean_materials/kma_oceaninterior" }
+            disablewhen "{ enableinterior == 0 } { assigninterior == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "opfilter" "!!CUSTOM/MATERIAL!!" }
+            parmtag { "oprelative" "." }
+        }
+        parm {
+            name    "assignproxy"
+            label   "Assign Proxy Material"
+            type    toggle
+            nolabel
+            joinnext
+            default { "1" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "proxymaterial"
+            label   "Proxy Material"
+            type    oppath
+            default { "ocean_materials/mtlxoceansurface_proxy" }
+            disablewhen "{ assignproxy == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "opfilter" "!!CUSTOM/MATERIAL!!" }
+            parmtag { "oprelative" "." }
+        }
+        parm {
+            name    "pointvel"
+            label   "Point Velocity"
+            type    toggle
+            default { "0" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cusp"
+            label   "Cusp"
+            type    toggle
+            nolabel
+            joinnext
+            default { "1" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cusprange"
+            label   "Cusp Min/Max"
+            type    float_minmax
+            size    2
+            default { "0.3" "0.7" }
+            disablewhen "{ cusp == 0 }"
+            range   { 0! 1! }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cuspgamma"
+            label   "Cusp Gamma"
+            type    float
+            default { "1" }
+            disablewhen "{ cusp == 0 }"
+            range   { 0 2 }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cuspint"
+            label   "Cusp Intensity"
+            type    float
+            default { "0.5" }
+            disablewhen "{ cusp == 0 }"
+            range   { 0 1 }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "enablefoam"
+            label   "Enable Foam"
+            type    toggle
+            nolabel
+            joinnext
+            default { "0" }
+            range   { 0! 1! }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "foamfile"
+            label   "Foam Particles"
+            type    geometry
+            default { "" }
+            disablewhen "{ enablefoam == 0 }"
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "filechooser_mode" "read_and_write" }
+        }
+        group {
+            name    "folder4_1_1"
+            label   "Foam Pattern"
+            disablewhentab "{ enablefoam == 0 }"
+
+            parm {
+                name    "foamradscale"
+                label   "Radius Scale"
+                type    float
+                default { "1" }
+                range   { 0 2 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamalpha"
+                label   "Alpha"
+                type    float
+                default { "0.05" }
+                range   { 0 1 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamfilterwidth"
+                label   "Filter Width"
+                type    float
+                default { "0.5" }
+                range   { 0 1 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamrange"
+                label   "Foam Min/Max"
+                type    float_minmax
+                size    2
+                default { "0" "0.7" }
+                range   { 0! 1! }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamgamma"
+                label   "Foam Gamma"
+                type    float
+                default { "1" }
+                range   { 0 2 }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamint"
+                label   "Foam Intensity"
+                type    float
+                default { "0.5" }
+                range   { 0 1 }
+                parmtag { "script_callback_language" "python" }
+            }
+            group {
+                name    "folder5"
+                label   "Streaks"
+
+                parm {
+                    name    "streakdir"
+                    label   "Direction"
+                    type    float
+                    default { "0" }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "streakbias"
+                    label   "Bias"
+                    type    float
+                    default { "0" }
+                    range   { 0 1 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "streaksharpness"
+                    label   "Sharpness"
+                    type    float
+                    default { "0.8" }
+                    range   { 0 1 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "streakfreq"
+                    label   "Frequency"
+                    type    vector
+                    size    3
+                    default { "1.5" "1.5" "1.5" }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "streakoffset"
+                    label   "Offset"
+                    type    vector
+                    size    3
+                    default { "0" "0" "0" }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+            }
+
+            group {
+                name    "folder5_1"
+                label   "Bubbles"
+
+                parm {
+                    name    "bubblefreq"
+                    label   "Frequency"
+                    type    vector
+                    size    3
+                    default { "35" "35" "35" }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+                parm {
+                    name    "bubbleoffset"
+                    label   "Offset"
+                    type    vector
+                    size    3
+                    default { "0" "0" "0" }
+                    range   { 0 10 }
+                    parmtag { "autoscope" "0000000000000000" }
+                    parmtag { "script_callback_language" "python" }
+                }
+            }
+
+        }
+
+        group {
+            name    "folder4_1_1_1"
+            label   "Displacement"
+            disablewhentab "{ cusp == 0 enablefoam == 0 }"
+
+            parm {
+                name    "cuspdisplace"
+                label   "Cusp Displacement"
+                type    float
+                default { "0.1" }
+                disablewhen "{ cusp == 0 }"
+                range   { 0 1 }
+                parmtag { "script_callback_language" "python" }
+            }
+            parm {
+                name    "foamdisplace"
+                label   "Foam Displacement"
+                type    float
+                default { "0.1" }
+                disablewhen "{ enablefoam == 0 }"
+                range   { 0 1 }
+                parmtag { "script_callback_language" "python" }
+            }
+        }
+
+    }
+
+}

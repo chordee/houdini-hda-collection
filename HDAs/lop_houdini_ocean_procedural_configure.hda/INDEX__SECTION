@@ -1,0 +1,14 @@
+Operator:     houdini_ocean_procedural_configure
+Label:        Houdini Ocean Procedural Configure
+Path:         oplib:/Lop/houdini_ocean_procedural_configure?Lop/houdini_ocean_procedural_configure
+Icon:         opdef:/Lop/houdini_ocean_procedural_configure?IconSVG
+Table:        Lop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jan  2 15:22:11 2024
+
