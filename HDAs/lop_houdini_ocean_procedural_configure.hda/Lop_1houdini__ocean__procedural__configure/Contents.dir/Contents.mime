@@ -31,26 +31,23 @@ Content-Disposition: attachment; filename="hdaroot.def"
 Content-Type: text/plain
 
 comment ""
-position 3.8526 4.55911
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+position -5.04001 -0.903731
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
 {
-1 "output1"
 }
 inputsNamed3
 {
-0 	sopimport3 0 1 "input1"
 }
 inputs
 {
-0 	sopimport3 0 1
 }
 stat
 {
   create -1
   modify -1
-  author chordee.lin@MoonShineFx06.moonshine.ad
+  author chordee@LAPTOP-ULJICLO8
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -186,6 +183,7 @@ Content-Type: text/plain
             name    "enable#"
             baseparm
             label   "Enable"
+            joinnext
             export  none
         }
         parm {
@@ -3431,7 +3429,6 @@ default_boolean	[ 0	locks=0 ]	(	"off"	)
 default_color3	[ 0	locks=0 ]	(	0	0	0	)
 default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 default_integer	[ 0	locks=0 ]	(	0	)
-default_string	[ 0	locks=0 ]	(	""	)
 default_vector2	[ 0	locks=0 ]	(	0	0	)
 default_vector3	[ 0	locks=0 ]	(	0	0	0	)
 default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
@@ -3510,7 +3507,6 @@ default_boolean	[ 0	locks=0 ]	(	"off"	)
 default_color3	[ 0	locks=0 ]	(	0	0	0	)
 default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 default_integer	[ 0	locks=0 ]	(	0	)
-default_string	[ 0	locks=0 ]	(	""	)
 default_vector2	[ 0	locks=0 ]	(	0	0	)
 default_vector3	[ 0	locks=0 ]	(	0	0	0	)
 default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
@@ -4142,7 +4138,7 @@ Content-Type: text/plain
 
 comment ""
 position 4.572 -3.52491
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -4155,7 +4151,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which 0 1 "which"
 }
 inputs
 {
@@ -4164,7 +4165,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which 0 1
 }
 stat
 {
@@ -4190,6 +4196,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -4201,6 +4211,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -4212,6 +4226,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -4223,6 +4241,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -4234,16 +4256,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -6953,7 +7056,7 @@ Content-Type: text/plain
 
 comment ""
 position 6.86827 -8.60893
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -6966,7 +7069,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which1 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which1 0 1 "which"
 }
 inputs
 {
@@ -6975,7 +7083,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which1 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which1 0 1
 }
 stat
 {
@@ -7001,6 +7114,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -7012,6 +7129,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -7023,6 +7144,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -7034,6 +7159,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -7045,16 +7174,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -9908,7 +10118,6 @@ default_boolean	[ 0	locks=0 ]	(	"off"	)
 default_color3	[ 0	locks=0 ]	(	0	0	0	)
 default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 default_integer	[ 0	locks=0 ]	(	0	)
-default_string	[ 0	locks=0 ]	(	""	)
 default_vector2	[ 0	locks=0 ]	(	0	0	)
 default_vector3	[ 0	locks=0 ]	(	0	0	0	)
 default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
@@ -9987,7 +10196,6 @@ default_boolean	[ 0	locks=0 ]	(	"off"	)
 default_color3	[ 0	locks=0 ]	(	0	0	0	)
 default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 default_integer	[ 0	locks=0 ]	(	0	)
-default_string	[ 0	locks=0 ]	(	""	)
 default_vector2	[ 0	locks=0 ]	(	0	0	)
 default_vector3	[ 0	locks=0 ]	(	0	0	0	)
 default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
@@ -10783,7 +10991,7 @@ Content-Type: text/plain
 
 comment ""
 position 4.572 -3.52491
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -10796,7 +11004,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which 0 1 "which"
 }
 inputs
 {
@@ -10805,7 +11018,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which 0 1
 }
 stat
 {
@@ -10831,6 +11049,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -10842,6 +11064,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -10853,6 +11079,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -10864,6 +11094,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -10875,16 +11109,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -13594,7 +13909,7 @@ Content-Type: text/plain
 
 comment ""
 position 6.86827 -8.60893
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -13607,7 +13922,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which1 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which1 0 1 "which"
 }
 inputs
 {
@@ -13616,7 +13936,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which1 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which1 0 1
 }
 stat
 {
@@ -13642,6 +13967,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13653,6 +13982,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13664,6 +13997,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13675,6 +14012,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13686,16 +14027,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -13859,7 +14281,7 @@ Content-Type: text/plain
 
 comment ""
 position -10.0969 -3.17307
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -13872,7 +14294,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which3 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which3 0 1 "which"
 }
 inputs
 {
@@ -13881,7 +14308,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which3 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which3 0 1
 }
 stat
 {
@@ -13907,6 +14339,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13918,6 +14354,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13929,6 +14369,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13940,6 +14384,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -13951,16 +14399,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -14124,7 +14653,7 @@ Content-Type: text/plain
 
 comment ""
 position -9.71718 -6.54133
-connectornextid 7
+connectornextid 12
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
 outputsNamed3
 {
@@ -14137,7 +14666,12 @@ inputsNamed3
 2 	"" "" 1 "in3"
 3 	"" "" 1 "in4"
 4 	"" "" 1 "in5"
-5 	which2 0 1 "which"
+5 	"" "" 1 "in6"
+7 	"" "" 1 "in7"
+8 	"" "" 1 "in8"
+9 	"" "" 1 "in9"
+10 	"" "" 1 "in10"
+11 	which2 0 1 "which"
 }
 inputs
 {
@@ -14146,7 +14680,12 @@ inputs
 2 	"" 0 1
 3 	"" 0 1
 4 	"" 0 1
-5 	which2 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+10 	which2 0 1
 }
 stat
 {
@@ -14172,6 +14711,10 @@ in1_color3	[ 0	locks=0 ]	(	0	0	0	)
 in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in1_vector2	[ 0	locks=0 ]	(	0	0	)
 in1_vector2I	[ 0	locks=0 ]	(	0	0	)
 in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -14183,6 +14726,10 @@ in2_color3	[ 0	locks=0 ]	(	0	0	0	)
 in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in2_vector2	[ 0	locks=0 ]	(	0	0	)
 in2_vector2I	[ 0	locks=0 ]	(	0	0	)
 in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -14194,6 +14741,10 @@ in3_color3	[ 0	locks=0 ]	(	0	0	0	)
 in3_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in3_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in3_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in3_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in3_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in3_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in3_vector2	[ 0	locks=0 ]	(	0	0	)
 in3_vector2I	[ 0	locks=0 ]	(	0	0	)
 in3_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -14205,6 +14756,10 @@ in4_color3	[ 0	locks=0 ]	(	0	0	0	)
 in4_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in4_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in4_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in4_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in4_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in4_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in4_vector2	[ 0	locks=0 ]	(	0	0	)
 in4_vector2I	[ 0	locks=0 ]	(	0	0	)
 in4_vector3	[ 0	locks=0 ]	(	0	0	0	)
@@ -14216,16 +14771,97 @@ in5_color3	[ 0	locks=0 ]	(	0	0	0	)
 in5_color3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_color4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in5_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in5_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in5_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
 in5_vector2	[ 0	locks=0 ]	(	0	0	)
 in5_vector2I	[ 0	locks=0 ]	(	0	0	)
 in5_vector3	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector3I	[ 0	locks=0 ]	(	0	0	0	)
 in5_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
 in5_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6	[ 0	locks=0 ]	(	0	)
+in6_color3	[ 0	locks=0 ]	(	0	0	0	)
+in6_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in6_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in6_vector2	[ 0	locks=0 ]	(	0	0	)
+in6_vector2I	[ 0	locks=0 ]	(	0	0	)
+in6_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in6_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in6_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7	[ 0	locks=0 ]	(	0	)
+in7_color3	[ 0	locks=0 ]	(	0	0	0	)
+in7_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in7_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in7_vector2	[ 0	locks=0 ]	(	0	0	)
+in7_vector2I	[ 0	locks=0 ]	(	0	0	)
+in7_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in7_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in7_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8	[ 0	locks=0 ]	(	0	)
+in8_color3	[ 0	locks=0 ]	(	0	0	0	)
+in8_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in8_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in8_vector2	[ 0	locks=0 ]	(	0	0	)
+in8_vector2I	[ 0	locks=0 ]	(	0	0	)
+in8_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in8_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in8_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9	[ 0	locks=0 ]	(	0	)
+in9_color3	[ 0	locks=0 ]	(	0	0	0	)
+in9_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in9_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in9_vector2	[ 0	locks=0 ]	(	0	0	)
+in9_vector2I	[ 0	locks=0 ]	(	0	0	)
+in9_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in9_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in9_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10	[ 0	locks=0 ]	(	0	)
+in10_color3	[ 0	locks=0 ]	(	0	0	0	)
+in10_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in10_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in10_vector2	[ 0	locks=0 ]	(	0	0	)
+in10_vector2I	[ 0	locks=0 ]	(	0	0	)
+in10_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in10_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in10_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
 which	[ 0	locks=0 ]	(	0	)
 which_color3I	[ 0	locks=0 ]	(	0	)
 which_color4I	[ 0	locks=0 ]	(	0	)
 which_floatI	[ 0	locks=0 ]	(	0	)
+which_matrix33I	[ 0	locks=0 ]	(	0	)
+which_matrix44I	[ 0	locks=0 ]	(	0	)
 which_vector2I	[ 0	locks=0 ]	(	0	)
 which_vector3I	[ 0	locks=0 ]	(	0	)
 which_vector4I	[ 0	locks=0 ]	(	0	)
@@ -16040,6 +16676,7 @@ version 0.8
 nummaterials	[ 0	locks=0 ]	(	3	)
 enable1	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	[ enable1	1 ] 	)
 primpattern1	[ 8	locks=0	autoscope=0	autosel=4294967295 ]	(	`chs(\"../rendergeo\")`	)
+ispathexpression1	[ 0	locks=0 ]	(	"off"	)
 matspecmethod1	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	"path"	)
 matspecpath1	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	`chs(\"../materials_path\")`/mtl/mtlxoceansurface	)
 matspeccvex1	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
@@ -16063,6 +16700,7 @@ bindpath1	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
 bindname1	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
 enable2	[ 8	locks=0	autoscope=0	autosel=4294967295 ]	(	[ enable2	1 ] 	)
 primpattern2	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	`chs(\"../interiorgeo\")`	)
+ispathexpression2	[ 0	locks=0 ]	(	"off"	)
 matspecmethod2	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	"path"	)
 matspecpath2	[ 8	locks=0	autoscope=0	autosel=4294967295 ]	(	`chs(\"../materials_path\")`/mtl/mtlxoceaninterior	)
 matspeccvex2	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
@@ -16086,6 +16724,7 @@ bindpath2	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
 bindname2	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	""	)
 enable3	[ 0	locks=0 ]	(	[ enable3	1 ] 	)
 primpattern3	[ 0	locks=0 ]	(	`chs(\"../rendergeo\")`	)
+ispathexpression3	[ 0	locks=0 ]	(	"off"	)
 matspecmethod3	[ 0	locks=0 ]	(	"path"	)
 matspecpath3	[ 0	locks=0 ]	(	`chs(\"../materials_path\")`/mtl/mtlxoceansurface_proxy	)
 matspeccvex3	[ 0	locks=0 ]	(	""	)
@@ -16707,6 +17346,7 @@ Content-Type: text/plain
                 name    "bindattrib#"
                 baseparm
                 label   "Attribute Name"
+                joinnext
                 export  none
             }
             parm {
@@ -20235,6 +20875,8 @@ setassetidentifier	[ 0	locks=0 ]	(	"off"	)
 assetidentifier	[ 0	locks=0 ]	(	""	)
 setassetname	[ 0	locks=0 ]	(	"off"	)
 assetname	[ 0	locks=0 ]	(	""	)
+setassetthumbnail	[ 0	locks=0 ]	(	"off"	)
+assetthumbnail	[ 0	locks=0 ]	(	""	)
 setassetversion	[ 0	locks=0 ]	(	"off"	)
 assetversion	[ 0	locks=0 ]	(	""	)
 setassetdependencies	[ 0	locks=0 ]	(	"off"	)
@@ -20243,6 +20885,8 @@ assetinfocount	[ 0	locks=0 ]	(	0	)
 Interface	[ 0	locks=0 ]	(	0	)
 seticon	[ 0	locks=0 ]	(	"off"	)
 icon	[ 0	locks=0 ]	(	""	)
+setcatalogparentpath	[ 0	locks=0 ]	(	"off"	)
+catalogparentpath	[ 0	locks=0 ]	(	""	)
 seteditable	[ 0	locks=0 ]	(	"off"	)
 editable	[ 0	locks=0 ]	(	"on"	)
 setselectable	[ 0	locks=0 ]	(	"off"	)
@@ -21751,11 +22395,15 @@ Content-Type: text/plain
 
 {
 version 0.8
-python	[ 0	locks=0 ]	(	[ python	"node = hou.pwd()
-stage = node.editableStage()
+python	[ 0	locks=0 ]	(	[ python	"# Use the drop down menu to select example code snippets.
+node = hou.pwd()
+
+# Add code to fetch node parameters and evaluate primitive patterns.
+# This should be done before calling editableStage or editableLayer.
+# paths = hou.LopSelectionRule(\"/*\").expandedPaths(node.input(0))
 
 # Add code to modify the stage.
-# Use drop down menu to select examples.
+stage = node.editableStage()
 " ] 	)
 maintainstate	[ 0	locks=0 ]	(	[ maintainstate	0 ] 	)
 procprim	[ 8	locks=0 ]	(	`chs(\"../interiorgeo\")`	)
@@ -23324,6 +23972,27 @@ Content-Disposition: attachment; filename="hdaroot/dicing_and_bumpmap_settings1.
 Content-Type: text/plain
 
 {
+    channel sample_f1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dicing_and_bumpmap_settings/sample_f1\") }
+    }
+    channel sample_f2 {
+      lefttype = extend
+      righttype = extend
+      default = 240
+      flags = 0
+      segment { length = 0 value = 240 240 expr = ch(\"../dicing_and_bumpmap_settings/sample_f2\") }
+    }
+    channel sample_f3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dicing_and_bumpmap_settings/sample_f3\") }
+    }
     channel xn__primvarskarmaobjectuvunwrap_highres_obj_n4bfg {
       lefttype = extend
       righttype = extend
@@ -24125,27 +24794,6 @@ Content-Type: text/plain
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../dicing_and_bumpmap_settings/sample_subframeenable\") }
-    }
-    channel sample_f3 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../dicing_and_bumpmap_settings/sample_f3\") }
-    }
-    channel sample_f2 {
-      lefttype = extend
-      righttype = extend
-      default = 240
-      flags = 0
-      segment { length = 0 value = 240 240 expr = ch(\"../dicing_and_bumpmap_settings/sample_f2\") }
-    }
-    channel sample_f1 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../dicing_and_bumpmap_settings/sample_f1\") }
     }
     channel sample_behavior {
       lefttype = extend

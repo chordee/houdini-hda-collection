@@ -12,7 +12,7 @@ Usd Stitch Export wraps a USD ROP and a USD Stitch Clips ROP into a single SOP, 
 
 Load from Disk:
     #id: loadfromdisk
-    Reads the geometry back from the exported USD instead of cooking the input.
+    Reads the geometry back from the exported USD sequence (USD Sequence Path) instead of cooking the input. Errors if the sequence has not been exported yet.
 
 Import Path Prefix:
     #id: pathprefix
@@ -64,12 +64,12 @@ Time Codes per Second:
 
 Render:
     #id: execute2
-    Stitches the exported sequence into a USD value clip.
+    Stitches the exported sequence into a USD value clip. Reports an error if any frame in the range is missing or cannot be opened.
 
 USD Sequence Path:
     #id: usd_seq_path
-    Resolved path of the exported per-frame USD sequence.
+    Path template of the exported per-frame USD sequence (mirrors the Save to Disk output, with `$F` substituted per frame).
 
 USD Stitch Path:
     #id: usd_stitch_path
-    Resolved output path of the stitched value clip.
+    Output path of the stitched value clip (mirrors the Render output template).
