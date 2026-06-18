@@ -90,6 +90,18 @@ Smooths polyline curves.
 * Bias: Smoothing bias (0–1).
 * Step: Number of smoothing iterations.
 
+### sop_USD_Stitch_Export (SOP: Usd Stitch Export)
+
+Exports the incoming SOP geometry to a per-frame USD sequence and stitches it into a USD value clip, so a geometry cache can be referenced as a single animated asset. Save to Disk writes the per-frame files; Render then stitches them.
+
+* Load from Disk: Read geometry back from the exported sequence instead of cooking the input.
+* Import Path Prefix: USD scope the geometry is imported under.
+* Base Name / Base Folder / Version: Output naming and location.
+* Files Frame Start/End/Inc: Frame range to export.
+* Save to Disk: Write the per-frame USD sequence.
+* Sync Version / Clip Version: Clip version, optionally independent of the export version.
+* Render: Stitch the sequence into a value clip (reports missing or unopenable frames).
+
 ### thunder_builder (SOP: Thunder Builder)
 
 Procedurally generates lightning bolt geometry from a polyline.
@@ -179,6 +191,19 @@ Sets a specified primitive to use a Houdini Procedural for rendering.
 * Procedural Primitive: The primitive to make procedural.
 * Inputs: Primitives to use as graph inputs.
 * Overrides: Override graph parameters and USD primitive properties.
+
+### lop_houdini_ocean_procedural_configure (LOP: Houdini Ocean Procedural Configure)
+
+Configures a USD primitive that is already on the stage to render as a Houdini Ocean surface via the ocean rendering procedural, so the displaced surface (and optional foam/interior) is generated at render time from cached ocean spectrum data. Unlike SideFX's stock ocean setup, which imports a SOP mesh into Solaris, this node targets an existing primitive on the input stage as the ocean surface — that is the only difference.
+
+> **WARNING:** The render command must include `--allowed-procedurals all` for the ocean procedural to load.
+
+* Spectrum File / Mask File: Ocean spectrum and optional mask geometry caches.
+* Surface Mesh Primitive: Existing stage primitive used as the ocean surface.
+* Enable Interior / Interior Mesh Primitive: Optional underwater volume.
+* Dicing Quality, Screen Window Size, Downsample, Anti-Alias Blur: Render-time tessellation controls.
+* Materials Path / Surface / Interior / Proxy Material: Material assignments.
+* Enable Foam / Foam Particles: Render foam from a particle cache.
 
 ### lop_kill_camera_motion_blur (LOP: Kill Camera Motion Blur)
 
