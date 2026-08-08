@@ -1,4 +1,4 @@
-"""Usd Stitch Export SOP 的 USD value clip stitch 實作。"""
+"""USD value clip stitching for the Usd Stitch Export SOP."""
 
 import os
 
@@ -10,7 +10,10 @@ CLIP_SET = 'default'
 
 
 def _prim_path(clip_path):
-    """把使用者輸入的 clip path 正規化為絕對 prim path，無效時回傳空 path。"""
+    """Normalise a user-supplied clip path to an absolute prim path.
+
+    Returns an empty path when the input is invalid.
+    """
     try:
         path = Sdf.Path(clip_path)
     except Exception:
@@ -21,7 +24,7 @@ def _prim_path(clip_path):
 
 
 def validate(frame_paths, clip_path, inc):
-    """回傳問題訊息清單；空清單代表可以進行 stitch。"""
+    """Return a list of problems; an empty list means stitching can proceed."""
     if inc != 1:
         return ['Start/End/Inc: Inc must be 1 (currently %g). A non-1 Inc makes '
                 'the file list inconsistent with the clip time range, producing '
@@ -52,7 +55,7 @@ def validate(frame_paths, clip_path, inc):
 
 
 def format_problems(problems):
-    """把問題清單組成單一訊息，超過上限時截斷。"""
+    """Join the problems into one message, truncating past the limit."""
     shown = problems[:MAX_REPORTED_PROBLEMS]
     text = '\n'.join(shown)
     remaining = len(problems) - len(shown)
@@ -86,7 +89,10 @@ def _move(temp_path, out_path):
 
 
 def _reanchor_topology(first_in_file, temp_topology, out_topology):
-    """輸出目錄與來源序列不同層時，重算 topology layer 內的相對 reference。"""
+    """Re-anchor relative references inside the topology layer.
+
+    Only needed when the output directory differs from the source sequence.
+    """
     if os.path.dirname(first_in_file) == os.path.dirname(out_topology):
         return
 
@@ -105,7 +111,7 @@ def _reanchor_topology(first_in_file, temp_topology, out_topology):
 
 
 def _rename_temp_refs(edit_path, temp_paths, out_paths):
-    """把 layer 內指向 __tmp__ 檔的參照改回正式檔名。"""
+    """Point references at the final file names instead of the __tmp__ ones."""
     temp_names = [os.path.basename(p) for p in temp_paths]
     out_names = [os.path.basename(p) for p in out_paths]
 
@@ -121,7 +127,10 @@ def _rename_temp_refs(edit_path, temp_paths, out_paths):
 
 
 def _relativize_asset_paths(edit_path, anchor_path):
-    """只相對化絕對路徑；`./` 開頭的 side-car 參照必須原封不動。"""
+    """Relativise absolute paths only.
+
+    The `./` side-car references must be left untouched.
+    """
     def relativize(asset_path):
         if not os.path.isabs(asset_path):
             return asset_path
@@ -134,7 +143,10 @@ def _relativize_asset_paths(edit_path, anchor_path):
 
 def stitch(frame_paths, out_path, clip_path, start_frame, end_frame, tcps,
            relative_asset_paths=False):
-    """把每幀 USD stitch 成 value clip，回傳最終輸出路徑。"""
+    """Stitch the per-frame USD files into a value clip.
+
+    Returns the final output path.
+    """
     out_path = hou.text.abspath(out_path)
     out_path, args = Sdf.Layer.SplitIdentifier(out_path)
     prim_path = _prim_path(clip_path)
@@ -184,7 +196,7 @@ def stitch(frame_paths, out_path, clip_path, start_frame, end_frame, tcps,
 
 
 def resolve_frames(node):
-    """依節點的 frame range 展開每幀輸入路徑。"""
+    """Expand the per-frame input paths over the node's frame range."""
     start = int(node.evalParm('f1'))
     end = int(node.evalParm('f2'))
     parm = node.parm('usd_seq_path')
@@ -192,7 +204,7 @@ def resolve_frames(node):
 
 
 def stitch_clips():
-    """Stitch Value Clip 按鈕進入點。"""
+    """Entry point for the Stitch Value Clip button."""
     node = hou.pwd()
     clip_path = node.evalParm('pathprefix')
 
