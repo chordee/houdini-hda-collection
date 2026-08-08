@@ -6,7 +6,7 @@
 
 == Overview ==
 
-Usd Stitch Export wraps a USD ROP and a USD Stitch Clips ROP into a single SOP, running in two steps. __Save to Disk__ writes the incoming SOP geometry to one USD file per frame. __Render__ then stitches the per-frame files into a USD value clip set, so the whole sequence can be referenced as a single animated asset.
+Usd Stitch Export wraps a USD ROP and a Python-based value clip stitcher into a single SOP, running in two steps. __Save to Disk__ writes the incoming SOP geometry to one USD file per frame. __Stitch Value Clip__ then stitches the per-frame files into a USD value clip set, so the whole sequence can be referenced as a single animated asset.
 
 @parameters
 
@@ -62,9 +62,13 @@ Time Codes per Second:
     #id: tcps
     Time codes per second written into the value clip. Default: `$FPS`.
 
-Render:
+Stitch Value Clip:
     #id: execute2
-    Stitches the exported sequence into a USD value clip. Reports an error if any frame in the range is missing or cannot be opened.
+    Stitches the exported sequence into a USD value clip. Validates the whole frame range first and reports every missing or unreadable frame at once, without writing any output. Also rejects a frame Inc other than 1, and an Import Path Prefix that does not exist in the exported files.
+
+Relative Asset Paths:
+    #id: relativeassetpaths
+    Writes the per-frame clip asset paths relative to the stitched file instead of as absolute paths. Off by default, matching the previous behaviour. Relative paths only work when the sequence and the stitched file are on the same drive.
 
 USD Sequence Path:
     #id: usd_seq_path

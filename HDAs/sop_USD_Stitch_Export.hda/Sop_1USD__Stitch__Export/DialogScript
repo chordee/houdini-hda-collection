@@ -19,7 +19,6 @@
         label   "Load from Disk         "
         type    toggle
         default { "0" }
-        range   { 0 1 }
     }
     parm {
         name    "labelparm4"
@@ -55,14 +54,14 @@
         name    "fileperframe"
         label   "Flush Data After Each Frame"
         type    toggle
-        default { "on" }
+        default { [ "on" hscript-expr ] }
         parmtag { "autoscope" "0000000000000000" }
     }
     parm {
         name    "trackprimexistence"
         label   "Track Primitive Existence to Set Visibility"
         type    toggle
-        default { "off" }
+        default { [ "off" hscript-expr ] }
         parmtag { "autoscope" "0000000000000000" }
         parmtag { "script_callback_language" "python" }
     }
@@ -150,12 +149,18 @@
         parmtag { "script_callback_language" "python" }
     }
     parm {
+        name    "relativeassetpaths"
+        label   "Relative Asset Paths"
+        type    toggle
+        default { "0" }
+    }
+    parm {
         name    "execute2"
-        label   "Render"
+        label   "Stitch Value Clip"
         type    button
         default { "0" }
         parmtag { "autoscope" "0000000000000000" }
-        parmtag { "script_callback" "hou.pwd().hdaModule().check_err()" }
+        parmtag { "script_callback" "hou.pwd().hdaModule().stitch_clips()" }
         parmtag { "script_callback_language" "python" }
         parmtag { "takecontrol" "always" }
     }
@@ -179,7 +184,7 @@
         name    "usd_stitch_path"
         label   "USD Stitch Path"
         type    file
-        default { [ "{\n    return chs('ropnet1/usdstitchclips1/outtemplatefile1');\n}" hscript-expr ] }
+        default { [ "node = hou.pwd()\nname = node.evalParm(\"basename\")\nversion = node.evalParm(\"clip_version\")\nreturn \"%s/%s/v%d/%s_v%d.usd\" % (\n    node.evalParm(\"basedir\"), name, version, name, version)" python ] }
         parmtag { "filechooser_mode" "read" }
         parmtag { "script_callback_language" "python" }
     }

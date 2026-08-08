@@ -1,12 +1,246 @@
-def check_err():
-    check_node = hou.pwd().node('ropnet1').node('usdstitchclips1')
+"""USD value clip stitching for the Usd Stitch Export SOP."""
+
+import os
+
+import hou
+from pxr import Ar, Sdf, UsdUtils
+
+CLIP_SET = 'default'
+
+
+def _prim_path(clip_path):
+    """Normalise a user-supplied clip path to an absolute prim path.
+
+    Returns an empty path when the input is invalid.
+    """
     try:
-        check_node.render(verbose=False)
-    except hou.Error:
-        pass
-    errors = check_node.errors()
-    warnings = check_node.warnings()
-    if warnings:
-        print('\n'.join(warnings))
-    if errors:
-        raise hou.NodeError('\n'.join(errors))
+        path = Sdf.Path(clip_path)
+    except Exception:
+        return Sdf.Path()
+    if path.isEmpty:
+        return Sdf.Path()
+    return path.GetPrimPath().MakeAbsolutePath(Sdf.Path('/'))
+
+
+def _format_frames(frames):
+    """Collapse a sorted frame list into a compact range string.
+
+    [1, 2, 3, 7, 9, 10] becomes "1-3, 7, 9-10".
+    """
+    groups = []
+    start = previous = frames[0]
+    for frame in frames[1:]:
+        if frame == previous + 1:
+            previous = frame
+            continue
+        groups.append((start, previous))
+        start = previous = frame
+    groups.append((start, previous))
+    return ', '.join(str(a) if a == b else '%d-%d' % (a, b) for a, b in groups)
+
+
+def validate(frame_paths, clip_path, inc):
+    """Return a list of problems; an empty list means stitching can proceed."""
+    if inc != 1:
+        return ['Start/End/Inc: Inc must be 1 (currently %g). A non-1 Inc makes '
+                'the file list inconsistent with the clip time range, producing '
+                'a value clip with gaps in its time mapping.' % inc]
+
+    prim_path = _prim_path(clip_path)
+    if prim_path.isEmpty:
+        return ['Import Path Prefix is not a valid prim path: %r' % clip_path]
+
+    if len(frame_paths) > 1 and len(set(p for _, p in frame_paths)) == 1:
+        return ['USD Sequence Path expands to the same file on every frame. '
+                'The path is probably missing $F: %s' % frame_paths[0][1]]
+
+    missing = []
+    unreadable = []
+    without_prim = []
+    example = {}
+    for frame, path in frame_paths:
+        if not os.path.isfile(path):
+            missing.append(frame)
+            example.setdefault('missing', path)
+            continue
+        layer = Sdf.Layer.FindOrOpen(path)
+        if not layer:
+            unreadable.append(frame)
+            example.setdefault('unreadable', path)
+            continue
+        if not layer.GetPrimAtPath(prim_path):
+            without_prim.append(frame)
+            example.setdefault('without_prim', path)
+
+    problems = []
+    if missing:
+        problems.append('Frames %s: file not found. First one: %s'
+                        % (_format_frames(missing), example['missing']))
+    if unreadable:
+        problems.append('Frames %s: cannot be opened as a USD layer. '
+                        'First one: %s'
+                        % (_format_frames(unreadable), example['unreadable']))
+    if without_prim:
+        problems.append('Frames %s: do not contain prim %s. First one: %s'
+                        % (_format_frames(without_prim), prim_path,
+                           example['without_prim']))
+    return problems
+
+
+def _temp_path(path):
+    directory, name = os.path.split(path)
+    return os.path.join(directory, '__tmp__' + name).replace('\\', '/')
+
+
+def _remove_files(paths):
+    for path in paths:
+        if os.path.isfile(path):
+            os.remove(path)
+
+
+def _move(temp_path, out_path):
+    try:
+        if os.path.isfile(out_path):
+            os.remove(out_path)
+        os.rename(temp_path, out_path)
+    except OSError as exc:
+        raise hou.NodeError(
+            'Cannot write %s: %s\nThe file is most likely held open by another '
+            'process. Close whatever has it open and try again. The existing '
+            'file has been left untouched.' % (out_path, exc))
+    hou.lop.reloadLayer(out_path)
+
+
+def _reanchor_topology(first_in_file, temp_topology, out_topology):
+    """Re-anchor relative references inside the topology layer.
+
+    Only needed when the output directory differs from the source sequence.
+    """
+    if os.path.dirname(first_in_file) == os.path.dirname(out_topology):
+        return
+
+    in_layer = Sdf.Layer.FindOrOpen(first_in_file)
+
+    def update(asset_path):
+        full = Ar.GetResolver().CreateIdentifier(asset_path, in_layer.resolvedPath)
+        orig = Ar.GetResolver().CreateIdentifier(asset_path)
+        if full and full != orig:
+            return hou.text.relpath(full, out_topology)
+        return asset_path
+
+    layer = Sdf.Layer.FindOrOpen(temp_topology)
+    UsdUtils.ModifyAssetPaths(layer, update)
+    layer.Save()
+
+
+def _rename_temp_refs(edit_path, temp_paths, out_paths):
+    """Point references at the final file names instead of the __tmp__ ones."""
+    temp_names = [os.path.basename(p) for p in temp_paths]
+    out_names = [os.path.basename(p) for p in out_paths]
+
+    def rename(asset_path):
+        for temp_name, out_name in zip(temp_names, out_names):
+            if asset_path.endswith(temp_name):
+                return asset_path.replace(temp_name, out_name)
+        return asset_path
+
+    layer = Sdf.Layer.FindOrOpen(edit_path)
+    UsdUtils.ModifyAssetPaths(layer, rename)
+    layer.Save()
+
+
+def _relativize_asset_paths(edit_path, anchor_path):
+    """Relativise absolute paths only.
+
+    The `./` side-car references must be left untouched.
+    """
+    def relativize(asset_path):
+        if not os.path.isabs(asset_path):
+            return asset_path
+        return hou.text.relpath(asset_path, anchor_path)
+
+    layer = Sdf.Layer.FindOrOpen(edit_path)
+    UsdUtils.ModifyAssetPaths(layer, relativize)
+    layer.Save()
+
+
+def stitch(frame_paths, out_path, clip_path, start_frame, end_frame, tcps,
+           relative_asset_paths=False):
+    """Stitch the per-frame USD files into a value clip.
+
+    Returns the final output path.
+    """
+    out_path = hou.text.abspath(out_path)
+    out_path, args = Sdf.Layer.SplitIdentifier(out_path)
+    prim_path = _prim_path(clip_path)
+    in_files = [path for _, path in frame_paths]
+
+    temp_path = _temp_path(out_path)
+    temps = (temp_path,
+             UsdUtils.GenerateClipTopologyName(temp_path),
+             UsdUtils.GenerateClipManifestName(temp_path))
+    outs = (out_path,
+            UsdUtils.GenerateClipTopologyName(out_path),
+            UsdUtils.GenerateClipManifestName(out_path))
+
+    directory = os.path.dirname(out_path)
+    if directory and not os.path.isdir(directory):
+        os.makedirs(directory)
+
+    _remove_files(temps)
+    temp_layer = Sdf.Layer.CreateNew(temp_path, args)
+    if not temp_layer:
+        raise hou.NodeError('Cannot create output file: ' + temp_path)
+
+    try:
+        UsdUtils.StitchClips(resultLayer=temp_layer,
+                             clipLayerFiles=in_files,
+                             clipPath=prim_path,
+                             startFrame=start_frame,
+                             endFrame=end_frame,
+                             clipSet=CLIP_SET)
+        if tcps:
+            temp_layer.timeCodesPerSecond = tcps
+            temp_layer.framesPerSecond = tcps
+            temp_layer.Save()
+        del temp_layer
+
+        _reanchor_topology(in_files[0], temps[1], outs[1])
+        _rename_temp_refs(temp_path, temps, outs)
+        if relative_asset_paths:
+            _relativize_asset_paths(temp_path, out_path)
+        for temp, dest in zip(temps, outs):
+            _move(temp, dest)
+    except Exception:
+        _remove_files(temps)
+        raise
+
+    return out_path
+
+
+def resolve_frames(node):
+    """Expand the per-frame input paths over the node's frame range."""
+    start = int(node.evalParm('f1'))
+    end = int(node.evalParm('f2'))
+    parm = node.parm('usd_seq_path')
+    return [(frame, parm.evalAtFrame(frame)) for frame in range(start, end + 1)]
+
+
+def stitch_clips():
+    """Entry point for the Stitch Value Clip button."""
+    node = hou.pwd()
+    clip_path = node.evalParm('pathprefix')
+
+    frame_paths = resolve_frames(node)
+    problems = validate(frame_paths, clip_path, node.evalParm('f3'))
+    if problems:
+        raise hou.NodeError('\n'.join(problems))
+
+    out_path = stitch(frame_paths,
+                      node.evalParm('usd_stitch_path'),
+                      clip_path,
+                      node.evalParm('f1'),
+                      node.evalParm('f2'),
+                      node.evalParm('tcps'),
+                      bool(node.evalParm('relativeassetpaths')))
+    print('Stitched value clip: ' + out_path)

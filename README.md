@@ -92,7 +92,7 @@ Smooths polyline curves.
 
 ### sop_USD_Stitch_Export (SOP: Usd Stitch Export)
 
-Exports the incoming SOP geometry to a per-frame USD sequence and stitches it into a USD value clip, so a geometry cache can be referenced as a single animated asset. Save to Disk writes the per-frame files; Render then stitches them.
+Exports the incoming SOP geometry to a per-frame USD sequence and stitches it into a USD value clip, so a geometry cache can be referenced as a single animated asset. Save to Disk writes the per-frame files; Stitch Value Clip then stitches them.
 
 * Load from Disk: Read geometry back from the exported sequence instead of cooking the input.
 * Import Path Prefix: USD scope the geometry is imported under.
@@ -100,7 +100,8 @@ Exports the incoming SOP geometry to a per-frame USD sequence and stitches it in
 * Files Frame Start/End/Inc: Frame range to export.
 * Save to Disk: Write the per-frame USD sequence.
 * Sync Version / Clip Version: Clip version, optionally independent of the export version.
-* Render: Stitch the sequence into a value clip (reports missing or unopenable frames).
+* Stitch Value Clip: Stitch the sequence into a value clip (validates the whole range first and lists every missing or unreadable frame).
+* Relative Asset Paths: Write clip asset paths relative to the stitched file instead of absolute.
 
 ### thunder_builder (SOP: Thunder Builder)
 
