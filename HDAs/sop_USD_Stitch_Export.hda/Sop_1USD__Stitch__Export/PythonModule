@@ -1,12 +1,203 @@
-def check_err():
-    check_node = hou.pwd().node('ropnet1').node('usdstitchclips1')
+"""Usd Stitch Export SOP 的 USD value clip stitch 實作。"""
+
+import os
+
+import hou
+from pxr import Ar, Sdf, UsdUtils
+
+MAX_REPORTED_PROBLEMS = 20
+CLIP_SET = 'default'
+
+
+def _prim_path(clip_path):
+    """把使用者輸入的 clip path 正規化為絕對 prim path，無效時回傳空 path。"""
     try:
-        check_node.render(verbose=False)
-    except hou.Error:
-        pass
-    errors = check_node.errors()
-    warnings = check_node.warnings()
-    if warnings:
-        print('\n'.join(warnings))
-    if errors:
-        raise hou.NodeError('\n'.join(errors))
+        path = Sdf.Path(clip_path)
+    except Exception:
+        return Sdf.Path()
+    if path.isEmpty:
+        return Sdf.Path()
+    return path.GetPrimPath().MakeAbsolutePath(Sdf.Path('/'))
+
+
+def validate(frame_paths, clip_path, inc):
+    """回傳問題訊息清單；空清單代表可以進行 stitch。"""
+    if inc != 1:
+        return ['Start/End/Inc 的 Inc 必須為 1（目前為 %g）。'
+                '非 1 的 Inc 會讓檔案清單與 clip 時間範圍不一致，'
+                '產生時間映射有洞的 value clip。' % inc]
+
+    prim_path = _prim_path(clip_path)
+    if prim_path.isEmpty:
+        return ['Import Path Prefix 不是有效的 prim 路徑：%r' % clip_path]
+
+    if len(frame_paths) > 1 and len(set(p for _, p in frame_paths)) == 1:
+        return ['USD Sequence Path 展開後每幀都指向同一個檔案，'
+                '路徑可能缺少 $F：%s' % frame_paths[0][1]]
+
+    problems = []
+    for frame, path in frame_paths:
+        if not os.path.isfile(path):
+            problems.append('第 %d 幀檔案不存在：%s' % (frame, path))
+            continue
+        layer = Sdf.Layer.FindOrOpen(path)
+        if not layer:
+            problems.append('第 %d 幀無法開啟為 USD layer：%s' % (frame, path))
+            continue
+        if not layer.GetPrimAtPath(prim_path):
+            problems.append('第 %d 幀不含 prim %s：%s' % (frame, prim_path, path))
+    return problems
+
+
+def format_problems(problems):
+    """把問題清單組成單一訊息，超過上限時截斷。"""
+    shown = problems[:MAX_REPORTED_PROBLEMS]
+    text = '\n'.join(shown)
+    remaining = len(problems) - len(shown)
+    if remaining > 0:
+        text += '\n…另有 %d 個問題未列出。' % remaining
+    return text
+
+
+def _temp_path(path):
+    directory, name = os.path.split(path)
+    return os.path.join(directory, '__tmp__' + name).replace('\\', '/')
+
+
+def _remove_files(paths):
+    for path in paths:
+        if os.path.isfile(path):
+            os.remove(path)
+
+
+def _move(temp_path, out_path):
+    if os.path.isfile(out_path):
+        os.remove(out_path)
+    os.rename(temp_path, out_path)
+    hou.lop.reloadLayer(out_path)
+
+
+def _reanchor_topology(first_in_file, temp_topology, out_topology):
+    """輸出目錄與來源序列不同層時，重算 topology layer 內的相對 reference。"""
+    if os.path.dirname(first_in_file) == os.path.dirname(out_topology):
+        return
+
+    in_layer = Sdf.Layer.FindOrOpen(first_in_file)
+
+    def update(asset_path):
+        full = Ar.GetResolver().CreateIdentifier(asset_path, in_layer.resolvedPath)
+        orig = Ar.GetResolver().CreateIdentifier(asset_path)
+        if full and full != orig:
+            return hou.text.relpath(full, out_topology)
+        return asset_path
+
+    layer = Sdf.Layer.FindOrOpen(temp_topology)
+    UsdUtils.ModifyAssetPaths(layer, update)
+    layer.Save()
+
+
+def _rename_temp_refs(edit_path, temp_paths, out_paths):
+    """把 layer 內指向 __tmp__ 檔的參照改回正式檔名。"""
+    temp_names = [os.path.basename(p) for p in temp_paths]
+    out_names = [os.path.basename(p) for p in out_paths]
+
+    def rename(asset_path):
+        for temp_name, out_name in zip(temp_names, out_names):
+            if asset_path.endswith(temp_name):
+                return asset_path.replace(temp_name, out_name)
+        return asset_path
+
+    layer = Sdf.Layer.FindOrOpen(edit_path)
+    UsdUtils.ModifyAssetPaths(layer, rename)
+    layer.Save()
+
+
+def _relativize_asset_paths(edit_path, anchor_path):
+    """只相對化絕對路徑；`./` 開頭的 side-car 參照必須原封不動。"""
+    def relativize(asset_path):
+        if not os.path.isabs(asset_path):
+            return asset_path
+        return hou.text.relpath(asset_path, anchor_path)
+
+    layer = Sdf.Layer.FindOrOpen(edit_path)
+    UsdUtils.ModifyAssetPaths(layer, relativize)
+    layer.Save()
+
+
+def stitch(frame_paths, out_path, clip_path, start_frame, end_frame, tcps,
+           relative_asset_paths=False):
+    """把每幀 USD stitch 成 value clip，回傳最終輸出路徑。"""
+    out_path = hou.text.abspath(out_path)
+    out_path, args = Sdf.Layer.SplitIdentifier(out_path)
+    prim_path = _prim_path(clip_path)
+    in_files = [path for _, path in frame_paths]
+
+    temp_path = _temp_path(out_path)
+    temps = (temp_path,
+             UsdUtils.GenerateClipTopologyName(temp_path),
+             UsdUtils.GenerateClipManifestName(temp_path))
+    outs = (out_path,
+            UsdUtils.GenerateClipTopologyName(out_path),
+            UsdUtils.GenerateClipManifestName(out_path))
+
+    directory = os.path.dirname(out_path)
+    if directory and not os.path.isdir(directory):
+        os.makedirs(directory)
+
+    _remove_files(temps)
+    temp_layer = Sdf.Layer.CreateNew(temp_path, args)
+    if not temp_layer:
+        raise hou.NodeError('無法建立輸出檔：' + temp_path)
+
+    try:
+        UsdUtils.StitchClips(resultLayer=temp_layer,
+                             clipLayerFiles=in_files,
+                             clipPath=prim_path,
+                             startFrame=start_frame,
+                             endFrame=end_frame,
+                             clipSet=CLIP_SET)
+        if tcps:
+            temp_layer.timeCodesPerSecond = tcps
+            temp_layer.framesPerSecond = tcps
+            temp_layer.Save()
+        del temp_layer
+
+        _reanchor_topology(in_files[0], temps[1], outs[1])
+        _rename_temp_refs(temp_path, temps, outs)
+        if relative_asset_paths:
+            _relativize_asset_paths(temp_path, out_path)
+        for temp, dest in zip(temps, outs):
+            _move(temp, dest)
+    except Exception:
+        _remove_files(temps)
+        raise
+
+    return out_path
+
+
+def resolve_frames(node):
+    """依節點的 frame range 展開每幀輸入路徑。"""
+    start = int(node.evalParm('f1'))
+    end = int(node.evalParm('f2'))
+    parm = node.parm('usd_seq_path')
+    return [(frame, parm.evalAtFrame(frame)) for frame in range(start, end + 1)]
+
+
+def stitch_clips():
+    """Stitch Value Clip 按鈕進入點。"""
+    node = hou.pwd()
+    clip_path = node.evalParm('pathprefix')
+
+    frame_paths = resolve_frames(node)
+    problems = validate(frame_paths, clip_path, node.evalParm('f3'))
+    if problems:
+        raise hou.NodeError(format_problems(problems))
+
+    out_path = stitch(frame_paths,
+                      node.evalParm('usd_stitch_path'),
+                      clip_path,
+                      node.evalParm('f1'),
+                      node.evalParm('f2'),
+                      node.evalParm('tcps'),
+                      bool(node.evalParm('relativeassetpaths')))
+    print('Stitched value clip: ' + out_path)
