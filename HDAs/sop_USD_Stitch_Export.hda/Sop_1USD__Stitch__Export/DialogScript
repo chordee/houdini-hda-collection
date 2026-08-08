@@ -184,7 +184,7 @@
         name    "usd_stitch_path"
         label   "USD Stitch Path"
         type    file
-        default { "`chs(\"basedir\")`/`chs(\"basename\")`/v`chs(\"clip_version\")`/`chs(\"basename\")`_v`chs(\"clip_version\")`.usd" }
+        default { [ "node = hou.pwd()\nname = node.evalParm(\"basename\")\nversion = node.evalParm(\"clip_version\")\nreturn \"%s/%s/v%d/%s_v%d.usd\" % (\n    node.evalParm(\"basedir\"), name, version, name, version)" python ] }
         parmtag { "filechooser_mode" "read" }
         parmtag { "script_callback_language" "python" }
     }
