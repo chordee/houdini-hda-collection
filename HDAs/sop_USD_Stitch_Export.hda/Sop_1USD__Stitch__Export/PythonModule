@@ -23,29 +23,31 @@ def _prim_path(clip_path):
 def validate(frame_paths, clip_path, inc):
     """回傳問題訊息清單；空清單代表可以進行 stitch。"""
     if inc != 1:
-        return ['Start/End/Inc 的 Inc 必須為 1（目前為 %g）。'
-                '非 1 的 Inc 會讓檔案清單與 clip 時間範圍不一致，'
-                '產生時間映射有洞的 value clip。' % inc]
+        return ['Start/End/Inc: Inc must be 1 (currently %g). A non-1 Inc makes '
+                'the file list inconsistent with the clip time range, producing '
+                'a value clip with gaps in its time mapping.' % inc]
 
     prim_path = _prim_path(clip_path)
     if prim_path.isEmpty:
-        return ['Import Path Prefix 不是有效的 prim 路徑：%r' % clip_path]
+        return ['Import Path Prefix is not a valid prim path: %r' % clip_path]
 
     if len(frame_paths) > 1 and len(set(p for _, p in frame_paths)) == 1:
-        return ['USD Sequence Path 展開後每幀都指向同一個檔案，'
-                '路徑可能缺少 $F：%s' % frame_paths[0][1]]
+        return ['USD Sequence Path expands to the same file on every frame. '
+                'The path is probably missing $F: %s' % frame_paths[0][1]]
 
     problems = []
     for frame, path in frame_paths:
         if not os.path.isfile(path):
-            problems.append('第 %d 幀檔案不存在：%s' % (frame, path))
+            problems.append('Frame %d: file not found: %s' % (frame, path))
             continue
         layer = Sdf.Layer.FindOrOpen(path)
         if not layer:
-            problems.append('第 %d 幀無法開啟為 USD layer：%s' % (frame, path))
+            problems.append('Frame %d: cannot be opened as a USD layer: %s'
+                            % (frame, path))
             continue
         if not layer.GetPrimAtPath(prim_path):
-            problems.append('第 %d 幀不含 prim %s：%s' % (frame, prim_path, path))
+            problems.append('Frame %d: does not contain prim %s: %s'
+                            % (frame, prim_path, path))
     return problems
 
 
@@ -55,7 +57,7 @@ def format_problems(problems):
     text = '\n'.join(shown)
     remaining = len(problems) - len(shown)
     if remaining > 0:
-        text += '\n…另有 %d 個問題未列出。' % remaining
+        text += '\n... and %d more problem(s) not listed.' % remaining
     return text
 
 
@@ -71,9 +73,15 @@ def _remove_files(paths):
 
 
 def _move(temp_path, out_path):
-    if os.path.isfile(out_path):
-        os.remove(out_path)
-    os.rename(temp_path, out_path)
+    try:
+        if os.path.isfile(out_path):
+            os.remove(out_path)
+        os.rename(temp_path, out_path)
+    except OSError as exc:
+        raise hou.NodeError(
+            'Cannot write %s: %s\nThe file is most likely held open by another '
+            'process. Close whatever has it open and try again. The existing '
+            'file has been left untouched.' % (out_path, exc))
     hou.lop.reloadLayer(out_path)
 
 
@@ -147,7 +155,7 @@ def stitch(frame_paths, out_path, clip_path, start_frame, end_frame, tcps,
     _remove_files(temps)
     temp_layer = Sdf.Layer.CreateNew(temp_path, args)
     if not temp_layer:
-        raise hou.NodeError('無法建立輸出檔：' + temp_path)
+        raise hou.NodeError('Cannot create output file: ' + temp_path)
 
     try:
         UsdUtils.StitchClips(resultLayer=temp_layer,
