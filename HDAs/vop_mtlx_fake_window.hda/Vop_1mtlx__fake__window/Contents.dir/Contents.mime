@@ -3816,12 +3816,12 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	side_u_positive 1 1 "in1"
+0 	side_u_final 4 1 "in1"
 1 	side_v 2 1 "in2"
 }
 inputs
 {
-0 	side_u_positive 0 1
+0 	side_u_final 0 1
 1 	side_v 0 1
 }
 stat
@@ -3853,6 +3853,211 @@ in2_vector4VV	[ 0	locks=0 ]	(	0	0	)
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/side_wall_uv.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_mirrored.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_mirrored.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "in1"
+1 	side_u_positive 1 1 "in2"
+}
+inputs
+{
+0 	"" 0 1
+1 	side_u_positive 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_mirrored.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	1	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_mirrored.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_final.init"
+Content-Type: text/plain
+
+type = mtlxifgreater
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_final.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0
+connectornextid 5
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+4 "out"
+}
+inputsNamed3
+{
+0 	ray_x_component 2 1 "value1"
+1 	"" "" 1 "value2"
+2 	side_u_mirrored 2 1 "in1"
+3 	side_u_positive 1 1 "in2"
+}
+inputs
+{
+0 	ray_x_component 0 1
+1 	"" 0 1
+2 	side_u_mirrored 0 1
+3 	side_u_positive 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_final.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value1	[ 0	locks=0 ]	(	1	)
+value1_color3I	[ 0	locks=0 ]	(	1	)
+value1_color4I	[ 0	locks=0 ]	(	1	)
+value1_floatI	[ 0	locks=0 ]	(	1	)
+value1_integerI	[ 0	locks=0 ]	(	1	)
+value1_matrix33I	[ 0	locks=0 ]	(	1	)
+value1_matrix44I	[ 0	locks=0 ]	(	1	)
+value1_vector2I	[ 0	locks=0 ]	(	1	)
+value1_vector3I	[ 0	locks=0 ]	(	1	)
+value1_vector4I	[ 0	locks=0 ]	(	1	)
+value2	[ 0	locks=0 ]	(	0	)
+value2_color3I	[ 0	locks=0 ]	(	0	)
+value2_color4I	[ 0	locks=0 ]	(	0	)
+value2_floatI	[ 0	locks=0 ]	(	0	)
+value2_integerI	[ 0	locks=0 ]	(	0	)
+value2_matrix33I	[ 0	locks=0 ]	(	0	)
+value2_matrix44I	[ 0	locks=0 ]	(	0	)
+value2_vector2I	[ 0	locks=0 ]	(	0	)
+value2_vector3I	[ 0	locks=0 ]	(	0	)
+value2_vector4I	[ 0	locks=0 ]	(	0	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_integerI	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2I	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_integerI	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector2I	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/side_u_final.userdata"
 Content-Type: text/plain
 
 {
@@ -4794,12 +4999,12 @@ outputsNamed3
 inputsNamed3
 {
 0 	vert_u 2 1 "in1"
-1 	vert_v_positive 1 1 "in2"
+1 	vert_v_final 4 1 "in2"
 }
 inputs
 {
 0 	vert_u 0 1
-1 	vert_v_positive 0 1
+1 	vert_v_final 0 1
 }
 stat
 {
@@ -4830,6 +5035,211 @@ in2_vector4VV	[ 0	locks=0 ]	(	0	0	)
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/vert_wall_uv.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_mirrored.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_mirrored.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "in1"
+1 	vert_v_positive 1 1 "in2"
+}
+inputs
+{
+0 	"" 0 1
+1 	vert_v_positive 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_mirrored.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	1	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_mirrored.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_final.init"
+Content-Type: text/plain
+
+type = mtlxifgreater
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_final.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0
+connectornextid 5
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+4 "out"
+}
+inputsNamed3
+{
+0 	ray_y_component 2 1 "value1"
+1 	"" "" 1 "value2"
+2 	vert_v_mirrored 2 1 "in1"
+3 	vert_v_positive 1 1 "in2"
+}
+inputs
+{
+0 	ray_y_component 0 1
+1 	"" 0 1
+2 	vert_v_mirrored 0 1
+3 	vert_v_positive 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_final.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value1	[ 0	locks=0 ]	(	1	)
+value1_color3I	[ 0	locks=0 ]	(	1	)
+value1_color4I	[ 0	locks=0 ]	(	1	)
+value1_floatI	[ 0	locks=0 ]	(	1	)
+value1_integerI	[ 0	locks=0 ]	(	1	)
+value1_matrix33I	[ 0	locks=0 ]	(	1	)
+value1_matrix44I	[ 0	locks=0 ]	(	1	)
+value1_vector2I	[ 0	locks=0 ]	(	1	)
+value1_vector3I	[ 0	locks=0 ]	(	1	)
+value1_vector4I	[ 0	locks=0 ]	(	1	)
+value2	[ 0	locks=0 ]	(	0	)
+value2_color3I	[ 0	locks=0 ]	(	0	)
+value2_color4I	[ 0	locks=0 ]	(	0	)
+value2_floatI	[ 0	locks=0 ]	(	0	)
+value2_integerI	[ 0	locks=0 ]	(	0	)
+value2_matrix33I	[ 0	locks=0 ]	(	0	)
+value2_matrix44I	[ 0	locks=0 ]	(	0	)
+value2_vector2I	[ 0	locks=0 ]	(	0	)
+value2_vector3I	[ 0	locks=0 ]	(	0	)
+value2_vector4I	[ 0	locks=0 ]	(	0	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_integerI	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in1_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2I	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color3I	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_color4I	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_integerI	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix33I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_matrix44I	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector2I	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector3I	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_vector4I	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vert_v_final.userdata"
 Content-Type: text/plain
 
 {
@@ -6194,7 +6604,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-68
+72
 suboutput1
 subinput1
 view_dir
@@ -6240,6 +6650,8 @@ side_u_positive
 side_step_y
 side_v
 side_wall_uv
+side_u_mirrored
+side_u_final
 ray_y_component
 uv_centred_y
 vert_target_y
@@ -6252,6 +6664,8 @@ vert_depth
 vert_v
 vert_v_positive
 vert_wall_uv
+vert_v_mirrored
+vert_v_final
 back_v_over
 back_v_under
 vert_id
