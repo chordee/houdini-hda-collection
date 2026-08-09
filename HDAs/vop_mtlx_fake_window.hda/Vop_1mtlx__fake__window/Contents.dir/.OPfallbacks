@@ -1,3 +1,5 @@
+Vop/mtlxabsval D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
+Vop/mtlxabsval otls/MaterialX.hda
 Vop/mtlxadd D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxadd otls/MaterialX.hda
 Vop/mtlxbitangent D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
@@ -14,12 +16,18 @@ Vop/mtlxdotproduct D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/ot
 Vop/mtlxdotproduct otls/MaterialX.hda
 Vop/mtlxextract D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxextract otls/MaterialX.hda
+Vop/mtlxifgreater D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
+Vop/mtlxifgreater otls/MaterialX.hda
 Vop/mtlximage D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlximage otls/MaterialX.hda
 Vop/mtlxmultiply D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxmultiply otls/MaterialX.hda
 Vop/mtlxnormal D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxnormal otls/MaterialX.hda
+Vop/mtlxsubtract D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
+Vop/mtlxsubtract otls/MaterialX.hda
+Vop/mtlxswitch D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
+Vop/mtlxswitch otls/MaterialX.hda
 Vop/mtlxtangent D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxtangent otls/MaterialX.hda
 Vop/mtlxtexcoord D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
