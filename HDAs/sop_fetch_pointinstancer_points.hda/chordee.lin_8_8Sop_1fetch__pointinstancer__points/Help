@@ -16,4 +16,7 @@ LOP Path:
 
 Primitive:
     #id: primitive
-    USD path to the PointInstancer primitive to fetch.
+    USD path to the PointInstancer primitive to fetch. The pattern must resolve
+    to a single PointInstancer: the output carries one global prototype list and
+    one transform, which cannot describe several instancers at once. Matching
+    more than one is reported as an error.

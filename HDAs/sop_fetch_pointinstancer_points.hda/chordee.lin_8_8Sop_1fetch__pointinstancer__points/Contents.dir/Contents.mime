@@ -133,7 +133,16 @@ indices_list: List[np.ndarray] = []
 
 # Select USD prims based on rule
 selection = hou.LopSelectionRule(prim_rule)
-paths = selection.expandedPaths(stage=stage)
+paths = [p for p in selection.expandedPaths(stage=stage)
+         if UsdGeom.PointInstancer(stage.GetPrimAtPath(p))]
+
+# Everything below merges into one point set sharing a single global
+# prototype list and transform, which only holds for a single instancer.
+if len(paths) > 1:
+    raise hou.NodeError(
+        'Primitive matches %d PointInstancers (%s). This node handles one '
+        'PointInstancer at a time - narrow the Primitive pattern.'
+        % (len(paths), ', '.join(str(p) for p in paths)))
 
 for path in paths:
     prim = stage.GetPrimAtPath(path)

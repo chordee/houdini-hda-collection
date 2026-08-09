@@ -81,7 +81,7 @@ Non-existent files appear in red and are added to the `non_exist` point group. P
 Fetches point data from a USD PointInstancer primitive into SOP geometry.
 
 * LOP Path: Path to the LOP node containing the stage.
-* Primitives: USD PointInstancer primitive to fetch.
+* Primitives: USD PointInstancer primitive to fetch. Must resolve to a single instancer.
 
 ### sop_smooth_polyline (SOP: Smooth Polyline)
 
