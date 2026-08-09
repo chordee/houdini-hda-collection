@@ -12,7 +12,10 @@ Fetch PointInstancer Points reads the instance positions, orientations, scales, 
 
 LOP Path:
     #id: lop_path
-    Path to the LOP node whose stage contains the PointInstancer primitive.
+    Path to the LOP node whose stage contains the PointInstancer primitive. A
+    path that does not resolve to a LOP node is reported as an error. Leaving
+    the parameter empty is treated as "not configured yet" and cooks to no
+    points.
 
 Primitive:
     #id: primitive
