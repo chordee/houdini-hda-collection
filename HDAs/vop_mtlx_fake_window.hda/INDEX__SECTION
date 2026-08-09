@@ -1,0 +1,14 @@
+Operator:     mtlx_fake_window
+Label:        MaterialX Fake Window
+Path:         oplib:/Vop/mtlx_fake_window?Vop/mtlx_fake_window
+Icon:         VOP_mtlx_fake_window
+Table:        Vop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Aug  9 21:43:00 2026
+
