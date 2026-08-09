@@ -177,7 +177,7 @@ if positions_list:
     scales = np.concatenate(scales_list, axis=0)
     orients = np.concatenate(orients_list, axis=0)
     indices = np.concatenate(indices_list, axis=0)
-    invisible = np.zeros(np.shape(positions_list)[1], dtype=int)
+    invisible = np.zeros(np.shape(positions_list)[1], dtype=np.int32)
     invisible[invisibleIds] = 1
 
     # Create points and assign attributes
