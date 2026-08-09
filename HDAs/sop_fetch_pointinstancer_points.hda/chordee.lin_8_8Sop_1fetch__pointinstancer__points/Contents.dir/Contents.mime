@@ -108,8 +108,21 @@ import hou
 parent = hou.pwd().parent()
 lop_path = parent.parm('lop_path').eval()
 prim_rule = parent.parm('primitive').eval()
-lop = hou.node(lop_path)
-stage = lop.stage(0)
+# An unset LOP Path means the node is not configured yet, so stay quiet;
+# a path that was filled in but does not resolve to a LOP is a mistake worth
+# reporting, since hou.node() otherwise returns None and the failure surfaces
+# as a bare AttributeError.
+lop = hou.node(lop_path) if lop_path.strip() else None
+if lop_path.strip():
+    if lop is None:
+        raise hou.NodeError(
+            'LOP Path does not point at an existing node: %s' % lop_path)
+    if lop.type().category().name() != 'Lop':
+        raise hou.NodeError(
+            'LOP Path must point at a LOP node, but %s is a %s node.'
+            % (lop.path(), lop.type().category().name()))
+
+stage = lop.stage(0) if lop is not None else None
 geo = hou.pwd().geometry()
 
 # Get current frame
@@ -132,14 +145,16 @@ orients_list: List[np.ndarray] = []
 indices_list: List[np.ndarray] = []
 
 # Select USD prims based on rule
-selection = hou.LopSelectionRule(prim_rule)
-paths = [p for p in selection.expandedPaths(stage=stage)
-         if UsdGeom.PointInstancer(stage.GetPrimAtPath(p))]
+paths = []
+if stage is not None:
+    selection = hou.LopSelectionRule(prim_rule)
+    paths = [p for p in selection.expandedPaths(stage=stage)
+             if UsdGeom.PointInstancer(stage.GetPrimAtPath(p))]
 
 # An unset Primitive means the node is not configured yet, so stay quiet;
 # a pattern that was filled in but resolves to nothing is a mistake worth
 # reporting, since it otherwise cooks to empty geometry with no explanation.
-if prim_rule.strip() and not paths:
+if stage is not None and prim_rule.strip() and not paths:
     raise hou.NodeError(
         'Primitive matches no PointInstancer. Set Primitive to the path of a '
         'single PointInstancer.')
