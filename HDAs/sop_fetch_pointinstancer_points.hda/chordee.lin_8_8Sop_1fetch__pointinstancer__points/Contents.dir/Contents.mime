@@ -136,6 +136,14 @@ selection = hou.LopSelectionRule(prim_rule)
 paths = [p for p in selection.expandedPaths(stage=stage)
          if UsdGeom.PointInstancer(stage.GetPrimAtPath(p))]
 
+# An unset Primitive means the node is not configured yet, so stay quiet;
+# a pattern that was filled in but resolves to nothing is a mistake worth
+# reporting, since it otherwise cooks to empty geometry with no explanation.
+if prim_rule.strip() and not paths:
+    raise hou.NodeError(
+        'Primitive matches no PointInstancer. Set Primitive to the path of a '
+        'single PointInstancer.')
+
 # Everything below merges into one point set sharing a single global
 # prototype list and transform, which only holds for a single instancer.
 if len(paths) > 1:
