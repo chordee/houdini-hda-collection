@@ -40,6 +40,20 @@
         parmtag { "sidefx::shader_isparmuniform" "1" }
     }
     parm {
+        name    "top_map"
+        label   "Top Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "bottom_map"
+        label   "Bottom Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
         name    "depth"
         label   "Depth"
         type    float

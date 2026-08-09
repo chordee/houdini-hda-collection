@@ -90,6 +90,13 @@ Smooths polyline curves.
 * Bias: Smoothing bias (0–1).
 * Step: Number of smoothing iterations.
 
+### vop_mtlx_fake_window (VOP: MaterialX Fake Window)
+
+Fakes an interior seen through a window using five directional maps and no geometry, for Solaris and Karma. Rebuild of the older fake_window VOP shader.
+
+* Opposite / Left Side / Right Side / Top / Bottom Map: Textures for the five walls of the virtual room.
+* Depth: How far the room extends behind the surface, in UV units.
+
 ### sop_USD_Stitch_Export (SOP: Usd Stitch Export)
 
 Exports the incoming SOP geometry to a per-frame USD sequence and stitches it into a USD value clip, so a geometry cache can be referenced as a single animated asset. Save to Disk writes the per-frame files; Stitch Value Clip then stitches them.

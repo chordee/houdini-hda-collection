@@ -1,0 +1,49 @@
+= MaterialX Fake Window =
+
+#context: vop
+#type: node
+
+"""Fakes an interior seen through a window, using five directional maps and no geometry."""
+
+== Overview ==
+
+MaterialX Fake Window walks the incident ray into a virtual box behind the
+surface and samples whichever wall the ray reaches, producing the illusion of a
+room behind a window without any interior geometry. It is a rebuild of the
+older fake_window VOP shader for Solaris and Karma.
+
+Place it inside a Material Library or MaterialX Builder and connect its output
+to the base colour or emission of an mtlxstandard_surface. The surface needs
+usable UVs: the room is laid out in UV space, so the effect follows the 0 to 1
+square.
+
+All five maps are sampled on every shade. MaterialX cannot switch a filename,
+so the wall is chosen after sampling rather than before. If this becomes a
+bottleneck, combine the walls into a single atlas.
+
+@parameters
+
+Opposite Map:
+    #id: opposite_map
+    Texture for the back wall, seen when looking straight through the window.
+
+Left Side Map:
+    #id: left_side_map
+    Texture for the left wall. Visible when looking in from the right.
+
+Right Side Map:
+    #id: right_side_map
+    Texture for the right wall. Visible when looking in from the left.
+
+Top Map:
+    #id: top_map
+    Texture for the ceiling. Visible when looking up from below.
+
+Bottom Map:
+    #id: bottom_map
+    Texture for the floor. Visible when looking down from above.
+
+Depth:
+    #id: depth
+    How far the virtual room extends behind the surface, in UV units. Larger
+    values give a deeper room and a stronger parallax shift.
