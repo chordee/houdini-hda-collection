@@ -4,11 +4,11 @@ Path:         oplib:/Vop/mtlx_fake_window?Vop/mtlx_fake_window
 Icon:         VOP_mtlx_fake_window
 Table:        Vop
 License:      
-Extra:        
+Extra:        shadertype=<Not Applicable>
 User:         
 Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Aug 10 01:47:53 2026
+Modified:     Mon Aug 10 02:03:07 2026
 
