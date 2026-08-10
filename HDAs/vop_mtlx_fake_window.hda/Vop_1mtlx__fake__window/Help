@@ -16,6 +16,27 @@ to the base colour or emission of an mtlxstandard_surface. The surface needs
 usable UVs: the room is laid out in UV space, so the effect follows the 0 to 1
 square.
 
+Besides the colour it reports where the ray landed, so the interior can take
+part in shading rather than being a flat image.
+
+@outputs
+
+Color:
+    The wall texture at the point the ray reached.
+
+In Depth:
+    How far below the surface that point sits, from 0 at the window to the
+    value of Depth at the back wall. Useful for fogging or fading the interior
+    with distance.
+
+Out Normal:
+    The normal of the wall that was hit, in world space, ready to drive the
+    normal input of a surface shader.
+
+Wall Id:
+    Which wall was hit: 0 back, 1 left, 2 right, 3 ceiling, 4 floor. Useful for
+    tinting or masking a single surface of the room.
+
 All five maps are sampled on every shade. MaterialX cannot switch a filename,
 so the wall is chosen after sampling rather than before. If this becomes a
 bottleneck, combine the walls into a single atlas.
