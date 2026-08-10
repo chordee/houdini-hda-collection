@@ -257,16 +257,9 @@ A CVEX lens shader that applies a fisheye distortion for Mantra rendering.
 
 ![Mandelbrot3D](docs/images/mandelbrot3d.png)
 
-### motion_vector (VOP: Motion Vector)
-
-Outputs a screen-space motion vector, scaled to pixel dimensions for use in motion vector AOVs.
-
-* Width Pixel: Horizontal resolution multiplier (default: 1920).
-* Height Pixel: Vertical resolution multiplier (default: 1080).
-
 ### vop_mtlx_fake_window (VOP: MaterialX Fake Window)
 
-Fakes an interior seen through a window using five directional maps and no geometry, for Solaris and Karma. Walks the incident ray into a virtual box behind the surface and samples whichever wall it reaches. Replaces the older VEX fake_window shader.
+Fakes an interior seen through a window using five directional maps and no geometry, for Solaris and Karma. Walks the incident ray into a virtual box behind the surface and samples whichever wall it reaches.
 
 Place it in a Material Library or MaterialX Builder and connect its output to the base colour or emission of an mtlxstandard_surface. The surface needs usable UVs, since the room is laid out in UV space.
 

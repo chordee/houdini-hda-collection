@@ -9,8 +9,7 @@
 
 MaterialX Fake Window walks the incident ray into a virtual box behind the
 surface and samples whichever wall the ray reaches, producing the illusion of a
-room behind a window without any interior geometry. It is a rebuild of the
-older fake_window VOP shader for Solaris and Karma.
+room behind a window without any interior geometry, for Solaris and Karma.
 
 Place it inside a Material Library or MaterialX Builder and connect its output
 to the base colour or emission of an mtlxstandard_surface. The surface needs
