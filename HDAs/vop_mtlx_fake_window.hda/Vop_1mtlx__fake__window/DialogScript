@@ -58,6 +58,6 @@
         label   "Depth"
         type    float
         default { "1" }
-        range   { 0 10 }
+        range   { 0! 10 }
     }
 }
