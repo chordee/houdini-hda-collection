@@ -1,0 +1,63 @@
+# Dialog script for mtlx_fake_window automatically generated
+
+{
+    name	mtlx_fake_window
+    script	mtlx_fake_window
+    label	"MaterialX Fake Window"
+
+    output	color	clr	Color
+    signature	"Default Inputs"	default	{ color }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "opposite_map"
+        label   "Opposite Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "left_side_map"
+        label   "Left Side Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "right_side_map"
+        label   "Right Side Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "top_map"
+        label   "Top Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "bottom_map"
+        label   "Bottom Map"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "depth"
+        label   "Depth"
+        type    float
+        default { "1" }
+        range   { 0! 10 }
+    }
+}

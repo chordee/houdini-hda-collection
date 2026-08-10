@@ -6,21 +6,6 @@ Houdini Digital Assets Collection
 
 ## SOP Nodes
 
-### fake_window (VOP: Fake Window)
-
-A shader similar to Unity's Fake Window. Outputs a simple color from the perspective camera.
-
-|![fake window node](docs/images/fake_window_node.png)|![fake window example](docs/images/fake_window_setting.png)|
-|:---:|:---:|
-|Vop in MatNetwork|Pre-set: UV and Normal|
-
-* Depth: Maximum depth value when outputting inDepth.
-* Outputs:
-
-    |![outUV](docs/images/wall_outUV.png)|![id](docs/images/wall_id.png)|![drawing](docs/images/out_nor.png)|![inDepth](docs/images/in_depth.png)|
-    |:---:|:---:|:---:|:---:|
-    |outUV|id|outNor|inDepth|
-
 ### grid_cutter (SOP: Grid Cutter)
 
 |![grid cutter node](docs/images/grid_cutter_node.png)|![grid cutter example](docs/images/grid_cutter.png)|
@@ -272,12 +257,14 @@ A CVEX lens shader that applies a fisheye distortion for Mantra rendering.
 
 ![Mandelbrot3D](docs/images/mandelbrot3d.png)
 
-### motion_vector (VOP: Motion Vector)
+### vop_mtlx_fake_window (VOP: MaterialX Fake Window)
 
-Outputs a screen-space motion vector, scaled to pixel dimensions for use in motion vector AOVs.
+Fakes an interior seen through a window using five directional maps and no geometry, for Solaris and Karma. Walks the incident ray into a virtual box behind the surface and samples whichever wall it reaches.
 
-* Width Pixel: Horizontal resolution multiplier (default: 1920).
-* Height Pixel: Vertical resolution multiplier (default: 1080).
+Place it in a Material Library or MaterialX Builder and connect its output to the base colour or emission of an mtlxstandard_surface. The surface needs usable UVs, since the room is laid out in UV space.
+
+* Opposite / Left Side / Right Side / Top / Bottom Map: Textures for the five walls of the virtual room.
+* Depth: How far the room extends behind the surface, in UV units.
 
 ### volume_texture (VOP: Volume Texture)
 
