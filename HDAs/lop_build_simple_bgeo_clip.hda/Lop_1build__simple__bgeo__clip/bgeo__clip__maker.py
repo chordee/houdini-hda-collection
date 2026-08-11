@@ -4,8 +4,6 @@ from pathlib import Path
 
 def copy_structure_no_values(src_path, dst_path, primpath=''):
     src_stage = Usd.Stage.Open(src_path)
-    if not src_stage:
-        return
 
     dst_layer = Sdf.Layer.FindOrOpen(dst_path)
     if dst_layer:
@@ -45,6 +43,14 @@ node = hou.pwd()
 usd_file_path = node.parm('lopoutput').eval()
 
 usd_path = Path(usd_file_path)
+
+# Houdini runs a post-render script whether or not the render succeeded. Stop
+# here rather than let the missing layer surface as a USD traceback on top of
+# the error the ROP has already reported.
+if not usd_path.is_file():
+    raise hou.NodeError(
+        'Clip topology layer was not written: %s' % usd_file_path)
+
 manifest_path = usd_path.with_name(f"{usd_path.stem}.manifest{usd_path.suffix}").as_posix()
 manifest_name = Path(manifest_path).name
 
