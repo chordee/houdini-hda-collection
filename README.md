@@ -42,8 +42,8 @@ The line needs to bend somewhere. A perfectly straight polyline has no interior 
 
 * Iterations: Increase to better match the input line. (May not be a perfect match.)
 * Iteration Threshold: Avoids extremely small pieces.
-* Clean Zero Plane: Discards pieces that come out flat. On ground that is itself flat every piece qualifies, so the output ends up empty.
-* Clean Threshold: How flat a piece has to be to count as flat.
+* Clean Zero Plane: Discards pieces that come out flat, judged from each piece's bounding box. On ground that is itself flat every piece qualifies, so the output ends up empty.
+* Clean Threshold: The area below which a piece counts as flat, compared against the smallest face of its bounding box.
 
 ### matrix_deformer (SOP: Matrix Deformer)
 

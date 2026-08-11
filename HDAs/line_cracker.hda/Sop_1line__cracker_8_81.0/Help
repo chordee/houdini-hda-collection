@@ -30,11 +30,11 @@ Iteration Threshold:
 
 Clean Zero Plane:
     #id: clean_zero_plane
-    Removes degenerate faces on the zero plane after fracturing.
+    Discards pieces that came out flat, judged from the bounding box of each piece. On ground that is itself flat every piece qualifies, so the output ends up empty.
 
 Clean Threshold:
     #id: clean_threshold
-    Distance threshold for zero-plane face removal.
+    The area below which a piece counts as flat, compared against the smallest face of that piece's bounding box.
 
 == Pieces ==
 
