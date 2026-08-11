@@ -42,7 +42,7 @@
     }
     parm {
         name    "orientations"
-        label   "Oritations"
+        label   "Orientations"
         type    toggle
         joinnext
         default { "0" }

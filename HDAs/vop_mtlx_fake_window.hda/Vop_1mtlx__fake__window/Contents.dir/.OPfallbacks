@@ -24,6 +24,8 @@ Vop/mtlxmultiply D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls
 Vop/mtlxmultiply otls/MaterialX.hda
 Vop/mtlxnormal D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxnormal otls/MaterialX.hda
+Vop/mtlxsign D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
+Vop/mtlxsign otls/MaterialX.hda
 Vop/mtlxsubtract D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda
 Vop/mtlxsubtract otls/MaterialX.hda
 Vop/mtlxswitch D:/Programs/Side Effects Software/Houdini 22.0.368/houdini/otls/MaterialX.hda

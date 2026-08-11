@@ -7,8 +7,9 @@ License:
 Extra:        shadertype=<Not Applicable>
 User:         
 Inputs:       0 to 0
+Outputs:      4
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Aug 10 09:07:40 2026
+Modified:     Mon Aug 10 14:09:26 2026
 

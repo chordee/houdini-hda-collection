@@ -265,6 +265,7 @@ Place it in a Material Library or MaterialX Builder and connect its output to th
 
 * Opposite / Left Side / Right Side / Top / Bottom Map: Textures for the five walls of the virtual room.
 * Depth: How far the room extends behind the surface, in UV units.
+* Outputs: Color, In Depth (0 at the window to Depth at the back wall), Out Normal (world space, for the surface shader's normal input), and Wall Id (0 back, 1 left, 2 right, 3 ceiling, 4 floor).
 
 ### volume_texture (VOP: Volume Texture)
 
