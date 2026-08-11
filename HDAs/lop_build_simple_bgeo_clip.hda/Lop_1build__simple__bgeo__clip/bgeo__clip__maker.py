@@ -89,5 +89,12 @@ clips_info[clip_name]["active"] = active
 clips_info[clip_name]["manifestAssetPath"] = manifest_asset_path
 
 prim_spec.SetInfo("clips", clips_info)
+
+# The USD ROP renders one frame and stamps that frame as the layer's whole time
+# range, which leaves the topology layer claiming it covers a single frame. The
+# clips span the scene range, so say so.
+layer.startTimeCode = scene_range1
+layer.endTimeCode = scene_range2
+
 layer.Save()
 
