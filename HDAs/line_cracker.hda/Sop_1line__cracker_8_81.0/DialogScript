@@ -20,13 +20,13 @@
         label   "Iterations"
         type    integer
         default { "1" }
-        range   { 1 10 }
+        range   { 1! 10 }
         parmtag { "autoscope" "0000000000000000" }
         parmtag { "script_callback_language" "python" }
     }
     parm {
         name    "iteration_threshold"
-        label   "Iterartion Threshold"
+        label   "Iteration Threshold"
         type    float
         default { "0.01" }
         range   { 0 1 }
@@ -47,6 +47,7 @@
         label   "Clean Threshold"
         type    float
         default { "0.001" }
+        disablewhen "{ clean_zero_plane == 0 }"
         range   { 0 1 }
         parmtag { "autoscope" "0000000000000000" }
         parmtag { "script_callback_language" "python" }

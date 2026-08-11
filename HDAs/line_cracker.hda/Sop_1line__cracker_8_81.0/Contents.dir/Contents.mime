@@ -32,7 +32,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -0.98124 0.339396
+position 0 0
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -148,86 +148,6 @@ Content-Type: text/plain
 	"___Version___":{
 		"type":"string",
 		"value":"___EXTERNAL___"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/pointwrangle1.init"
-Content-Type: text/plain
-
-type = attribwrangle
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/pointwrangle1.def"
-Content-Type: text/plain
-
-sopflags sopflags = 
-comment ""
-position -7.0653 4.13097
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	resample2 1 1 "input1"
-}
-inputs
-{
-0 	resample2 0 1
-}
-stat
-{
-  create -1
-  modify -1
-  author Chordee@MoonShineExp40
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/pointwrangle1.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-folder0	[ 0	locks=0 ]	(	0	0	)
-group	[ 0	locks=0 ]	(	""	)
-grouptype	[ 0	locks=0 ]	(	"guess"	)
-class	[ 0	locks=0 ]	(	"point"	)
-vex_numcount	[ 0	locks=0 ]	(	10	)
-vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
-snippet	[ 0	locks=0 ]	(	"v@tangentv = cross({0,1,0}, normalize(v@tangentu));"	)
-exportlist	[ 0	locks=0 ]	(	*	)
-vex_strict	[ 0	locks=0 ]	(	"off"	)
-vex_strictvariables	[ 0	locks=0 ]	(	"on"	)
-autobind	[ 0	locks=0 ]	(	"on"	)
-bindings	[ 0	locks=0 ]	(	0	)
-groupautobind	[ 0	locks=0 ]	(	"on"	)
-groupbindings	[ 0	locks=0 ]	(	0	)
-vex_cwdpath	[ 0	locks=0 ]	(	.	)
-vex_outputmask	[ 0	locks=0 ]	(	*	)
-vex_updatenmls	[ 0	locks=0 ]	(	"off"	)
-vex_matchattrib	[ 0	locks=0 ]	(	id	)
-vex_inplace	[ 0	locks=0 ]	(	"off"	)
-vex_selectiongroup	[ 0	locks=0 ]	(	""	)
-vex_precision	[ 0	locks=0 ]	(	auto	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/pointwrangle1.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":""
 	}
 }
 
@@ -1253,11 +1173,11 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	attribwrangle4 1 1 "input1"
+0 	foreach_end2 1 1 "input1"
 }
 inputs
 {
-0 	attribwrangle4 0 1
+0 	foreach_end2 0 1
 }
 stat
 {
@@ -1283,24 +1203,36 @@ grouptype	[ 0	locks=0 ]	(	"guess"	)
 class	[ 0	locks=0 ]	(	"primitive"	)
 vex_numcount	[ 0	locks=0 ]	(	10	)
 vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
-snippet	[ 0	locks=0 ]	(	"if(i@primnum < (nprimitives(0)-1)){
-    float a1 = prim(0, 'a', i@primnum);
-    float b1 = prim(0, 'b', i@primnum);
-    
-    float a2 = prim(0, 'a', i@primnum + 1);
-    float b2  = prim(0, 'b', i@primnum + 1);
-    
-    float x = (b2 - b1) / (a1 - a2);
-    float y = (a1 * x) + b1;
-    
-    f@x = x; f@y = y;
-    
-    vector pos = set(x, 0, y);
-    
-    addpoint(0, pos); 
+snippet	[ 0	locks=0 ]	(	"// Each primitive here is the perpendicular bisector of one segment of the crack
+// line. Where two consecutive bisectors meet is the circumcentre of the points
+// they came from, which is the Voronoi seed this branch produces.
+int next = i@primnum + 1;
+if(next < nprimitives(0)){
+    int this_pts[] = primpoints(0, i@primnum);
+    int next_pts[] = primpoints(0, next);
+
+    vector a0 = point(0, 'P', this_pts[0]);
+    vector a1 = point(0, 'P', this_pts[1]);
+    vector b0 = point(0, 'P', next_pts[0]);
+    vector b1 = point(0, 'P', next_pts[1]);
+
+    // The crack is solved in the XZ plane.
+    vector2 p = set(a0.x, a0.z);
+    vector2 r = normalize(set(a1.x - a0.x, a1.z - a0.z));
+    vector2 q = set(b0.x, b0.z);
+    vector2 s = normalize(set(b1.x - b0.x, b1.z - b0.z));
+
+    // Parallel bisectors meet at infinity: their points are collinear and have
+    // no circumcentre. A zero length segment also lands here, because
+    // normalize() leaves denom NaN and the comparison is false.
+    float denom = r.x * s.y - r.y * s.x;
+    if(abs(denom) > 1e-6){
+        float t = ((q.x - p.x) * s.y - (q.y - p.y) * s.x) / denom;
+        vector2 hit = p + t * r;
+        addpoint(0, set(hit.x, 0, hit.y));
+    }
 }
-removeprim(0, i@primnum, 1);
-"	)
+removeprim(0, i@primnum, 1);"	)
 exportlist	[ 0	locks=0 ]	(	*	)
 vex_strict	[ 0	locks=0 ]	(	"off"	)
 vex_strictvariables	[ 0	locks=0 ]	(	"on"	)
@@ -1563,30 +1495,30 @@ vex_numcount	[ 0	locks=0 ]	(	10	)
 vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
 snippet	[ 0	locks=0 ]	(	"int nprims = nprimitives(1);
 vector orig_pos = point(0, 'P', 0);
-vector add_pos = {0,0,0};
-//nprims = min(chi('test_step'), nprims);
 
-for(int i = 0; i < (nprims); i++){
+for(int i = 0; i < nprims; i++){
     vector reflect_cen = prim(1, 'P', i);
     vector axis = point(1, 'tangentu', primpoints(1, i)[0]);
-    v@test = axis;
-    vector in_pos = orig_pos - reflect_cen;
+
     matrix3 mmm = ident();
-    rotate(mmm, radians(180) , axis );
-    
+    rotate(mmm, radians(180), axis);
+
     vector in = orig_pos - reflect_cen;
     vector out = in * mmm;
-    add_pos = out + reflect_cen; 
+    vector add_pos = out + reflect_cen;
     addpoint(0, add_pos);
-    
-    vector next_axis = point(1, 'tangentu', primpoints(1, i+1)[0]);
-    
-    vector cross_axis = cross(normalize(axis), normalize(next_axis));
-    vector cross_reflect = cross(normalize(axis), normalize(add_pos - reflect_cen));    
-    float turn_check = dot(normalize(cross_axis), cross_reflect);
-    if(turn_check > 0)
-        orig_pos = add_pos;
-};"	)
+
+    // The last segment has no successor, and the turn check exists only to
+    // decide where the next reflection starts from.
+    if(i + 1 < nprims){
+        vector next_axis = point(1, 'tangentu', primpoints(1, i + 1)[0]);
+
+        vector cross_axis = cross(normalize(axis), normalize(next_axis));
+        vector cross_reflect = cross(normalize(axis), normalize(add_pos - reflect_cen));
+        if(dot(normalize(cross_axis), cross_reflect) > 0)
+            orig_pos = add_pos;
+    }
+}"	)
 exportlist	[ 0	locks=0 ]	(	*	)
 vex_strict	[ 0	locks=0 ]	(	"off"	)
 vex_strictvariables	[ 0	locks=0 ]	(	"on"	)
@@ -1607,95 +1539,6 @@ test_step	[ 8	locks=0 ]	(	79	)
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/attributewrangle2.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":""
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle4.init"
-Content-Type: text/plain
-
-type = attribwrangle
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle4.def"
-Content-Type: text/plain
-
-sopflags sopflags = 
-comment ""
-position -4.3144 -19.6009
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	foreach_end2 1 1 "input1"
-}
-inputs
-{
-0 	foreach_end2 0 1
-}
-stat
-{
-  create -1
-  modify -1
-  author Chordee@MoonShineExp40
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle4.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-folder0	[ 0	locks=0 ]	(	0	0	)
-group	[ 0	locks=0 ]	(	""	)
-grouptype	[ 0	locks=0 ]	(	"guess"	)
-class	[ 0	locks=0 ]	(	"primitive"	)
-vex_numcount	[ 0	locks=0 ]	(	10	)
-vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
-snippet	[ 0	locks=0 ]	(	"float x1 = vector(point(0, 'P', primpoints(0, i@primnum)[0]))[0];
-float x2 = vector(point(0, 'P', primpoints(0, i@primnum)[1]))[0];
-
-float y1 = vector(point(0, 'P', primpoints(0, i@primnum)[0]))[2];
-float y2 = vector(point(0, 'P', primpoints(0, i@primnum)[1]))[2];
-
-float a = (y1 - y2) / (x1 - x2);
-float b = y1 - (a * x1);
-
-@a = a; f@b = b;"	)
-exportlist	[ 0	locks=0 ]	(	*	)
-vex_strict	[ 0	locks=0 ]	(	"off"	)
-vex_strictvariables	[ 0	locks=0 ]	(	"on"	)
-autobind	[ 0	locks=0 ]	(	"on"	)
-bindings	[ 0	locks=0 ]	(	0	)
-groupautobind	[ 0	locks=0 ]	(	"on"	)
-groupbindings	[ 0	locks=0 ]	(	0	)
-vex_cwdpath	[ 0	locks=0 ]	(	.	)
-vex_outputmask	[ 0	locks=0 ]	(	*	)
-vex_updatenmls	[ 0	locks=0 ]	(	"off"	)
-vex_matchattrib	[ 0	locks=0 ]	(	id	)
-vex_inplace	[ 0	locks=0 ]	(	"off"	)
-vex_selectiongroup	[ 0	locks=0 ]	(	""	)
-vex_precision	[ 0	locks=0 ]	(	auto	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle4.userdata"
 Content-Type: text/plain
 
 {
@@ -2150,11 +1993,11 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	pointwrangle1 1 1 "input1"
+0 	resample2 1 1 "input1"
 }
 inputs
 {
-0 	pointwrangle1 0 1
+0 	resample2 0 1
 }
 stat
 {
@@ -2572,6 +2415,8 @@ outclass	[ 0	locks=0 ]	(	"point"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
 method	[ 0	locks=0 ]	(	"mean"	)
+doindexattrib	[ 0	locks=0 ]	(	"off"	)
+indexattrib	[ 0	locks=0 ]	(	sourceindex	)
 useoutname	[ 0	locks=0 ]	(	"off"	)
 outname	[ 0	locks=0 ]	(	""	)
 deletein	[ 0	locks=0 ]	(	"on"	)
@@ -3324,6 +3169,8 @@ outclass	[ 0	locks=0 ]	(	"point"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
 method	[ 0	locks=0 ]	(	"mean"	)
+doindexattrib	[ 0	locks=0 ]	(	"off"	)
+indexattrib	[ 0	locks=0 ]	(	sourceindex	)
 useoutname	[ 0	locks=0 ]	(	"off"	)
 outname	[ 0	locks=0 ]	(	""	)
 deletein	[ 0	locks=0 ]	(	"off"	)
@@ -3456,6 +3303,8 @@ outclass	[ 0	locks=0 ]	(	"primitive"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
 method	[ 0	locks=0 ]	(	"max"	)
+doindexattrib	[ 0	locks=0 ]	(	"off"	)
+indexattrib	[ 0	locks=0 ]	(	sourceindex	)
 useoutname	[ 0	locks=0 ]	(	"off"	)
 outname	[ 0	locks=0 ]	(	""	)
 deletein	[ 0	locks=0 ]	(	"on"	)
@@ -3738,9 +3587,6 @@ Content-Type: text/plain
         baseparm
         label   "Group"
         export  none
-        bindselector everything "Transform Geometry"
-            "Select the geometry to transform and press Enter to complete. Middle mouse to select. Left mouse to select and drag."
-            0 1 0xffffffff 1 grouptype 0
     }
     parm {
         name    "grouptype"
@@ -4669,6 +4515,8 @@ outclass	[ 0	locks=0 ]	(	"primitive"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
 method	[ 0	locks=0 ]	(	"max"	)
+doindexattrib	[ 0	locks=0 ]	(	"off"	)
+indexattrib	[ 0	locks=0 ]	(	sourceindex	)
 useoutname	[ 0	locks=0 ]	(	"off"	)
 outname	[ 0	locks=0 ]	(	""	)
 deletein	[ 0	locks=0 ]	(	"on"	)
@@ -5767,6 +5615,8 @@ outclass	[ 0	locks=0 ]	(	"detail"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
 method	[ 0	locks=0 ]	(	"min"	)
+doindexattrib	[ 0	locks=0 ]	(	"off"	)
+indexattrib	[ 0	locks=0 ]	(	sourceindex	)
 useoutname	[ 0	locks=0 ]	(	"off"	)
 outname	[ 0	locks=0 ]	(	""	)
 deletein	[ 0	locks=0 ]	(	"on"	)
@@ -6341,9 +6191,8 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-66
+64
 convertline1
-pointwrangle1
 convertline4
 primitivewrangle2
 groupexpression2
@@ -6351,7 +6200,6 @@ convertline5
 voronoifracture4
 attribwrangle3
 attributewrangle2
-attribwrangle4
 pointwrangle2
 pointwrangle3
 pointwrangle4
