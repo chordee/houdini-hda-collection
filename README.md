@@ -30,16 +30,20 @@ Fractures based on polyline projection (X/Z plane).
 |![line creacker node](docs/images/line_cracker_node.png)|![line crack example](docs/images/line_cracker_45.png)|
 |---|---|
 
-> Input 1: polyline.  
-> Input 2: Ground plane (does not need to be flat)  
+> Input 1: Ground plane (does not need to be flat)  
+> Input 2: Polyline, as a single primitive.  
 > Output: Fractured polygons with attributes.
 
 |![close line example](docs/images/line_cracker_circle.png)|![open line example](docs/images/line_cracker_straight.png)|
 |:---:|:---:|
 |Close Line|Open Line|
 
+The line needs to bend somewhere. A perfectly straight polyline has no interior detail to work from and passes the ground through uncracked.
+
 * Iterations: Increase to better match the input line. (May not be a perfect match.)
 * Iteration Threshold: Avoids extremely small pieces.
+* Clean Zero Plane: Discards pieces that come out flat. On ground that is itself flat every piece qualifies, so the output ends up empty.
+* Clean Threshold: How flat a piece has to be to count as flat.
 
 ### matrix_deformer (SOP: Matrix Deformer)
 
