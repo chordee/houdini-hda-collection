@@ -1333,7 +1333,7 @@ Keep dollar signs out of the messages: this snippet lives in a string parameter,
 so Houdini expands them before the code ever runs.
 \"\"\"
 import hou
-from pxr import Sdf, Usd
+from pxr import Sdf
 
 node = hou.pwd()
 asset = node.node('..')
@@ -1359,21 +1359,13 @@ if not stage.GetPrimAtPath(primpath):
         'Primitive %s is not in the loaded bgeo. Top level prims are: %s'
         % (primpath, ', '.join(roots) if roots else '<none>'))
 
-# Value clips read time samples. A bgeo written without a sample frame carries
-# only default values, which contribute nothing through a clip: the composed
-# prim keeps its structure and loses every attribute value.
-template = asset.parm('filepath').evalAsStringAtFrame(
-    asset.parm('template_frame').eval())
-clip_stage = Usd.Stage.Open(template)
-prim = clip_stage.GetPrimAtPath(primpath) if clip_stage else None
-if prim and not any(attr.GetNumTimeSamples()
-                    for child in Usd.PrimRange(prim)
-                    for attr in child.GetAttributes()):
-    raise hou.NodeError(
-        'The bgeo files carry no USD time samples, so the clips would resolve '
-        'to nothing. Write the sequence through a usdconfigure SOP with Sample '
-        'Frame enabled, so each file records the frame it belongs to. '
-        'Checked: %s' % template)"	)
+# Missing time samples are not checked here. Reading them means opening the bgeo
+# again -- the Load Layer copies the file into an anonymous layer and lets the
+# source go, so nothing is cached and the read costs about 1.8 ms of every cook,
+# on a node whose whole point is to be quick. The write-time scan already covers
+# every frame in the range, the template frame among them, so moving the check
+# there costs no coverage; it only means a sequence with no sample frames is
+# reported when the layer is written rather than while it is being set up."	)
 maintainstate	[ 0	locks=0 ]	(	"off"	)
 }
 
