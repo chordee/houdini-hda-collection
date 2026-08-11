@@ -1345,11 +1345,13 @@ if not primpath:
         'Primitive is empty. Set it to the prim path the bgeo sequence '
         'imports to.')
 
-valid = Sdf.Path.IsValidPathString(primpath)
-if not valid or not primpath.startswith('/'):
+# Unpack rather than lean on the result object's truthiness, which is a detail
+# of the Python binding rather than something the API promises.
+path_ok, path_error = Sdf.Path.IsValidPathString(primpath)
+if not path_ok or not primpath.startswith('/'):
     raise hou.NodeError(
         'Primitive is not an absolute USD path: %s%s'
-        % (primpath, ' (%s)' % valid.errorMessage if not valid else ''))
+        % (primpath, ' (%s)' % path_error if path_error else ''))
 
 if not stage.GetPrimAtPath(primpath):
     roots = [p.GetName() for p in stage.GetPseudoRoot().GetChildren()]
