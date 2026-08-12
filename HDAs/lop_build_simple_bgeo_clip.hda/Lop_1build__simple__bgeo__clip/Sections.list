@@ -9,3 +9,4 @@ Tools.shelf	Tools.shelf
 IconSVG	IconSVG
 ExtraFileOptions	ExtraFileOptions
 bgeo__clip__maker.py	bgeo_clip_maker.py
+validate__clip__range.py	validate_clip_range.py

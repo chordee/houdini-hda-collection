@@ -75,11 +75,11 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	loadlayer1 0 1 "input1"
+0 	validate1 1 1 "input1"
 }
 inputs
 {
-0 	loadlayer1 0 1
+0 	validate1 0 1
 }
 stat
 {
@@ -1132,8 +1132,8 @@ setropcook	[ 0	locks=0 ]	(	"on"	)
 optioncount	[ 0	locks=0 ]	(	1	)
 separator_scripts	[ 0	locks=0 ]	(	)
 tprerender	[ 0	locks=0 ]	(	"on"	)
-prerender	[ 0	locks=0 ]	(	""	)
-lprerender	[ 0	locks=0 ]	(	hscript	)
+prerender	[ 0	locks=0 ]	(	opdef:/Lop/build_simple_bgeo_clip?validate_clip_range.py	)
+lprerender	[ 0	locks=0 ]	(	python	)
 tpreframe	[ 0	locks=0 ]	(	"on"	)
 preframe	[ 0	locks=0 ]	(	""	)
 lpreframe	[ 0	locks=0 ]	(	hscript	)
@@ -1274,10 +1274,117 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/validate1.init"
+Content-Type: text/plain
+
+type = pythonscript
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/validate1.def"
+Content-Type: text/plain
+
+comment ""
+position 0 5.92352
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	loadlayer1 0 1 "input1"
+}
+inputs
+{
+0 	loadlayer1 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/validate1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+python	[ 0	locks=0 ]	(	"\"\"\"Checks for the misconfigurations that would otherwise fail silently.
+
+This sits between the Load Layer and everything else, so it is on both the
+asset's own output and the branch that feeds the USD ROP. That placement is the
+point: the nodes that author the clip metadata only feed the ROP, so anything
+they raise stays inside the asset and never marks the node the user can see.
+
+Each check covers a case where the layer gets written, looks structurally
+correct, and resolves to no geometry at all. A missing file needs no check here,
+because the Load Layer upstream already reports it.
+
+Keep dollar signs out of the messages: this snippet lives in a string parameter,
+so Houdini expands them before the code ever runs.
+\"\"\"
+import hou
+from pxr import Sdf
+
+node = hou.pwd()
+asset = node.node('..')
+stage = node.editableStage()
+
+primpath = asset.parm('primpath').evalAsString().strip()
+if not primpath:
+    raise hou.NodeError(
+        'Primitive is empty. Set it to the prim path the bgeo sequence '
+        'imports to.')
+
+# Unpack rather than lean on the result object's truthiness, which is a detail
+# of the Python binding rather than something the API promises.
+path_ok, path_error = Sdf.Path.IsValidPathString(primpath)
+if not path_ok or not primpath.startswith('/'):
+    raise hou.NodeError(
+        'Primitive is not an absolute USD path: %s%s'
+        % (primpath, ' (%s)' % path_error if path_error else ''))
+
+if not stage.GetPrimAtPath(primpath):
+    roots = [p.GetName() for p in stage.GetPseudoRoot().GetChildren()]
+    raise hou.NodeError(
+        'Primitive %s is not in the loaded bgeo. Top level prims are: %s'
+        % (primpath, ', '.join(roots) if roots else '<none>'))
+
+# Missing time samples are not checked here. Reading them means opening the bgeo
+# again -- the Load Layer copies the file into an anonymous layer and lets the
+# source go, so nothing is cached and the read costs about 1.8 ms of every cook,
+# on a node whose whole point is to be quick. The write-time scan already covers
+# every frame in the range, the template frame among them, so moving the check
+# there costs no coverage; it only means a sequence with no sample frames is
+# reported when the layer is written rather than while it is being set up."	)
+maintainstate	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/validate1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-7
+8
 STAGE
 pythonscript2
 output0
@@ -1285,6 +1392,7 @@ pythonscript3
 configurelayer1
 usd_rop1
 loadlayer1
+validate1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
