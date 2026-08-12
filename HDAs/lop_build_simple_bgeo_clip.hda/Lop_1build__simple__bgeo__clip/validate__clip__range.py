@@ -1,14 +1,16 @@
-"""Checks the whole sequence before the clip layer is written.
+"""Checks every file in the sequence before the clip layer is written.
 
-The per-cook validation inside the asset only looks at the template frame,
-because opening every file in the range costs about a millisecond each and this
-node cooks interactively -- a 500 frame sequence would spend half a second on
-the scan every time the stage is evaluated.
+Time samples are not looked at while the node cooks. Reading a file to find them
+costs about a millisecond, and the Load Layer releases the bgeo once it has
+copied it, so the read is never cached -- on a node that exists to be quick, a
+500 frame sequence would spend half a second of every stage evaluation on it.
+The cook-time validation therefore covers only the Primitive path, which it can
+answer from the stage it already holds.
 
-A sequence written unevenly, some frames through a usdconfigure Sample Frame and
-some not, passes the template check and leaves frames in the clip that resolve to
-nothing. That case is worth catching, so the exhaustive scan runs here instead:
-once, at the moment the layer is actually written.
+That makes this the one place sample frames are verified, so it checks every
+frame rather than just the template. A sequence written unevenly, some frames
+through a usdconfigure Sample Frame and some not, would otherwise reach the clip
+with frames that resolve to nothing.
 
 Missing files are left alone; the Load Layer upstream already reports those.
 """
