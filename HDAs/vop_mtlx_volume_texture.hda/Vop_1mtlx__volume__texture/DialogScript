@@ -1,0 +1,56 @@
+# Dialog script for mtlx_volume_texture automatically generated
+
+{
+    name	mtlx_volume_texture
+    script	mtlx_volume_texture
+    label	"MaterialX Volume Texture"
+
+    output	color	out	out
+    signature	"Default Inputs"	default	{ color }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+        name    "file"
+        label   "Volume Texture"
+        type    image
+        default { "" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "utile"
+        label   "U Tile"
+        type    integer
+        default { "8" }
+        range   { 1! 32 }
+    }
+    parm {
+        name    "vtile"
+        label   "V Tile"
+        type    integer
+        default { "8" }
+        range   { 1! 32 }
+    }
+    parm {
+        name    "bboxmin"
+        label   "BBox Min Primvar"
+        type    string
+        default { "bboxmin" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+    parm {
+        name    "bboxmax"
+        label   "BBox Max Primvar"
+        type    string
+        default { "bboxmax" }
+        parmtag { "sidefx::shader_isparmuniform" "1" }
+    }
+}

@@ -1,0 +1,14 @@
+Operator:     mtlx_volume_texture
+Label:        MaterialX Volume Texture
+Path:         oplib:/Vop/mtlx_volume_texture?Vop/mtlx_volume_texture
+Icon:         VOP_mtlx_volume_texture
+Table:        Vop
+License:      
+Extra:        shadertype=<Not Applicable>
+User:         
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Aug 24 19:45:37 2026
+

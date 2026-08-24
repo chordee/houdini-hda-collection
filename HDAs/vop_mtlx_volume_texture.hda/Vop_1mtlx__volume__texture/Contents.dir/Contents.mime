@@ -1,0 +1,4309 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY"
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPfallbacks"
+Content-Type: application/external-reference
+
+.OPfallbacks
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename=".OPdummydefs"
+Content-Type: application/external-reference
+
+.OPdummydefs
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="node_type"
+Content-Type: text/plain
+
+Vop
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.init"
+Content-Type: text/plain
+
+type = mtlx_volume_texture
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.def"
+Content-Type: text/plain
+
+comment ""
+position 0 0
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/obj_pos.init"
+Content-Type: text/plain
+
+type = mtlxposition
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/obj_pos.def"
+Content-Type: text/plain
+
+comment ""
+position 0 -1.66533e-16
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "space"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/obj_pos.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+space	[ 0	locks=0 ]	(	object	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/obj_pos.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_min.init"
+Content-Type: text/plain
+
+type = mtlxgeompropvalue
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_min.def"
+Content-Type: text/plain
+
+comment ""
+position 0 -1.5036
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "geomprop"
+1 	"" "" 1 "default"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_min.chn"
+Content-Type: text/plain
+
+{
+    channel geomprop {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"bboxmin\"
+      flags = 0
+      segment { options = {	 autoslope  ai ao }
+
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = chs(\"../bboxmin\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_min.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector3	)
+geomprop	[ 0	locks=0 ]	(	[ geomprop	"" ] 	)
+default	[ 0	locks=0 ]	(	0	)
+default_boolean	[ 0	locks=0 ]	(	"off"	)
+default_color3	[ 0	locks=0 ]	(	0	0	0	)
+default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+default_integer	[ 0	locks=0 ]	(	0	)
+default_vector2	[ 0	locks=0 ]	(	0	0	)
+default_vector3	[ 0	locks=0 ]	(	0	0	0	)
+default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_min.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_max.init"
+Content-Type: text/plain
+
+type = mtlxgeompropvalue
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_max.def"
+Content-Type: text/plain
+
+comment ""
+position 0 -3.3337
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "geomprop"
+1 	"" "" 1 "default"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_max.chn"
+Content-Type: text/plain
+
+{
+    channel geomprop {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"bboxmax\"
+      flags = 0
+      segment { options = {	 autoslope  ai ao }
+
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = chs(\"../bboxmax\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_max.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector3	)
+geomprop	[ 0	locks=0 ]	(	[ geomprop	"" ] 	)
+default	[ 0	locks=0 ]	(	0	)
+default_boolean	[ 0	locks=0 ]	(	"off"	)
+default_color3	[ 0	locks=0 ]	(	0	0	0	)
+default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+default_integer	[ 0	locks=0 ]	(	0	)
+default_vector2	[ 0	locks=0 ]	(	0	0	)
+default_vector3	[ 0	locks=0 ]	(	0	0	0	)
+default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_max.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_span.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_span.def"
+Content-Type: text/plain
+
+comment ""
+position 2.6559 -3.3337
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bbox_max 2 1 "in1"
+1 	bbox_min 2 1 "in2"
+}
+inputs
+{
+0 	bbox_max 0 1
+1 	bbox_min 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_span.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector3	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bbox_span.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pos_rel.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pos_rel.def"
+Content-Type: text/plain
+
+comment ""
+position 2.6559 -0.7518
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	obj_pos 1 1 "in1"
+1 	bbox_min 2 1 "in2"
+}
+inputs
+{
+0 	obj_pos 0 1
+1 	bbox_min 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pos_rel.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector3	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/pos_rel.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_pos.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_pos.def"
+Content-Type: text/plain
+
+comment ""
+position 5.3118 -2.04275
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	pos_rel 2 1 "in1"
+1 	bbox_span 2 1 "in2"
+}
+inputs
+{
+0 	pos_rel 0 1
+1 	bbox_span 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_pos.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector3	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_pos.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_x.init"
+Content-Type: text/plain
+
+type = mtlxextract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_x.def"
+Content-Type: text/plain
+
+comment ""
+position 39.8385 -13.4848
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bb_pos 2 1 "in"
+1 	"" "" 1 "index"
+}
+inputs
+{
+0 	bb_pos 0 1
+1 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_x.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+index	[ 0	locks=0 ]	(	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_x.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_y.init"
+Content-Type: text/plain
+
+type = mtlxextract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_y.def"
+Content-Type: text/plain
+
+comment ""
+position 7.9677 -2.04275
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bb_pos 2 1 "in"
+1 	"" "" 1 "index"
+}
+inputs
+{
+0 	bb_pos 0 1
+1 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_y.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+index	[ 0	locks=0 ]	(	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_y.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_z.init"
+Content-Type: text/plain
+
+type = mtlxextract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_z.def"
+Content-Type: text/plain
+
+comment ""
+position 39.8385 -16.9685
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bb_pos 2 1 "in"
+1 	"" "" 1 "index"
+}
+inputs
+{
+0 	bb_pos 0 1
+1 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_z.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+index	[ 0	locks=0 ]	(	2	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/bb_z.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile.init"
+Content-Type: text/plain
+
+type = mtlxconstant
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile.def"
+Content-Type: text/plain
+
+comment ""
+position 18.5913 -11.8047
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "value"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile.chn"
+Content-Type: text/plain
+
+{
+    channel value {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { options = {	 untie  iv ov is os ia oa }
+
+	 length = 0 expr = ch(\"../utile\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value	[ 0	locks=0 ]	(	[ value	0 ] 	)
+value_boolean	[ 0	locks=0 ]	(	"off"	)
+value_color3	[ 0	locks=0 ]	(	0	0	0	)
+value_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_integer	[ 0	locks=0 ]	(	0	)
+value_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+value_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+value_string	[ 0	locks=0 ]	(	""	)
+value_vector2	[ 0	locks=0 ]	(	0	0	)
+value_vector3	[ 0	locks=0 ]	(	0	0	0	)
+value_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_filename	[ 0	locks=0 ]	(	""	)
+valuecolorspace_filename	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_tile.init"
+Content-Type: text/plain
+
+type = mtlxconstant
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_tile.def"
+Content-Type: text/plain
+
+comment ""
+position 7.9677 -5.2388
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "value"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_tile.chn"
+Content-Type: text/plain
+
+{
+    channel value {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { options = {	 untie  iv ov is os ia oa }
+
+	 length = 0 expr = ch(\"../vtile\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_tile.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value	[ 0	locks=0 ]	(	[ value	0 ] 	)
+value_boolean	[ 0	locks=0 ]	(	"off"	)
+value_color3	[ 0	locks=0 ]	(	0	0	0	)
+value_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_integer	[ 0	locks=0 ]	(	0	)
+value_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+value_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+value_string	[ 0	locks=0 ]	(	""	)
+value_vector2	[ 0	locks=0 ]	(	0	0	)
+value_vector3	[ 0	locks=0 ]	(	0	0	0	)
+value_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_filename	[ 0	locks=0 ]	(	""	)
+valuecolorspace_filename	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_tile.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/one.init"
+Content-Type: text/plain
+
+type = mtlxconstant
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/one.def"
+Content-Type: text/plain
+
+comment ""
+position 18.5913 1.6801
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "value"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/one.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value	[ 0	locks=0 ]	(	1	)
+value_boolean	[ 0	locks=0 ]	(	"off"	)
+value_color3	[ 0	locks=0 ]	(	0	0	0	)
+value_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_integer	[ 0	locks=0 ]	(	0	)
+value_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+value_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+value_string	[ 0	locks=0 ]	(	""	)
+value_vector2	[ 0	locks=0 ]	(	0	0	)
+value_vector3	[ 0	locks=0 ]	(	0	0	0	)
+value_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_filename	[ 0	locks=0 ]	(	""	)
+valuecolorspace_filename	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/one.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/total_tiles.init"
+Content-Type: text/plain
+
+type = mtlxmultiply
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/total_tiles.def"
+Content-Type: text/plain
+
+comment ""
+position 10.6236 -5.1638
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_tile 1 1 "in1"
+1 	v_tile 1 1 "in2"
+}
+inputs
+{
+0 	u_tile 0 1
+1 	v_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/total_tiles.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdfC	[ 0	locks=0 ]	(	""	)
+in1_bsdfF	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edfC	[ 0	locks=0 ]	(	""	)
+in1_edfF	[ 0	locks=0 ]	(	""	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdfC	[ 0	locks=0 ]	(	""	)
+in1_vdfF	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_bsdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_edfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/total_tiles.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/last_tile.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/last_tile.def"
+Content-Type: text/plain
+
+comment ""
+position 15.9354 -8.321
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	total_tiles 2 1 "in1"
+1 	one 1 1 "in2"
+}
+inputs
+{
+0 	total_tiles 0 1
+1 	one 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/last_tile.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/last_tile.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/y_flipped.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/y_flipped.def"
+Content-Type: text/plain
+
+comment ""
+position 10.6236 -2.04275
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	one 1 1 "in1"
+1 	bb_y 2 1 "in2"
+}
+inputs
+{
+0 	one 0 1
+1 	bb_y 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/y_flipped.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/y_flipped.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_raw.init"
+Content-Type: text/plain
+
+type = mtlxmultiply
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_raw.def"
+Content-Type: text/plain
+
+comment ""
+position 13.2795 -3.60328
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	y_flipped 2 1 "in1"
+1 	total_tiles 2 1 "in2"
+}
+inputs
+{
+0 	y_flipped 0 1
+1 	total_tiles 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_raw.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdfC	[ 0	locks=0 ]	(	""	)
+in1_bsdfF	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edfC	[ 0	locks=0 ]	(	""	)
+in1_edfF	[ 0	locks=0 ]	(	""	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdfC	[ 0	locks=0 ]	(	""	)
+in1_vdfF	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_bsdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_edfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_raw.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase.init"
+Content-Type: text/plain
+
+type = mtlxclamp
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase.def"
+Content-Type: text/plain
+
+comment ""
+position 15.9354 -5.88714
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+3 "out"
+}
+inputsNamed3
+{
+0 	phase_raw 2 1 "in"
+1 	phase_low 1 1 "low"
+2 	last_tile 2 1 "high"
+}
+inputs
+{
+0 	phase_raw 0 1
+1 	phase_low 0 1
+2 	last_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	)
+in_color3	[ 0	locks=0 ]	(	0	0	0	)
+in_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+low	[ 0	locks=0 ]	(	0	)
+low_color3	[ 0	locks=0 ]	(	0	0	0	)
+low_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+low_vector2	[ 0	locks=0 ]	(	0	0	)
+low_vector3	[ 0	locks=0 ]	(	0	0	0	)
+low_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+high	[ 0	locks=0 ]	(	1	)
+high_color3	[ 0	locks=0 ]	(	1	1	1	)
+high_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+high_vector2	[ 0	locks=0 ]	(	1	1	)
+high_vector3	[ 0	locks=0 ]	(	1	1	1	)
+high_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_low.init"
+Content-Type: text/plain
+
+type = mtlxconstant
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_low.def"
+Content-Type: text/plain
+
+comment ""
+position 13.2795 -6.8174
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "value"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_low.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+value	[ 0	locks=0 ]	(	0	)
+value_boolean	[ 0	locks=0 ]	(	"off"	)
+value_color3	[ 0	locks=0 ]	(	0	0	0	)
+value_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_integer	[ 0	locks=0 ]	(	0	)
+value_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+value_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+value_string	[ 0	locks=0 ]	(	""	)
+value_vector2	[ 0	locks=0 ]	(	0	0	)
+value_vector3	[ 0	locks=0 ]	(	0	0	0	)
+value_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+value_filename	[ 0	locks=0 ]	(	""	)
+valuecolorspace_filename	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/phase_low.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_pre.init"
+Content-Type: text/plain
+
+type = mtlxfloor
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 18.5913 -6.03714
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	phase 3 1 "in"
+}
+inputs
+{
+0 	phase 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	)
+in_color3	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/blend.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/blend.def"
+Content-Type: text/plain
+
+comment ""
+position 50.4621 -22.2823
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	phase 3 1 "in1"
+1 	slice_pre 1 1 "in2"
+}
+inputs
+{
+0 	phase 0 1
+1 	slice_pre 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/blend.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/blend.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next_raw.init"
+Content-Type: text/plain
+
+type = mtlxadd
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next_raw.def"
+Content-Type: text/plain
+
+comment ""
+position 23.9031 -5.96214
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_pre 1 1 "in1"
+1 	one 1 1 "in2"
+}
+inputs
+{
+0 	slice_pre 0 1
+1 	one 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next_raw.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdf	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edf	[ 0	locks=0 ]	(	""	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdf	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_bsdf	[ 0	locks=0 ]	(	""	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_edf	[ 0	locks=0 ]	(	""	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vdf	[ 0	locks=0 ]	(	""	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next_raw.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next.init"
+Content-Type: text/plain
+
+type = mtlxmin
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next.def"
+Content-Type: text/plain
+
+comment ""
+position 26.559 -7.14157
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_next_raw 2 1 "in1"
+1 	last_tile 2 1 "in2"
+}
+inputs
+{
+0 	slice_next_raw 0 1
+1 	last_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_offset.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_offset.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -13.4848
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bb_x 2 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	bb_x 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_offset.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_offset.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_offset.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_offset.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -16.9685
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	bb_z 2 1 "in1"
+1 	v_tile 1 1 "in2"
+}
+inputs
+{
+0 	bb_z 0 1
+1 	v_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_offset.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_offset.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile_minus1.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile_minus1.def"
+Content-Type: text/plain
+
+comment ""
+position 37.1826 2.5069
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_tile 1 1 "in1"
+1 	one 1 1 "in2"
+}
+inputs
+{
+0 	u_tile 0 1
+1 	one 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile_minus1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_tile_minus1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_pre.init"
+Content-Type: text/plain
+
+type = mtlxfloor
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 31.8708 -18.8736
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	row_div_pre 2 1 "in"
+}
+inputs
+{
+0 	row_div_pre 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	)
+in_color3	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_pre.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 29.2149 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_pre 1 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	slice_pre 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_pre.init"
+Content-Type: text/plain
+
+type = mtlxmultiply
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 34.5267 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	row_pre 1 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	row_pre 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdfC	[ 0	locks=0 ]	(	""	)
+in1_bsdfF	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edfC	[ 0	locks=0 ]	(	""	)
+in1_edfF	[ 0	locks=0 ]	(	""	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdfC	[ 0	locks=0 ]	(	""	)
+in1_vdfF	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_bsdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_edfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_pre.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 37.1826 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_pre 1 1 "in1"
+1 	row_scaled_pre 2 1 "in2"
+}
+inputs
+{
+0 	slice_pre 0 1
+1 	row_scaled_pre 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_pre.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 39.8385 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_tile_minus1 2 1 "in1"
+1 	col_pre 2 1 "in2"
+}
+inputs
+{
+0 	u_tile_minus1 0 1
+1 	col_pre 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_pre.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_num_pre 2 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	u_num_pre 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_pre.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -20.6287
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	row_pre 1 1 "in1"
+1 	v_tile 1 1 "in2"
+}
+inputs
+{
+0 	row_pre 0 1
+1 	v_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_pre.init"
+Content-Type: text/plain
+
+type = mtlxadd
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 45.1503 -18.7986
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_pre 2 1 "in1"
+1 	u_offset 2 1 "in2"
+}
+inputs
+{
+0 	u_pre 0 1
+1 	u_offset 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdf	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edf	[ 0	locks=0 ]	(	""	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdf	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_bsdf	[ 0	locks=0 ]	(	""	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_edf	[ 0	locks=0 ]	(	""	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vdf	[ 0	locks=0 ]	(	""	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_pre.init"
+Content-Type: text/plain
+
+type = mtlxadd
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 45.1503 -20.6287
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	v_pre 2 1 "in1"
+1 	v_offset 2 1 "in2"
+}
+inputs
+{
+0 	v_pre 0 1
+1 	v_offset 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdf	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edf	[ 0	locks=0 ]	(	""	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdf	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_bsdf	[ 0	locks=0 ]	(	""	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_edf	[ 0	locks=0 ]	(	""	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vdf	[ 0	locks=0 ]	(	""	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_pre.init"
+Content-Type: text/plain
+
+type = mtlxcombine2
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 47.8062 -19.7137
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	uu_pre 2 1 "in1"
+1 	vv_pre 2 1 "in2"
+}
+inputs
+{
+0 	uu_pre 0 1
+1 	vv_pre 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector2	)
+in1	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector2	[ 0	locks=0 ]	(	0	)
+in1_vector4VF	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4VV	[ 0	locks=0 ]	(	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_vector4VV	[ 0	locks=0 ]	(	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_pre.init"
+Content-Type: text/plain
+
+type = mtlximage
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_pre.def"
+Content-Type: text/plain
+
+comment ""
+position 50.4621 -19.1136
+connectornextid 11
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+10 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "file"
+1 	"" "" 1 "layer"
+2 	"" "" 1 "default"
+3 	uv_pre 2 1 "texcoord"
+4 	"" "" 1 "uaddressmode"
+5 	"" "" 1 "vaddressmode"
+6 	"" "" 1 "filtertype"
+7 	"" "" 1 "framerange"
+8 	"" "" 1 "frameoffset"
+9 	"" "" 1 "frameendaction"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	uv_pre 0 1
+4 	"" 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_pre.chn"
+Content-Type: text/plain
+
+{
+    channel file {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { options = {	 autoslope  ai ao }
+
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = chs(\"../file\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_pre.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	color3	)
+file	[ 0	locks=0 ]	(	[ file	"" ] 	)
+filecolorspace	[ 0	locks=0 ]	(	""	)
+layer	[ 0	locks=0 ]	(	""	)
+default	[ 0	locks=0 ]	(	0	)
+default_color3	[ 0	locks=0 ]	(	0	0	0	)
+default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+default_vector2	[ 0	locks=0 ]	(	0	0	)
+default_vector3	[ 0	locks=0 ]	(	0	0	0	)
+default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+texcoord	[ 0	locks=0 ]	(	0	0	)
+uaddressmode	[ 0	locks=0 ]	(	clamp	)
+vaddressmode	[ 0	locks=0 ]	(	clamp	)
+filtertype	[ 0	locks=0 ]	(	linear	)
+framerange	[ 0	locks=0 ]	(	""	)
+frameoffset	[ 0	locks=0 ]	(	0	)
+frameendaction	[ 0	locks=0 ]	(	constant	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_pre.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_next.init"
+Content-Type: text/plain
+
+type = mtlxfloor
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_next.def"
+Content-Type: text/plain
+
+comment ""
+position 31.8708 -10.2261
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+1 "out"
+}
+inputsNamed3
+{
+0 	row_div_next 2 1 "in"
+}
+inputs
+{
+0 	row_div_next 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in	[ 0	locks=0 ]	(	0	)
+in_color3	[ 0	locks=0 ]	(	0	0	0	)
+in_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in_vector2	[ 0	locks=0 ]	(	0	0	)
+in_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_next.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_next.def"
+Content-Type: text/plain
+
+comment ""
+position 29.2149 -10.1511
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_next 2 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	slice_next 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_div_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_next.init"
+Content-Type: text/plain
+
+type = mtlxmultiply
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_next.def"
+Content-Type: text/plain
+
+comment ""
+position 34.5267 -10.1511
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	row_next 1 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	row_next 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdfC	[ 0	locks=0 ]	(	""	)
+in1_bsdfF	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edfC	[ 0	locks=0 ]	(	""	)
+in1_edfF	[ 0	locks=0 ]	(	""	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdfC	[ 0	locks=0 ]	(	""	)
+in1_vdfF	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_bsdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_edfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vdfC	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/row_scaled_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_next.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_next.def"
+Content-Type: text/plain
+
+comment ""
+position 37.1826 -8.64633
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	slice_next 2 1 "in1"
+1 	row_scaled_next 2 1 "in2"
+}
+inputs
+{
+0 	slice_next 0 1
+1 	row_scaled_next 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/col_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_next.init"
+Content-Type: text/plain
+
+type = mtlxsubtract
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_next.def"
+Content-Type: text/plain
+
+comment ""
+position 39.8385 -3.06972
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_tile_minus1 2 1 "in1"
+1 	col_next 2 1 "in2"
+}
+inputs
+{
+0 	u_tile_minus1 0 1
+1 	col_next 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_num_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_next.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_next.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -7.36221
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_num_next 2 1 "in1"
+1 	u_tile 1 1 "in2"
+}
+inputs
+{
+0 	u_num_next 0 1
+1 	u_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/u_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_next.init"
+Content-Type: text/plain
+
+type = mtlxdivide
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_next.def"
+Content-Type: text/plain
+
+comment ""
+position 42.4944 -15.3149
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	row_next 1 1 "in1"
+1 	v_tile 1 1 "in2"
+}
+inputs
+{
+0 	row_next 0 1
+1 	v_tile 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	1	)
+in2_color3	[ 0	locks=0 ]	(	1	1	1	)
+in2_color4	[ 0	locks=0 ]	(	1	1	1	1	)
+in2_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in2_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in2_vector2	[ 0	locks=0 ]	(	1	1	)
+in2_vector3	[ 0	locks=0 ]	(	1	1	1	)
+in2_vector4	[ 0	locks=0 ]	(	1	1	1	1	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/v_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_next.init"
+Content-Type: text/plain
+
+type = mtlxadd
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_next.def"
+Content-Type: text/plain
+
+comment ""
+position 45.1503 -10.4235
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	u_next 2 1 "in1"
+1 	u_offset 2 1 "in2"
+}
+inputs
+{
+0 	u_next 0 1
+1 	u_offset 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdf	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edf	[ 0	locks=0 ]	(	""	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdf	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_bsdf	[ 0	locks=0 ]	(	""	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_edf	[ 0	locks=0 ]	(	""	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vdf	[ 0	locks=0 ]	(	""	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uu_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_next.init"
+Content-Type: text/plain
+
+type = mtlxadd
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_next.def"
+Content-Type: text/plain
+
+comment ""
+position 45.1503 -16.1417
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	v_next 2 1 "in1"
+1 	v_offset 2 1 "in2"
+}
+inputs
+{
+0 	v_next 0 1
+1 	v_offset 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+in1	[ 0	locks=0 ]	(	0	)
+in1_bsdf	[ 0	locks=0 ]	(	""	)
+in1_color3	[ 0	locks=0 ]	(	0	0	0	)
+in1_color3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_color4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_edf	[ 0	locks=0 ]	(	""	)
+in1_integer	[ 0	locks=0 ]	(	0	)
+in1_matrix33	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix33FA	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+in1_matrix44	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_matrix44FA	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+in1_vdf	[ 0	locks=0 ]	(	""	)
+in1_vector2	[ 0	locks=0 ]	(	0	0	)
+in1_vector2FA	[ 0	locks=0 ]	(	0	0	)
+in1_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector3FA	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+in1_vector4FA	[ 0	locks=0 ]	(	0	0	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_bsdf	[ 0	locks=0 ]	(	""	)
+in2_color3	[ 0	locks=0 ]	(	0	0	0	)
+in2_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+in2_edf	[ 0	locks=0 ]	(	""	)
+in2_integer	[ 0	locks=0 ]	(	0	)
+in2_matrix33	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	)
+in2_matrix44	[ 0	locks=0 ]	(	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	)
+in2_vdf	[ 0	locks=0 ]	(	""	)
+in2_vector2	[ 0	locks=0 ]	(	0	0	)
+in2_vector3	[ 0	locks=0 ]	(	0	0	0	)
+in2_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/vv_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_next.init"
+Content-Type: text/plain
+
+type = mtlxcombine2
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_next.def"
+Content-Type: text/plain
+
+comment ""
+position 47.8062 -13.2826
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+2 "out"
+}
+inputsNamed3
+{
+0 	uu_next 2 1 "in1"
+1 	vv_next 2 1 "in2"
+}
+inputs
+{
+0 	uu_next 0 1
+1 	vv_next 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	vector2	)
+in1	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector2	[ 0	locks=0 ]	(	0	)
+in1_vector4VF	[ 0	locks=0 ]	(	0	0	0	)
+in1_vector4VV	[ 0	locks=0 ]	(	0	0	)
+in2	[ 0	locks=0 ]	(	0	)
+in2_vector4VV	[ 0	locks=0 ]	(	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/uv_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_next.init"
+Content-Type: text/plain
+
+type = mtlximage
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_next.def"
+Content-Type: text/plain
+
+comment ""
+position 50.4621 -12.6826
+connectornextid 11
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+10 "out"
+}
+inputsNamed3
+{
+0 	"" "" 1 "file"
+1 	"" "" 1 "layer"
+2 	"" "" 1 "default"
+3 	uv_next 2 1 "texcoord"
+4 	"" "" 1 "uaddressmode"
+5 	"" "" 1 "vaddressmode"
+6 	"" "" 1 "filtertype"
+7 	"" "" 1 "framerange"
+8 	"" "" 1 "frameoffset"
+9 	"" "" 1 "frameendaction"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	uv_next 0 1
+4 	"" 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 1
+8 	"" 0 1
+9 	"" 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_next.chn"
+Content-Type: text/plain
+
+{
+    channel file {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { options = {	 autoslope  ai ao }
+
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = chs(\"../file\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_next.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	color3	)
+file	[ 0	locks=0 ]	(	[ file	"" ] 	)
+filecolorspace	[ 0	locks=0 ]	(	""	)
+layer	[ 0	locks=0 ]	(	""	)
+default	[ 0	locks=0 ]	(	0	)
+default_color3	[ 0	locks=0 ]	(	0	0	0	)
+default_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+default_vector2	[ 0	locks=0 ]	(	0	0	)
+default_vector3	[ 0	locks=0 ]	(	0	0	0	)
+default_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+texcoord	[ 0	locks=0 ]	(	0	0	)
+uaddressmode	[ 0	locks=0 ]	(	clamp	)
+vaddressmode	[ 0	locks=0 ]	(	clamp	)
+filtertype	[ 0	locks=0 ]	(	linear	)
+framerange	[ 0	locks=0 ]	(	""	)
+frameoffset	[ 0	locks=0 ]	(	0	)
+frameendaction	[ 0	locks=0 ]	(	constant	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/sample_next.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_blend.init"
+Content-Type: text/plain
+
+type = mtlxmix
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_blend.def"
+Content-Type: text/plain
+
+comment ""
+position 53.118 -17.4075
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+3 "out"
+}
+inputsNamed3
+{
+0 	sample_next 10 1 "fg"
+1 	sample_pre 10 1 "bg"
+2 	blend 2 1 "mix"
+}
+inputs
+{
+0 	sample_next 0 1
+1 	sample_pre 0 1
+2 	blend 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_blend.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	color3	)
+fg	[ 0	locks=0 ]	(	0	)
+fg_bsdf	[ 0	locks=0 ]	(	""	)
+fg_color3	[ 0	locks=0 ]	(	0	0	0	)
+fg_color3color3	[ 0	locks=0 ]	(	0	0	0	)
+fg_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+fg_color4color4	[ 0	locks=0 ]	(	0	0	0	0	)
+fg_displacementshader	[ 0	locks=0 ]	(	""	)
+fg_edf	[ 0	locks=0 ]	(	""	)
+fg_surfaceshader	[ 0	locks=0 ]	(	""	)
+fg_vdf	[ 0	locks=0 ]	(	""	)
+fg_vector2	[ 0	locks=0 ]	(	0	0	)
+fg_vector2vector2	[ 0	locks=0 ]	(	0	0	)
+fg_vector3	[ 0	locks=0 ]	(	0	0	0	)
+fg_vector3vector3	[ 0	locks=0 ]	(	0	0	0	)
+fg_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+fg_vector4vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+fg_volumeshader	[ 0	locks=0 ]	(	""	)
+bg	[ 0	locks=0 ]	(	0	)
+bg_bsdf	[ 0	locks=0 ]	(	""	)
+bg_color3	[ 0	locks=0 ]	(	0	0	0	)
+bg_color3color3	[ 0	locks=0 ]	(	0	0	0	)
+bg_color4	[ 0	locks=0 ]	(	0	0	0	0	)
+bg_color4color4	[ 0	locks=0 ]	(	0	0	0	0	)
+bg_displacementshader	[ 0	locks=0 ]	(	""	)
+bg_edf	[ 0	locks=0 ]	(	""	)
+bg_surfaceshader	[ 0	locks=0 ]	(	""	)
+bg_vdf	[ 0	locks=0 ]	(	""	)
+bg_vector2	[ 0	locks=0 ]	(	0	0	)
+bg_vector2vector2	[ 0	locks=0 ]	(	0	0	)
+bg_vector3	[ 0	locks=0 ]	(	0	0	0	)
+bg_vector3vector3	[ 0	locks=0 ]	(	0	0	0	)
+bg_vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+bg_vector4vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+bg_volumeshader	[ 0	locks=0 ]	(	""	)
+mix	[ 0	locks=0 ]	(	0	)
+mix_color3color3	[ 0	locks=0 ]	(	0	0	0	)
+mix_color4color4	[ 0	locks=0 ]	(	0	0	0	0	)
+mix_vector2vector2	[ 0	locks=0 ]	(	0	0	)
+mix_vector3vector3	[ 0	locks=0 ]	(	0	0	0	)
+mix_vector4vector4	[ 0	locks=0 ]	(	0	0	0	0	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/slice_blend.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output.init"
+Content-Type: text/plain
+
+type = suboutput
+matchesdef = 1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output.def"
+Content-Type: text/plain
+
+comment ""
+position 55.7739 -17.4825
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on lowdetail off mediumdetail off highdetail on material off
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	slice_blend 3 1 "out"
+}
+inputs
+{
+0 	slice_blend 0 1
+}
+stat
+{
+  create -1
+  modify -1
+  author chordee@LAPTOP-ULJICLO8
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+name1	[ 0	locks=0 ]	(	""	)
+label1	[ 0	locks=0 ]	(	""	)
+name2	[ 0	locks=0 ]	(	""	)
+label2	[ 0	locks=0 ]	(	""	)
+name3	[ 0	locks=0 ]	(	""	)
+label3	[ 0	locks=0 ]	(	""	)
+name4	[ 0	locks=0 ]	(	""	)
+label4	[ 0	locks=0 ]	(	""	)
+name5	[ 0	locks=0 ]	(	""	)
+label5	[ 0	locks=0 ]	(	""	)
+name6	[ 0	locks=0 ]	(	""	)
+label6	[ 0	locks=0 ]	(	""	)
+name7	[ 0	locks=0 ]	(	""	)
+label7	[ 0	locks=0 ]	(	""	)
+name8	[ 0	locks=0 ]	(	""	)
+label8	[ 0	locks=0 ]	(	""	)
+name9	[ 0	locks=0 ]	(	""	)
+label9	[ 0	locks=0 ]	(	""	)
+name10	[ 0	locks=0 ]	(	""	)
+label10	[ 0	locks=0 ]	(	""	)
+name11	[ 0	locks=0 ]	(	""	)
+label11	[ 0	locks=0 ]	(	""	)
+name12	[ 0	locks=0 ]	(	""	)
+label12	[ 0	locks=0 ]	(	""	)
+name13	[ 0	locks=0 ]	(	""	)
+label13	[ 0	locks=0 ]	(	""	)
+name14	[ 0	locks=0 ]	(	""	)
+label14	[ 0	locks=0 ]	(	""	)
+name15	[ 0	locks=0 ]	(	""	)
+label15	[ 0	locks=0 ]	(	""	)
+name16	[ 0	locks=0 ]	(	""	)
+label16	[ 0	locks=0 ]	(	""	)
+name17	[ 0	locks=0 ]	(	""	)
+label17	[ 0	locks=0 ]	(	""	)
+name18	[ 0	locks=0 ]	(	""	)
+label18	[ 0	locks=0 ]	(	""	)
+name19	[ 0	locks=0 ]	(	""	)
+label19	[ 0	locks=0 ]	(	""	)
+name20	[ 0	locks=0 ]	(	""	)
+label20	[ 0	locks=0 ]	(	""	)
+name21	[ 0	locks=0 ]	(	""	)
+label21	[ 0	locks=0 ]	(	""	)
+name22	[ 0	locks=0 ]	(	""	)
+label22	[ 0	locks=0 ]	(	""	)
+name23	[ 0	locks=0 ]	(	""	)
+label23	[ 0	locks=0 ]	(	""	)
+name24	[ 0	locks=0 ]	(	""	)
+label24	[ 0	locks=0 ]	(	""	)
+name25	[ 0	locks=0 ]	(	""	)
+label25	[ 0	locks=0 ]	(	""	)
+name26	[ 0	locks=0 ]	(	""	)
+label26	[ 0	locks=0 ]	(	""	)
+name27	[ 0	locks=0 ]	(	""	)
+label27	[ 0	locks=0 ]	(	""	)
+name28	[ 0	locks=0 ]	(	""	)
+label28	[ 0	locks=0 ]	(	""	)
+name29	[ 0	locks=0 ]	(	""	)
+label29	[ 0	locks=0 ]	(	""	)
+name30	[ 0	locks=0 ]	(	""	)
+label30	[ 0	locks=0 ]	(	""	)
+name31	[ 0	locks=0 ]	(	""	)
+label31	[ 0	locks=0 ]	(	""	)
+name32	[ 0	locks=0 ]	(	""	)
+label32	[ 0	locks=0 ]	(	""	)
+name33	[ 0	locks=0 ]	(	""	)
+label33	[ 0	locks=0 ]	(	""	)
+name34	[ 0	locks=0 ]	(	""	)
+label34	[ 0	locks=0 ]	(	""	)
+name35	[ 0	locks=0 ]	(	""	)
+label35	[ 0	locks=0 ]	(	""	)
+name36	[ 0	locks=0 ]	(	""	)
+label36	[ 0	locks=0 ]	(	""	)
+name37	[ 0	locks=0 ]	(	""	)
+label37	[ 0	locks=0 ]	(	""	)
+name38	[ 0	locks=0 ]	(	""	)
+label38	[ 0	locks=0 ]	(	""	)
+name39	[ 0	locks=0 ]	(	""	)
+label39	[ 0	locks=0 ]	(	""	)
+name40	[ 0	locks=0 ]	(	""	)
+label40	[ 0	locks=0 ]	(	""	)
+name41	[ 0	locks=0 ]	(	""	)
+label41	[ 0	locks=0 ]	(	""	)
+name42	[ 0	locks=0 ]	(	""	)
+label42	[ 0	locks=0 ]	(	""	)
+name43	[ 0	locks=0 ]	(	""	)
+label43	[ 0	locks=0 ]	(	""	)
+name44	[ 0	locks=0 ]	(	""	)
+label44	[ 0	locks=0 ]	(	""	)
+name45	[ 0	locks=0 ]	(	""	)
+label45	[ 0	locks=0 ]	(	""	)
+name46	[ 0	locks=0 ]	(	""	)
+label46	[ 0	locks=0 ]	(	""	)
+name47	[ 0	locks=0 ]	(	""	)
+label47	[ 0	locks=0 ]	(	""	)
+name48	[ 0	locks=0 ]	(	""	)
+label48	[ 0	locks=0 ]	(	""	)
+name49	[ 0	locks=0 ]	(	""	)
+label49	[ 0	locks=0 ]	(	""	)
+name50	[ 0	locks=0 ]	(	""	)
+label50	[ 0	locks=0 ]	(	""	)
+name51	[ 0	locks=0 ]	(	""	)
+label51	[ 0	locks=0 ]	(	""	)
+name52	[ 0	locks=0 ]	(	""	)
+label52	[ 0	locks=0 ]	(	""	)
+name53	[ 0	locks=0 ]	(	""	)
+label53	[ 0	locks=0 ]	(	""	)
+name54	[ 0	locks=0 ]	(	""	)
+label54	[ 0	locks=0 ]	(	""	)
+name55	[ 0	locks=0 ]	(	""	)
+label55	[ 0	locks=0 ]	(	""	)
+name56	[ 0	locks=0 ]	(	""	)
+label56	[ 0	locks=0 ]	(	""	)
+name57	[ 0	locks=0 ]	(	""	)
+label57	[ 0	locks=0 ]	(	""	)
+name58	[ 0	locks=0 ]	(	""	)
+label58	[ 0	locks=0 ]	(	""	)
+name59	[ 0	locks=0 ]	(	""	)
+label59	[ 0	locks=0 ]	(	""	)
+name60	[ 0	locks=0 ]	(	""	)
+label60	[ 0	locks=0 ]	(	""	)
+name61	[ 0	locks=0 ]	(	""	)
+label61	[ 0	locks=0 ]	(	""	)
+name62	[ 0	locks=0 ]	(	""	)
+label62	[ 0	locks=0 ]	(	""	)
+name63	[ 0	locks=0 ]	(	""	)
+label63	[ 0	locks=0 ]	(	""	)
+name64	[ 0	locks=0 ]	(	""	)
+label64	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/output.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"___EXTERNAL___"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.order"
+Content-Type: text/plain
+
+49
+obj_pos
+bbox_min
+bbox_max
+bbox_span
+pos_rel
+bb_pos
+bb_x
+bb_y
+bb_z
+u_tile
+v_tile
+one
+total_tiles
+last_tile
+y_flipped
+phase_raw
+phase
+phase_low
+slice_pre
+blend
+slice_next_raw
+slice_next
+u_offset
+v_offset
+u_tile_minus1
+row_pre
+row_div_pre
+row_scaled_pre
+col_pre
+u_num_pre
+u_pre
+v_pre
+uu_pre
+vv_pre
+uv_pre
+sample_pre
+row_next
+row_div_next
+row_scaled_next
+col_next
+u_num_next
+u_next
+v_next
+uu_next
+vv_next
+uv_next
+sample_next
+slice_blend
+output
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY--

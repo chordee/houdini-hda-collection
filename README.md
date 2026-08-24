@@ -271,6 +271,26 @@ Place it in a Material Library or MaterialX Builder and connect its output to th
 * Depth: How far the room extends behind the surface, in UV units.
 * Outputs: Color, In Depth (0 at the window to Depth at the back wall), Out Normal (world space, for the surface shader's normal input), and Wall Id (0 back, 1 left, 2 right, 3 ceiling, 4 floor).
 
+### vop_mtlx_volume_texture (VOP: MaterialX Volume Texture)
+
+Samples a volume texture atlas exported by **Labs VolumeTexture Export**, for Solaris and Karma. Picks the two slices either side of the shading point's height and blends between them.
+
+Place it in a Material Library or MaterialX Builder and connect its output to the base colour or emission of an `mtlxstandard_surface`. Export the atlas with **Up Axis** set to Y, which is the axis this node slices along.
+
+MaterialX has no access to a bounding box, so the box is supplied as two constant primvars and the node works out the position inside it. Author them on the geometry from the prim's `extent`:
+
+```
+primvars:bboxmin   float3   constant
+primvars:bboxmax   float3   constant
+```
+
+Anything that reports a box will do — they do not have to come from `extent`. Being constant primvars rather than shader parameters, one material can be bound to many prims and each still uses its own box. The names are parameters, so they can point at whatever the scene already carries.
+
+* Volume Texture: The atlas image.
+* U Tile / V Tile: Slice columns and rows in the atlas. Must match the export.
+* BBox Min Primvar / BBox Max Primvar: Names of the constant primvars holding the box corners.
+* out: Colour blended from the two nearest slices.
+
 ### volume_texture (VOP: Volume Texture)
 
 Reuse the volume texture exported from **Labs Volume Texture Export** in Houdini.
