@@ -11,19 +11,22 @@ Labs VolumeTexture Export writes a volume as a grid of slices packed into one
 image. This node reads that image back, picking the two slices either side of
 the shading point's height and blending between them.
 
-The slice is chosen from the point's position inside the object's bounding box.
-MaterialX has no access to a bounding box, so this node reads the box from two
-primvars and works out the position itself. Author them on the geometry as
-constant `float3` primvars holding the prim's `extent`:
+The slice is chosen from the point's position inside a bounding box. MaterialX
+has no access to one, so this node reads the box from two primvars and works out
+the position itself. They must describe the box the atlas was exported from,
+which is the prim's own `extent` whenever the geometry matches that box:
 
 {{{
 primvars:bboxmin   float3   constant
 primvars:bboxmax   float3   constant
 }}}
 
-Anything that reports a box will do; they do not have to come from `extent`.
 Because they are constant primvars rather than shader parameters, one material
 can be bound to many prims and each still uses its own box.
+
+A surface sitting exactly on the volume's box samples its outermost shell, which
+for a fog volume is empty. Shade something inside the box, or a plane cutting
+through it.
 
 Export the atlas with __Up Axis__ set to Y, which is the axis this node slices
 along.

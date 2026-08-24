@@ -277,14 +277,16 @@ Samples a volume texture atlas exported by **Labs VolumeTexture Export**, for So
 
 Place it in a Material Library or MaterialX Builder and connect its output to the base colour or emission of an `mtlxstandard_surface`. Export the atlas with **Up Axis** set to Y, which is the axis this node slices along.
 
-MaterialX has no access to a bounding box, so the box is supplied as two constant primvars and the node works out the position inside it. Author them on the geometry from the prim's `extent`:
+MaterialX has no access to a bounding box, so the box is supplied as two constant primvars and the node works out the position inside it. They must describe the box the atlas was exported from, which is the prim's own `extent` whenever the geometry matches that box:
 
 ```
 primvars:bboxmin   float3   constant
 primvars:bboxmax   float3   constant
 ```
 
-Anything that reports a box will do — they do not have to come from `extent`. Being constant primvars rather than shader parameters, one material can be bound to many prims and each still uses its own box. The names are parameters, so they can point at whatever the scene already carries.
+Being constant primvars rather than shader parameters, one material can be bound to many prims and each still uses its own box. The names are parameters, so they can point at whatever the scene already carries.
+
+A surface sitting exactly on the volume's box samples its outermost shell, which for a fog volume is empty. Shade something inside the box, or a plane cutting through it.
 
 * Volume Texture: The atlas image.
 * U Tile / V Tile: Slice columns and rows in the atlas. Must match the export.
