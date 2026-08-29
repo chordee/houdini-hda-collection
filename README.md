@@ -279,7 +279,7 @@ Place it in a Material Library or MaterialX Builder and connect its output to th
 
 MaterialX has no access to a bounding box, so the box is supplied as two constant primvars and the node works out the position inside it. They must describe the box the atlas was exported from, which is the prim's own `extent` whenever the geometry matches that box:
 
-```
+```text
 primvars:bboxmin   float3   constant
 primvars:bboxmax   float3   constant
 ```
