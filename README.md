@@ -293,17 +293,6 @@ A surface sitting exactly on the volume's box samples its outermost shell, which
 * BBox Min Primvar / BBox Max Primvar: Names of the constant primvars holding the box corners.
 * out: Colour blended from the two nearest slices.
 
-### volume_texture (VOP: Volume Texture)
-
-Reuse the volume texture exported from **Labs Volume Texture Export** in Houdini.
-![Volume Texture Node](docs/images/volume_texture_node.png)
-
-* Volume Texture: Texture filepath.
-* BB_pos: Bounding box position.
-* U_Tile
-* V_Tile
-* outClr: RGB color from the volume texture.
-
 ---
 
 ## TOP Nodes
