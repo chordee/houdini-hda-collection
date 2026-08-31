@@ -273,9 +273,11 @@ Place it in a Material Library or MaterialX Builder and connect its output to th
 
 ### vop_mtlx_volume_texture (VOP: MaterialX Volume Texture)
 
-Samples a volume texture atlas exported by **Labs VolumeTexture Export**, for Solaris and Karma. Picks the two slices either side of the shading point's height and blends between them.
+Resamples a 3D voxel field out of a volume texture atlas exported by **Labs VolumeTexture Export**, for Solaris and Karma. For a given position it picks the two slices either side of it and blends between them, reconstructing the field the atlas was baked from.
 
-Place it in a Material Library or MaterialX Builder and connect its output to the base colour or emission of an `mtlxstandard_surface`. Export the atlas with **Up Axis** set to Y, which is the axis this node slices along.
+It feeds a volume shader, not a surface one. Place it in a Material Library or MaterialX Builder and drive `kma_volume`'s scattering or emission with it, or an EDF/VDF feeding `mtlxvolume`. The usual subject is a uniform volume — the Cube a Karma Fog Box creates, for instance — where the shader supplies the field the volume does not carry itself.
+
+Export the atlas with **Up Axis** set to Y, which is the axis this node slices along.
 
 MaterialX has no access to a bounding box, so the box is supplied as two constant primvars and the node works out the position inside it. They must describe the box the atlas was exported from, which is the prim's own `extent` whenever the geometry matches that box:
 
@@ -286,12 +288,10 @@ primvars:bboxmax   float3   constant
 
 Being constant primvars rather than shader parameters, one material can be bound to many prims and each still uses its own box. The names are parameters, so they can point at whatever the scene already carries.
 
-A surface sitting exactly on the volume's box samples its outermost shell, which for a fog volume is empty. Shade something inside the box, or a plane cutting through it.
-
 * Volume Texture: The atlas image.
 * U Tile / V Tile: Slice columns and rows in the atlas. Must match the export.
 * BBox Min Primvar / BBox Max Primvar: Names of the constant primvars holding the box corners.
-* out: Colour blended from the two nearest slices.
+* out: The field sampled at the shading position, blended from the two nearest slices.
 
 ---
 

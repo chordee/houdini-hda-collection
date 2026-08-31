@@ -3,18 +3,29 @@
 #context: vop
 #type: node
 
-"""Samples a volume texture atlas exported by Labs VolumeTexture Export."""
+"""Resamples a 3D voxel field from an atlas exported by Labs VolumeTexture Export."""
 
 == Overview ==
 
 Labs VolumeTexture Export writes a volume as a grid of slices packed into one
-image. This node reads that image back, picking the two slices either side of
-the shading point's height and blending between them.
+image. This node reads that image back: for a given position it picks the two
+slices either side of it and blends between them, reconstructing the field the
+atlas was baked from.
 
-The slice is chosen from the point's position inside a bounding box. MaterialX
-has no access to one, so this node reads the box from two primvars and works out
-the position itself. They must describe the box the atlas was exported from,
-which is the prim's own `extent` whenever the geometry matches that box:
+It feeds a volume shader, not a surface one. Drive `kma_volume`'s scattering or
+emission with it, or an EDF or VDF feeding `mtlxvolume`. The usual subject is a
+uniform volume — the Cube a Karma Fog Box creates, for instance — where the
+shader supplies the field the volume does not carry itself.
+
+Export the atlas with __Up Axis__ set to Y, which is the axis this node slices
+along.
+
+== The bounding box ==
+
+The slice is chosen from the position inside a bounding box. MaterialX has no
+access to one, so this node reads the box from two primvars and works out the
+position itself. They must describe the box the atlas was exported from, which
+is the prim's own `extent` whenever the geometry matches that box:
 
 {{{
 primvars:bboxmin   float3   constant
@@ -23,13 +34,6 @@ primvars:bboxmax   float3   constant
 
 Because they are constant primvars rather than shader parameters, one material
 can be bound to many prims and each still uses its own box.
-
-A surface sitting exactly on the volume's box samples its outermost shell, which
-for a fog volume is empty. Shade something inside the box, or a plane cutting
-through it.
-
-Export the atlas with __Up Axis__ set to Y, which is the axis this node slices
-along.
 
 @parameters
 
@@ -56,4 +60,5 @@ BBox Max Primvar:
 @outputs
 
 out:
-    The blended colour sampled from the two nearest slices.
+    The field sampled at the shading position, blended from the two nearest
+    slices.
