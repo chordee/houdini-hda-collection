@@ -155,9 +155,11 @@ Creates a USD class primitive and moves the hierarchy below a specified primitiv
 * Class: Name for the new class primitive (specifier will be `class`).
 * New Name: Optionally rename the top-level prim when placed in the class.
 
-### lop_create_crowd_collections_by_agent_stage_material (LOP)
+### lop_create_crowd_collections_by_agent_stage_material (LOP: Create Crowd Collections By Agent Stage Material)
 
 Creates USD collections based on the material binding names of the source agent mesh.
+
+![Create Crowd Collections node](docs/images/crowd_collections_node.png)
 
 * Collection: Collection prim path.
 * From Path
