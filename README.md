@@ -144,6 +144,7 @@ Builds USD value clips from a bgeo sequence. Requires a `usdconfigure` SOP to se
 * Loop: Enable looping.
 * Primitive: Target USD primitive path (must match the prim path the bgeo imports to).
 * Output File: Path to write the clip USD file.
+* Check Time Samples: Before writing, open every file in the range and stop if any carries no USD time samples. Without it such a file still goes into the clip and resolves to nothing, with no error. Off by default, since it costs about a millisecond per file.
 * Save to Disk: Write the output USD file and generate the manifest sidecar.
 * Use Relative Paths: Write relative paths in the output USD.
 
