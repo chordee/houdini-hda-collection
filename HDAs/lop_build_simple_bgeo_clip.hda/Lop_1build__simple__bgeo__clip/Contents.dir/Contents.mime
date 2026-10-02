@@ -1087,6 +1087,15 @@ Content-Type: text/plain
       flags = 0
       segment { length = 0 expr = chs(\"../simplerelativepaths_spacer\") }
     }
+    channel tprerender {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { options = {	 untie  iv ov is os ia oa }
+
+	 length = 0 expr = ch(\"../check_time_samples\") }
+    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -1131,7 +1140,7 @@ contextoptions_group	[ 0	locks=0 ]	(	0	)
 setropcook	[ 0	locks=0 ]	(	"on"	)
 optioncount	[ 0	locks=0 ]	(	1	)
 separator_scripts	[ 0	locks=0 ]	(	)
-tprerender	[ 0	locks=0 ]	(	"on"	)
+tprerender	[ 0	locks=0 ]	(	[ tprerender	1 ] 	)
 prerender	[ 0	locks=0 ]	(	opdef:/Lop/build_simple_bgeo_clip?validate_clip_range.py	)
 lprerender	[ 0	locks=0 ]	(	python	)
 tpreframe	[ 0	locks=0 ]	(	"on"	)

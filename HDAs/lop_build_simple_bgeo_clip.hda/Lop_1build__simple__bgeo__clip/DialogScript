@@ -111,6 +111,13 @@
         parmtag { "filechooser_mode" "write" }
     }
     parm {
+        name    "check_time_samples"
+        label   "Check Time Samples"
+        type    toggle
+        default { "0" }
+        help    "Before writing, open every file in the range and stop if any of them carries no USD time samples under the Primitive. About a millisecond per file."
+    }
+    parm {
         name    "execute"
         label   "Save to Disk"
         type    button

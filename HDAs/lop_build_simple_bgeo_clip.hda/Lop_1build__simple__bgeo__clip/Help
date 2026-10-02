@@ -55,6 +55,10 @@ Output File:
     #id: lopoutput
     File path to write the output USD clip file. A `.manifest.usd` sidecar is written next to it.
 
+Check Time Samples:
+    #id: check_time_samples
+    Before writing, opens every file in the frame range and stops if any of them carries no USD time samples under the Primitive. Without it such a file still goes into the clip and resolves to nothing, with no error. Off by default, since it costs about a millisecond per file.
+
 Save to Disk:
     #id: execute
     Writes the output USD clip file and generates the manifest sidecar.
