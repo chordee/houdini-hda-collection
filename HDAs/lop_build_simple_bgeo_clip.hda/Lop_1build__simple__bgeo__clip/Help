@@ -57,7 +57,7 @@ Output File:
 
 Check Time Samples:
     #id: check_time_samples
-    Before writing, opens every file in the frame range and stops if any of them carries no USD time samples. Without it such a file still goes into the clip and resolves to nothing, with no error. Off by default, since it costs about a millisecond per file.
+    Before writing, opens every file in the frame range and stops if any of them carries no USD time samples under the Primitive. Without it such a file still goes into the clip and resolves to nothing, with no error. Off by default, since it costs about a millisecond per file.
 
 Save to Disk:
     #id: execute
