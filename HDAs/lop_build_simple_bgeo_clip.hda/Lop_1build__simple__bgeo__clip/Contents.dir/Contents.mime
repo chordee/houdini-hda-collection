@@ -342,7 +342,10 @@ paths = rule.expandedPaths(stage = stage)
 for path in paths:
     prim = stage.GetPrimAtPath(path)
     for attr in prim.GetAttributes():
-        attr.Clear()"	)
+        # An attribute the bgeo writes as a default alone has nothing in the
+        # clips, so its value has to stay here.
+        if attr.GetNumTimeSamples():
+            attr.Clear()"	)
 maintainstate	[ 0	locks=0 ]	(	"off"	)
 }
 
