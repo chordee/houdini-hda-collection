@@ -4,7 +4,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 
 import hou
-from pxr import Ar, Sdf, UsdUtils
+from pxr import Ar, Sdf, Tf, UsdUtils
 
 CLIP_SET = 'default'
 
@@ -62,7 +62,11 @@ def validate(frame_paths, clip_path, inc):
     def check(path):
         if not os.path.isfile(path):
             return 'missing'
-        layer = Sdf.Layer.FindOrOpen(path)
+        # A file that is not USD raises rather than returning None.
+        try:
+            layer = Sdf.Layer.FindOrOpen(path)
+        except Tf.ErrorException:
+            layer = None
         if not layer:
             return 'unreadable'
         if not layer.GetPrimAtPath(prim_path):
