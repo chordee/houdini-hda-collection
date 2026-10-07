@@ -127,11 +127,9 @@ for i in range(1, inputs + 1):
 # Add code to modify the stage.
 stage = node.editableStage()
 
-import os
-
 import pluginutils
 from husd import UsdHoudini
-from pxr import Sdf, UsdGeom
+from pxr import Ar, Sdf, UsdGeom
 
 path = node.node('..').parm('proc_prim').eval()
 prim = stage.GetPrimAtPath(path) if path else None
@@ -144,9 +142,10 @@ graph_file = node.node('..').parm('graph_file').eval()
 script = node.node('..').parm('procedural_script').eval()
 if not script:
     raise hou.NodeError('Procedural Script is empty.')
-# The renderer looks the script up the same way and skips the procedural
-# without a word when it finds nothing.
-if not os.path.isfile(script) and not pluginutils.findModules(
+# The renderer looks the script up the same way, through the asset resolver
+# first and the houdiniprocedurals plugin folders after, and skips the
+# procedural without a word when it finds nothing.
+if not Ar.GetResolver().Resolve(script) and not pluginutils.findModules(
         dirname='houdiniprocedurals', file_pattern=script,
         pathvar='HOUDINI_HUSDPLUGINS_PATH'):
     raise hou.NodeError('Procedural Script {0} was not found, so the renderer '
