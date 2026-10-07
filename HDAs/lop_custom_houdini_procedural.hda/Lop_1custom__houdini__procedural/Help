@@ -19,7 +19,7 @@ Graph File:
 
 Procedural Script:
     #id: procedural_script
-    The Python script the renderer runs, `invokegraph.py` by default. A bare file name is looked up under `houdiniprocedurals` in `HOUDINI_HUSDPLUGINS_PATH`; a full path is used as is. The renderer skips a script it cannot find without reporting it, so the node reports an error when the same lookup finds nothing on this machine.
+    The Python script the renderer runs, `invokegraph.py` by default. It is written as an asset path, so the renderer resolves it through the asset resolver first (a bare file name is searched for in the working directory and the resolver's search paths) and then under `houdiniprocedurals` in `HOUDINI_HUSDPLUGINS_PATH`. Use a full path or a bare file name: a `./` relative path resolves against the layer it ends up saved in, which this node cannot check. The renderer skips a script it cannot find without reporting it, so the node reports an error when the same lookup finds nothing on this machine.
 
     A custom script defines `procedural(prim, args)` and returns a `hou.Geometry` (Houdini 22 also accepts a list of `(time, hou.Geometry)` pairs). `args` holds `graph`, the Graph File; `inputs`, the relationship names on the primitive whose targets are each input's primitives; and `overrides`, mapping each graph parameter to the primvar holding its value.
 

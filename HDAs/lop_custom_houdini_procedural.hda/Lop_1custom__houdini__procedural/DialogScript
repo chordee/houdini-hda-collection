@@ -26,7 +26,7 @@
         label   "Procedural Script"
         type    file
         default { "invokegraph.py" }
-        help    "The Python script the renderer runs. A bare file name is looked up under houdiniprocedurals in HOUDINI_HUSDPLUGINS_PATH; a full path is used as is."
+        help    "The Python script the renderer runs. Resolved through the asset resolver, then under houdiniprocedurals in HOUDINI_HUSDPLUGINS_PATH. Use a full path or a bare file name, not a ./ relative path."
         parmtag { "filechooser_pattern" "*.py" }
         parmtag { "script_callback_language" "python" }
     }
