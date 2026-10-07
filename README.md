@@ -178,9 +178,11 @@ Sets a specified primitive to use a Houdini Procedural for rendering.
 > **WARNING:** The render command must include `--allowed-procedurals all` unless only curves and points are used.
 
 * Graph File: The SOP-level graph file for the procedural.
+* Procedural Script: The Python script the renderer runs, `invokegraph.py` by default. A bare file name is looked up under `houdiniprocedurals` in `HOUDINI_HUSDPLUGINS_PATH`; a full path is used as is. The node errors when the script cannot be found, since the renderer would skip it silently. A custom script defines `procedural(prim, args)` and returns a `hou.Geometry`; `args` carries `graph`, `inputs` and `overrides`.
 * Procedural Name: Name of the Houdini Procedural.
 * Procedural Primitive: The primitive to make procedural.
-* Inputs: Primitives to use as graph inputs.
+* Animated Procedural: Run the procedural before every frame. Off, it runs once before the render and every frame uses that result.
+* Inputs: Primitives to use as graph inputs. Each entry is one input and may be a pattern or several primitives.
 * Overrides: Override graph parameters and USD primitive properties.
 
 ### lop_houdini_ocean_procedural_configure (LOP: Houdini Ocean Procedural Configure)

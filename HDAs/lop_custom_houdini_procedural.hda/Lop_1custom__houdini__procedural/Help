@@ -17,6 +17,12 @@ Graph File:
     #id: graph_file
     SOP-level graph file provided as input to the procedural.
 
+Procedural Script:
+    #id: procedural_script
+    The Python script the renderer runs, `invokegraph.py` by default. A bare file name is looked up under `houdiniprocedurals` in `HOUDINI_HUSDPLUGINS_PATH`; a full path is used as is. The renderer skips a script it cannot find without reporting it, so the node reports an error when the same lookup finds nothing on this machine.
+
+    A custom script defines `procedural(prim, args)` and returns a `hou.Geometry` (Houdini 22 also accepts a list of `(time, hou.Geometry)` pairs). `args` holds `graph`, the Graph File; `inputs`, the relationship names on the primitive whose targets are each input's primitives; and `overrides`, mapping each graph parameter to the primvar holding its value.
+
 Procedural Name:
     #id: proc_name
     Name of the registered Houdini Procedural.
@@ -25,9 +31,13 @@ Procedural Primitive:
     #id: proc_prim
     The USD primitive to configure as a Houdini Procedural.
 
+Animated Procedural:
+    #id: proc_animated
+    Run the procedural again before every frame. Off, it runs once before the render starts and every frame uses that result, so turn it off only when nothing the graph reads changes over time, Animated overrides included.
+
 Inputs:
     #id: inputs
-    USD primitives to use as inputs to the SOP graph.
+    USD primitives to use as inputs to the SOP graph. Each entry is one input and may be a pattern or several primitives; an entry that matches nothing is an error.
 
 Overrides:
     #id: overrides
