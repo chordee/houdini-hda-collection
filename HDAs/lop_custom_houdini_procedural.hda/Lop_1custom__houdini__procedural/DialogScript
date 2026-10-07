@@ -22,6 +22,15 @@
         parmtag { "script_callback_language" "python" }
     }
     parm {
+        name    "procedural_script"
+        label   "Procedural Script"
+        type    file
+        default { "invokegraph.py" }
+        help    "The Python script the renderer runs. Resolved through the asset resolver, then under houdiniprocedurals in HOUDINI_HUSDPLUGINS_PATH. Use a full path or a bare file name, not a ./ relative path."
+        parmtag { "filechooser_pattern" "*.py" }
+        parmtag { "script_callback_language" "python" }
+    }
+    parm {
         name    "sepparm3"
         label   "Spacer"
         type    separator
@@ -38,9 +47,18 @@
     }
     parm {
         name    "proc_prim"
-        label   "Procedural Primtive"
+        label   "Procedural Primitive"
         type    string
         default { "" }
+        parmtag { "script_callback_language" "python" }
+        parmtag { "sidefx:usdpathtype" "prim" }
+    }
+    parm {
+        name    "proc_animated"
+        label   "Animated Procedural"
+        type    toggle
+        default { "1" }
+        help    "Run the procedural again before every frame. Off, it runs once before the render starts and every frame uses that result, so turn it off only when nothing the graph reads changes over time, Animated overrides included."
         parmtag { "script_callback_language" "python" }
     }
     parm {
